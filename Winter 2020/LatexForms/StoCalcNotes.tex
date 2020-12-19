@@ -1,0 +1,275 @@
+\documentclass[11pt]{article}
+%you can look for fun LaTeX packages to use hereasdf
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+
+%fun commands for fun sets
+%make sure to use these in math mode
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\m}{\mathcal{M}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\pa}{\partial}
+\newcommand{\dD}{\mathcal{D}}
+\newcommand{\E}{\mathbb{E}}
+
+
+
+\oddsidemargin0cm
+\topmargin-2cm    
+\textwidth16.5cm   
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Alex Havrilla}
+\newcommand{\myandrew}{alumhavr}
+\newcommand{\myhwnum}{Hw 1}
+
+\newtheorem{prop}{Prop}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{defi}{Def}
+\newtheorem{apps}{Application}
+\newtheorem{quest}{Question}
+\newtheorem{ans}{Answer}
+\newtheorem{interest}{Interesting}
+\newtheorem{theme}{Theme}
+\newtheorem{theorem}{Theorem}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{\mycourse}}
+
+\linespread{1.3}
+
+\begin{document}
+
+\section{Notes}
+
+\begin{remark}
+	Filtered probability space is akin to saying what knowledge is allowed before time t.
+\end{remark}
+
+\subsection{Higher Probability Theory}
+
+\begin{theorem}1.9
+	Let He be a centered Guassian space and $(H_i)_{i \in I}$ be collection of linear subspaces of H. Then the $H_i$ are pairwise orthogonal in $L^2$ $\iff$ $\sigma$ fields $\sigma(H_i)$ are independent.
+\end{theorem}
+
+\begin{proof}
+	$\impliedby$: First suppose $\sigma(H_i)$ ind. So for $X \in H_i, Y \in H_j$ we know $\E[XY] = \E[X]\E[Y]$. 
+
+	This is basically the ind iff. uncorrelated proof. 
+\end{proof}
+
+\begin{remark}
+	Note this is specific to gaussians and not true in general. B/c uncorrelated iff independent. Useful for making geometric arguments
+\end{remark}
+
+\subsection{Gaussian White Noise}
+
+Gaussian white noise is isometry from space of finite variance random variables to centered gaussians. Intensity is measure of measure space
+
+Note probability of gaussians space can depend on $\mu$
+
+\begin{align*}
+	E[G(f)G(g)] = \langle f,g\rangle_{L^2(E,\mathcal{E},\mu)} = \int fg d\mu
+\end{align*}
+
+\begin{prop} 2.3
+	TFAE: 
+	\begin{enumerate}
+		\item $(X_i)_{t \geq 0}$ is a pre-brownian motion\\
+		\item $(X_i)_{t \geq 0}$ is a centered gaussian process with covariance $K(s,t) = s \wedge t$
+		\item $X_0 = 0$ a.s. and for every $0 \leq s < t$ rv $X_t - X_s$ is independent of $\sigma(X_r,r\leq s)$ and distributed according to $N(0,t-s)$
+		\item $X_0 = 0$ a.s. and for every choice of $0 = t_0 < t_1 < ... < t_p$ we have $X_{t_i} - X_{t_{i-1}}$ are independent and dist according to $N(0,t_i-t_{i-1})$.
+	\end{enumerate}
+\end{prop}
+
+\begin{prop}
+	First $1 \implies 2$. Gaussian white noise maps into gaussian space, we know $B_t$ a gaussian process. 
+	\begin{align*}
+		\E[B_s B_t] = \E[G([0,s])G([0,t])] = \int_0^{\infty} dr 1_{[0,s]}1_{[0,t]} = min(s,t)
+	\end{align*}
+
+	$2 \implies 3$. Suppose $X_t$ centered gaussian with min covariance. $X_0$ is $N(0,0)$ and $X_0 = 0$ a.s. 
+
+	Let $H_s$ be span of $\{X_r, 0\leq r \leq s\}$ and $\hat{H_s}$ span of $\{X_{s+u}-X_s, u \geq 0\}$. We show orthogonal and therefore have desired indpendence
+
+	Compute
+	\begin{align*}
+		\E[X_r(X_{s+u} - X_s)] = r \wedge (s+u) - r\wedge s = r - s = 0
+	\end{align*}
+\end{prop}
+
+\begin{remark}
+	Subtracting an earlier value yields independence from earlier events - This is via theorem 1.9?
+\end{remark}
+
+\begin{theme}
+	Show independence of objects by showing orthogonality of in a geometric space
+\end{theme}
+
+\subsection{Pre-Brownian Motion}
+
+\begin{prop}
+	1. $B_t^{\lambda} = \frac{1}{\lambda}B_{\lambda^2 t}$ is a prebrownian motion
+
+	2. $B_t^{(s)} = B_{s+t} - B_s$ is a pre-Broownian motion and ind. of $\sigma(B_r, r \leq s)$
+\end{prop}
+
+\begin{proof}
+	First 1. Clearly $B_t^{\lambda} = \frac{1}{\lambda}B_{\lambda^2 t}$ are centered gaussians. Suffices to show they have min covariance. Compute
+	\begin{align*}
+		\E[\frac{1}{\lambda}B_{\lambda^2 s}\frac{1}{\lambda}B_{\lambda^2 t}] = \frac{1}{\lambda^2} min(\lambda^2s,\lambda^2 t) = min(s,t)
+	\end{align*}
+
+	Now 2. Note by the markov property we know independence to hold. Confirmed by prop $2.3$. 
+\end{proof}
+
+\subsection{Brownian Motion}
+
+\begin{remark}
+	Brownian motion constructed constructed from pre-brownian as a modification via Kolmogorov's lemma(a technical point involving holder continuity). 
+\end{remark}
+
+
+
+\textbf{Strong Markov Property of Brownian Motion}
+
+
+
+
+\subsection{Continuous Semi-Martingales}
+
+\begin{align*}
+	\int_0^T f(s) da(s) := \int_{[0,T]} f(s) \mu(ds)\\
+	\int_0^T f(s) |da(s)| := \int_{[0,T]} f(s) |\mu|(ds)
+\end{align*}
+
+\begin{lemma}
+$f : [0,T] \to \R$ continuous, then
+\begin{align*}
+	\int_0^T f da(s) = \lim_{n \to \infty}\sum_{i=1}^{p_n} f(t_{i-1}^n)(a(t_i^n) - a(t_{i-1}^n))
+\end{align*}
+
+where the $t_i^n$ are refinings of a partition
+\end{lemma}
+
+\begin{proof}
+	Follows from dominated convergence applied to the measure defining bounded variation a. Since $f_n(t) = f(t_{i}^n)$ for $t \in [t_{i-1},t_i)$ converges pointwise to f and the simple sum is the integral of an elementary function
+	\end{proof}
+
+\textbf{Quadratic Variation}
+
+Proof of quadratic variation very long and should be looked into.
+
+\textbf{Bracket}
+
+Bracket can be thought of as an extension of the quadratic variation.
+
+(This can be thought of as a cauchy schwarz type inequality for the processes)
+\begin{proof}
+\textit{Kunita-Watanabe}:
+
+Poinwise we have 
+
+\begin{align*}
+	|\langle M, N \rangle_s^t| \leq \sqrt{\langle M,M \rangle_s^t}\sqrt{\langle N,N \rangle_s^t}
+\end{align*}
+
+We show this pointwise via appoximations for these+cauchy schwarz.
+
+Then show intergral inequality using this pointwise estimate for simple functions and extend it to all functions.
+
+\end{proof}
+
+\subsection{Continuous Martingales}
+
+
+
+\subsection{Stochastic Integration}
+
+\begin{prop}
+	$\mathbb{H}^2$ is a hilbert space
+\end{prop}
+
+\begin{proof}
+	Want to show sequence $M^n$ cauchy then convergent. 
+
+	\begin{align*}
+		\lim_{m,n \to \infty}E[(M_{\infty}^n-M_{\infty}^m)^2] = \lim_{m,n \to \infty}(M^n - M^m,M^n- M^m)_H = 0
+	\end{align*}
+
+	So we know $(M_{\infty}^n)$ converging in $L^2$. We xtract this to get the same limit. 
+\end{proof}
+
+We know $H \to H \cdot M$ extends to an isometry from $L^2(M)$ into $\mathbb{H}^2$. Furthermore $H \cdot M$ is unique martingale of $\mathbb{H}^2$ s.t.
+
+\begin{align*}
+	\langle H \cdot M, N \rangle H \dot \langle M ,N\rangle
+\end{align*}
+
+This can be thought of as a version of inner product definition of derivative.
+
+Often we say the stochastic integral "commutes" with bracket ie. for $M \in \mathbb{H}^2, H \in L^2(M)$
+
+\begin{align*}
+	\langle H \cdot M,H \cdot M\rangle = H \cdot (H \cdot \langle M,M \rangle) = H^2 \cdot \langle M , M \rangle 
+\end{align*}
+
+since $\langle H \cdot M,N\rangle = H \cdot \langle M, N \rangle$
+
+?Why do we have the second equality?
+
+A lot of these results also extend to the CLM case.
+
+
+\section{Confusions}
+
+\begin{quest}
+	Equivalences to gaussian white noise
+\end{quest}
+
+\begin{ans}
+	All we seem to have is prop 1.13 \ref{LG} which shows existence of gaussian white noise
+\end{ans}
+
+\begin{quest}
+	Ways of deducing a random variable is gaussian?
+\end{quest}
+
+\begin{ans}
+	Rotational invariance?
+	\begin{prop}
+		RV ind. components and rotationally invariant $\iff$ components are gaussian
+	\end{prop}
+\end{ans}
+
+
+\begin{thebibliography}{9}
+
+\bibitem{LG} 
+Legal. Brownian Motion and Stochastic Calculus. \begin{verbatim} https://drive.google.com/drive/u/1/search?q=le%20gall \end{verbatim} 
+
+\end{thebibliography}
+
+\end{document}
+
