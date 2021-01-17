@@ -1,0 +1,115 @@
+\documentclass[11pt]{article}
+%you can look for fun LaTeX packages to use hereasdf
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+
+%fun commands for fun sets
+%make sure to use these in math mode
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\m}{\mathcal{M}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\pa}{\partial}
+\newcommand{\dD}{\mathcal{D}}
+\newcommand{\E}{\mathbb{E}}
+
+
+
+\oddsidemargin0cm
+\topmargin-2cm    
+\textwidth16.5cm   
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Alex Havrilla}
+\newcommand{\myandrew}{alumhavr}
+\newcommand{\myhwnum}{Hw 1}
+
+\newtheorem{prop}{Prop}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{defi}{Def}
+\newtheorem*{apps}{Application}
+\newtheorem*{quest}{Question}
+\newtheorem*{ans}{Answer}
+\newtheorem*{interest}{Interesting}
+\newtheorem*{theme}{Theme}
+\newtheorem*{back}{Background}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{\mycourse}}
+
+\title{Type L Easy Regime}
+
+\linespread{1.3}
+
+\begin{document}
+
+\maketitle
+
+We seek to show $(1,1,0,0,...)$ a minimizer and $(\frac{1}{\sqrt{n}},\frac{1}{\sqrt{n}},...)$ a maximizer for the expression
+
+\begin{align*}
+	\E|\sqrt{a_1}X_1 + \sqrt{a_2}X_2 + W|^p
+\end{align*}
+
+where $X_i \sim \frac{1}{\sqrt{2 \pi }}x^2e^{-x^2/2} = L(x)$
+
+Suppose $a_1 > a_2$. Set $X_{\epsilon} = \sqrt{a_1-\epsilon}X_1 + \sqrt{a_2+\epsilon}X_2$. Wlog  we may suppose $a_1 + a_2 =1$. Then we show
+
+\begin{align*}
+	&\E_W \E_X [|X_{\epsilon} + W|^p - |X_0 + W|^p] =\\ 
+	&\E_W \int_0^{\infty} [|\sqrt{x}+W|^p+|-\sqrt{x}+W|^p+\alpha x + \beta](f_{\epsilon}(\sqrt{x}) - f_0(\sqrt{x}))\frac{1}{2\sqrt{x}}dx
+	 \geq 0
+\end{align*}
+
+where $\alpha, \beta$ depend on the densities $f_{\epsilon}$. By known arguments it suffices to show $f_{\epsilon}(\sqrt{x}) - f_0(\sqrt{x})$ has exactly two zeroes(note it must have at least two since $X_{\epsilon}$ have fixed variances and both f are probability distributions).
+
+Fix $a_1 > a_2 \in \R_+$. Compute for arbitrary $a_1,a_2$ the density
+
+\begin{align*}
+	f_0(y) = \int_{-\infty}^{\infty} L(x/\sqrt{a_1})L((y-x)/\sqrt{a_2}) dx &= \frac{e^{-y^2/2}}{\sqrt{2\pi}}\frac{3a_1a_2 + (a_1^2-4a_1a_3 + a_2^2)y^2 + a_1a_2y^4}{\sqrt{1/a_1a_2}} \\ 
+	&= \frac{e^{-y^2/2}}{\sqrt{2\pi}} ((a_1a_2)^{3/2}(y^4-2y^2+3) + \sqrt{a_1a_2}(a_1-a_2)^2y^2)
+\end{align*}
+
+Then considering $g(y) = f_{\epsilon}(\sqrt{y}) - f_0(\sqrt{y})$ we can only be 0 when the polynomial expression $(b_1b_2)^{3/2}(y^4-2y^2+3) + \sqrt{b_1b_2}(b_1-b_2)^2y^2-(a_1a_2)^{3/2}(y^4-2y^2+3) + \sqrt{a_1a_2}(a_1-a_2)^2y^2$ is 0 where $b_1  = a_1 - \epsilon$, and similarly for $b_2$. Then it suffices to show this expression convex. But trivially by taking two derivatives in y we see
+
+\begin{align*}
+	g''(y) =  2(b_1b_2)^{3/2}-2(a_1a_2)^{3/2} \geq 0
+\end{align*}
+
+since $b_1b_2 = (a_1-\epsilon)(a_2 + \epsilon) \geq a_1a_2$ when $a_1 > a_2$. 
+
+More generally for $b \in [0,1]$ we have if $L_b(x) = (1-b+bx^2)\frac{e^{-x^2/2}}{\sqrt{2 \pi}}$ then 
+
+\begin{align*}
+	f_{a,b,0}(x) = e^{y^2/2}(1-b+3a_1a_2b^2 + b(1-6a_1a_2b)y^2 + a_1a_2 b^2y^4)
+\end{align*}
+
+(via mathematica)
+
+so exactly the same analysis carries over since we have the highest order term $a_1a_2b^2y^4$. 
+
+
+\end{document}
+
