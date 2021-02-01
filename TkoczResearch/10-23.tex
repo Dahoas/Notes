@@ -1,0 +1,133 @@
+\documentclass[10pt]{article}
+
+
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx,color}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{refcheck}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\1}{\textbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\red}{\color{red}}
+\newcommand{\shift}{\vdash}
+\newcommand{\pP}{\mathcal{P}}
+\newcommand{\lL}{\mathcal{L}}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sgn}
+
+\usepackage[paper=a4paper, left=1.3in, right=1.3in, top=1in, bottom=1in]{geometry}
+\linespread{1.3}
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+
+\theoremstyle{prop}
+\newtheorem{prop}[theorem]{Prop}
+
+\theoremstyle{Corollary}
+\newtheorem{Corollary}[theorem]{Corollary}
+
+
+\title{\vspace{-3em}Log}
+
+
+
+\begin{document}
+
+\section{10/23}
+
+Notes
+
+\section{10/29}
+
+\textbf{Questions:}
+
+How do we extend to khintchine inequality?
+
+\section{11/19}
+
+\textbf{Goals:}
+
+Show distribution inequality. Involving lambert w functions.
+
+\textbf{Plan:}
+
+Break into cases: 
+
+Note first over $t \in (t_{lm},1]$ we know $G(t) \geq F(t)$ since $t_{lm} = 1/2e^{-3/2}$ is a local optimium for G and above this threshold is it strictly dominated. (For some reason graph of $p=2$ not reflective of this? Should be dominated regardless of distribution of mass). So dif $D = F - G$ negative.
+
+Then note from $(t_+,t_{lm})$ we seek to show the derivative D' negative.
+
+From $(0,t_+)$ seek to show D postive.
+
+This will show we have exactly one crossing from + to -.
+
+Issue: $t_+$ seems to depend on p.
+
+\textbf{Confusions:}
+
+The plots don't seem to be reflecting a switch from positive to negative given a fixed variance? But it must be there?
+
+Upon closer inspection just seems to go negative very quickly for large p. So G very quickly dominates F as p increases. Increasing p concentrates mass at 0? Makes sense cause we know gaussian F dominates G near 0(so G larger since measuring under mass).
+
+Also all plots regardless of p should be negative at $t_{lm}$ but this doesn't seem to be the case. Makes me worry the formulation is incorrect.
+
+Why does it suffice to compute measure for $x > 0$ in distribution argument?
+
+\subsection{The Lambert Function}
+
+$W(x)e^{W(x)} = x$. But multiple solutions to $W(xe^x)$ (if negative).
+
+Implcitly defined. But similar to logs and exponentials:
+
+\begin{align*}
+	\lim_{x \to \infty} \frac{W_0(x)}{ln(x)} = 1\\
+	\lim_{x \to 0^-} \frac{W_{-1}(x)}{ln(-x)} = 1
+\end{align*}
+
+
+
+\begin{thebibliography}{9}
+
+\bibitem{HH} Hasani. Inequalities for Lambert Function. \begin{verbatim}https://www.emis.de/journals/JIPAM/images/107_07_JIPAM/107_07_www.pdf \end{verbatim}
+
+\bibitem{PH} Hallum P. Zeroes of Entire Funtions Represented by Fourier Transforms. 
+
+\bibitem{BB} Borcea J, Branden P. Polya-schur Master Theorems for Circular Domains and Their Boundaries
+
+
+\bibitem{MR} Markovsky. I, Shodhan. R,
+Palindromic Polynomials, Time-Reversible Systems, and Conserved Quantities. https://eprints.soton.ac.uk/266592/1/Med08.pdf
+
+\bibitem{KB} Keel. L, Bhattarcharyya. S,
+A New Proof of the Jury Test. https://ieeexplore.ieee.org/document/703305
+%\bibitem{Z-2} 
+%https://mathoverflow.net/questions/208349
+
+
+
+\end{thebibliography}
+
+\end{document}
+
+
+
