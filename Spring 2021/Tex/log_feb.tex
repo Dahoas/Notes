@@ -80,7 +80,217 @@
 	\end{verbatim}
 \end{remark}
 
+\begin{remark}
+	A complicated blunder filled game:
+	\begin{verbatim}
+		https://www.chess.com/a/CbAJ8Wm4XAX8
+	\end{verbatim}	
+
+	To Analyze:
+\end{remark}
+
 \subsection{Complex Analysis}
+
+\section{2/1}
+
+\subsection{Chess}
+
+\begin{remark}
+	Talk about a clean game:
+	\begin{verbatim}
+		https://www.chess.com/a/Gzp6PJxWXAX8
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	My first brilliant move!:
+	\begin{verbatim}
+		https://www.chess.com/a/2BfrDrz2JXAX8
+	\end{verbatim}
+\end{remark}
+
+
+
+\subsection{Technical Animation}
+
+\begin{interest}
+	TA Arjun is interested in PDEs and numerical simulation.
+\end{interest}
+
+\begin{remark}
+	Course Website:
+	\begin{verbatim}
+		http://graphics.cs.cmu.edu/nsp/course/15464-s21/www/
+	\end{verbatim}
+
+	\textit{Computer Animation: Algorithms and Techniques} is the course textbook. In drive.
+\end{remark}
+
+\begin{quest}
+	Does greater physical simulation accuarcy lead to a less palatable viewing experience? 
+\end{quest}
+
+\begin{ans}
+	Not sure but often directors will personify animations and we have different parameters to give differenter personfications. For example "angry storm".
+\end{ans}
+
+\begin{ans}
+	It seems exaggerated motion is often more digestestible(think actors for example). Often used actors in motion capture
+\end{ans}
+
+\begin{interest}
+	Rig Net: automatically rigging meshes. Note: rigging is process of jointing meshes, providing structure/skeleton.
+\end{interest}
+
+\begin{remark}
+	Beginning of rigging: find medial axis of geometry and impose some structure.
+\end{remark}
+
+\subsection{On Lp Brunn-Minkowski Type Inequalities}
+
+\textbf{Tag}: BrunnMinkowski
+
+\begin{remark}
+	V is $1/n$ concave measure w.r.t Minkowsi sum. Need normalizing $1/n$ powers 
+\end{remark}
+
+\begin{prop}
+	\begin{align*}
+		h_{K+L}(u) = h_K(u) + h_L(u)
+	\end{align*}
+\end{prop}
+
+\begin{remark}
+	\textbf{Brascamp-Lieb}
+
+	$\alpha \geq -1/n, t\in [0,1]$. With $f,g,h : \mathbb{R}^n \to \mathbb{R}_+$ satisfy
+
+$h((1-t)x + ty) \geq [(1-t)f(x)^{\alpha} + tg(y)^{\alpha}]^{1/\alpha}$ then
+
+$\int_{R^n} h(x)dx \geq [(1-t)(\int_{R^n}f(x)dx)^{\alpha/1+n\alpha}+t(\int_{R^n}g(x)dx)^{\alpha/1+n\alpha}]^{1+n\alpha/\alpha}$
+
+Prekopa lindler is $\alpha = 0$
+\end{remark}
+
+\begin{prop}
+	\begin{align*}
+		(1-t)X_s1_A \oplus_s t X_s 1_B = 1_{(1-t)A + tB}
+	\end{align*}
+\end{prop}
+
+\begin{remark}
+	Changing operator: minkwoski sum, to $l_p$ variants. 
+\end{remark}
+
+\begin{remark}
+	Also some kind of interplay beteween functional inequalities and volume inequalities. Between supremal convolutions and Lp minkwoski sums.
+\end{remark}
+
+\subsection{PDEs and Data Analysis}
+
+\textbf{TAG:} OptimalTransport
+
+\begin{theme}
+	The more assumptions you make on a measure the better approximation you can achieve
+\end{theme}
+
+\begin{interest}
+	Shimaa is interested in stochastic BDEs. Wes interested in foundations of machine learning.
+\end{interest}
+
+\begin{theme}
+	Look at a measure as some kind of energy landscape and the transport map as the process of rearranging mass.
+\end{theme}
+
+\begin{remark}
+	Often transportation cost is $|x-y|^p$. 
+\end{remark}
+
+\begin{remark}
+	Optimal transport minimizes transportation cost.
+\end{remark}
+
+\begin{theme}
+	Goal is to find weaker problem which provides good solution to wider class of subproblems.
+\end{theme}
+
+
+\section{2/2}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Chess: 1300 in blitz
+	\item Research: 3 hours worked, some progress, email tkocz
+	\item Thesis: 5 pages
+	\item Homework: Animation
+	\item Get glenn to agree to a time
+\end{enumerate}
+
+\subsection{DRL}
+
+\textbf{TAG:} DRL
+
+\begin{quest}
+	what is computational design?
+\end{quest}
+
+\begin{remark}
+	Course link: 
+	\begin{verbatim}
+		https://cmudeeprl.github.io/403_website/
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	Katerina F.
+	\begin{verbatim}
+		"My genes have strong priors from the world"
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	Inconsistent rewards lead to addiction.
+\end{remark}
+
+\begin{remark}
+	For a long time large emphasis on discovering new behaiors in DRL. Now thinking we need to develop behavior repetoire and associate with some stimuli.
+\end{remark}
+
+\begin{remark}
+	Curiosity, a desire to see new things, very intrinsically powerful.
+\end{remark}
+
+\begin{remark}
+	Conor Igoe: 
+	\begin{verbatim}
+		For a fixed known opponent, the evolution of chess is markovian from the perspective of the main player.
+	\end{verbatim}
+
+	In some cases(such as driving) we need multiple frames/time steps to even attempt to play. But this can also be redefined as markovian by letting states correspond to multiple time steps.
+\end{remark}
+
+\begin{remark}
+	Model vs. non-model based. Can we learn via simulation or not.
+\end{remark}
+
+\begin{remark}
+	Cannot use gradient based optimization often in DRL. We can if we have a model.
+\end{remark}
+
+\subsection{The Embodiment Hypothesis}
+
+\begin{remark}
+	Link:
+	\begin{verbatim}
+		https://cogdev.sitehost.iu.edu/labwork/6_lessons.pdf
+	\end{verbatim}
+\end{remark}
+
+
+
+
+\subsection{Modeling Evolution}
 
 \end{document}
 

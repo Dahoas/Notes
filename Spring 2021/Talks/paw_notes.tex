@@ -63,32 +63,51 @@
 
 \linespread{1.3}
 
-\title{Complex Analysis}
+\title{PAW Seminar}
 
 \begin{document}
 
 \maketitle
 
-\section{An Introduction}
+\section{Lp Brunn-Minkowski Inequalities}
 
-\begin{idea}
-	Proving non-analyticity. Show different limit in two diff. directions. Often useful to consider $h \in \R$ and $h \in i \R$. 
-\end{idea}
+\textbf{Tag}: BrunnMinkowski
+
+\begin{remark}
+	V is $1/n$ concave measure w.r.t Minkowsi sum. Need normalizing $1/n$ powers 
+\end{remark}
 
 \begin{prop}
-	Often convenient to regard holomorphic definition as
 	\begin{align*}
-		f(z_0 + h) = f(z_0) + ah + o(h)
+		h_{K+L}(u) = h_K(u) + h_L(u)
 	\end{align*}
-
-	for some $a$. Ie. the function is locally complex linear.
 \end{prop}
 
 \begin{remark}
-	The above propsition is useful for proving chain rule.
+	\textbf{Brascamp-Lieb}
+
+	$\alpha \geq -1/n, t\in [0,1]$. With $f,g,h : \mathbb{R}^n \to \mathbb{R}_+$ satisfy
+
+$h((1-t)x + ty) \geq [(1-t)f(x)^{\alpha} + tg(y)^{\alpha}]^{1/\alpha}$ then
+
+$\int_{R^n} h(x)dx \geq [(1-t)(\int_{R^n}f(x)dx)^{\alpha/1+n\alpha}+t(\int_{R^n}g(x)dx)^{\alpha/1+n\alpha}]^{1+n\alpha/\alpha}$
+
+Prekopa lindler is $\alpha = 0$
 \end{remark}
 
+\begin{prop}
+	\begin{align*}
+		(1-t)X_s1_A \oplus_s t X_s 1_B = 1_{(1-t)A + tB}
+	\end{align*}
+\end{prop}
 
+\begin{remark}
+	Changing operator: minkwoski sum, to $l_p$ variants. 
+\end{remark}
+
+\begin{remark}
+	Also some kind of interplay beteween functional inequalities and volume inequalities. Between supremal convolutions and Lp minkwoski sums.
+\end{remark}
 
 
 \end{document}

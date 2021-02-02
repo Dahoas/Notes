@@ -63,31 +63,39 @@
 
 \linespread{1.3}
 
-\title{Complex Analysis}
+\title{PDE and Data Analysis}
 
 \begin{document}
 
 \maketitle
 
-\section{An Introduction}
+\section{Introductions}
 
-\begin{idea}
-	Proving non-analyticity. Show different limit in two diff. directions. Often useful to consider $h \in \R$ and $h \in i \R$. 
-\end{idea}
+\textbf{TAG:} OptimalTransport
 
-\begin{prop}
-	Often convenient to regard holomorphic definition as
-	\begin{align*}
-		f(z_0 + h) = f(z_0) + ah + o(h)
-	\end{align*}
+\begin{theme}
+	The more assumptions you make on a measure the better approximation you can achieve
+\end{theme}
 
-	for some $a$. Ie. the function is locally complex linear.
-\end{prop}
+\begin{interest}
+	Shimaa is interested in stochastic BDEs. Wes interested in foundations of machine learning.
+\end{interest}
+
+\begin{theme}
+	Look at a measure as some kind of energy landscape and the transport map as the process of rearranging mass.
+\end{theme}
 
 \begin{remark}
-	The above propsition is useful for proving chain rule.
+	Often transportation cost is $|x-y|^p$. 
 \end{remark}
 
+\begin{remark}
+	Optimal transport minimizes transportation cost.
+\end{remark}
+
+\begin{theme}
+	Goal is to find weaker problem which provides good solution to wider class of subproblems.
+\end{theme}
 
 
 

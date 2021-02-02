@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  1 FEB 2021 12:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  1 FEB 2021 12:17
 entering extended mode
-**"C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
-("C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
+**"C:/Users/Alex/Desktop/Notes/Spring 2021/Chess/chess_notes.tex"
+("C:/Users/Alex/Desktop/Notes/Spring 2021/Chess/chess_notes.tex"
 LaTeX2e <2018-04-01> patch level 5
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -182,8 +182,8 @@ LaTeX Info: Redefining \bm on input line 207.
 \c@idea=\count111
 \c@example=\count112
 
-(log_feb.aux)
-\openout1 = `log_feb.aux'.
+No file chess_notes.aux.
+\openout1 = `chess_notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
@@ -283,26 +283,99 @@ This may cause the page layout to be inconsistent, however.
 [1
 
 {C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(log_feb.aux) ) 
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.185 \end{remark}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package Fancyhdr Warning: \headheight is too small (13.59999pt): 
+Make it at least 25.2842pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[2]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.244 
+      
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3]
+
+! LaTeX Error: \begin{remark} on input line 266 ended by \end{Remark}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.268 \end{Remark}
+                  
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+
+! LaTeX Error: \begin{remark} on input line 230 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.270 \end{document}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.270 \end{document}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[4] (chess_notes.aux) )
+(\end occurred inside a group at level 2)
+
+### semi simple group (level 2) entered at line 230 (\begingroup)
+### semi simple group (level 1) entered at line 228 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 2468 strings out of 492973
- 32876 string characters out of 3127135
- 96768 words of memory out of 3000000
- 6291 multiletter control sequences out of 15000+200000
- 12772 words of font info for 47 fonts, out of 3000000 for 9000
+ 2469 strings out of 492973
+ 32887 string characters out of 3127135
+ 98766 words of memory out of 3000000
+ 6293 multiletter control sequences out of 15000+200000
+ 13080 words of font info for 48 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,43p,320b,203s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Use
-rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
-.pfb>
-Output written on log_feb.pdf (1 page, 80311 bytes).
+ 41i,10n,43p,346b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local
+/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/Ap
+pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Us
+ers/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
+0.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
+nts/cm/cmtt10.pfb>
+Output written on chess_notes.pdf (4 pages, 103182 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
+ 43 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
