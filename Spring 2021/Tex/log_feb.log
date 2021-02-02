@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  1 FEB 2021 12:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  2 FEB 2021 14:10
 entering extended mode
 **"C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
 ("C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
@@ -283,26 +283,82 @@ This may cause the page layout to be inconsistent, however.
 [1
 
 {C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-(log_feb.aux) ) 
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.194 	T
+        he more assumptions you make on a measure the better approximation y...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+Package Fancyhdr Warning: \headheight is too small (13.59999pt): 
+Make it at least 25.2842pt.
+We now make it that large for the rest of the document.
+This may cause the page layout to be inconsistent, however.
+
+[2]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.262 \end{remark}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[3]
+Overfull \hbox (128.39307pt too wide) in paragraph at lines 268--268
+[]\OT1/cmtt/m/n/10.95 For a fixed known opponent, the evolution of chess is mar
+kovian from the perspective of the main player.[] 
+ []
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.306 \end{document}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[4] (log_feb.aux) ) 
 Here is how much of TeX's memory you used:
- 2468 strings out of 492973
- 32876 string characters out of 3127135
- 96768 words of memory out of 3000000
- 6291 multiletter control sequences out of 15000+200000
- 12772 words of font info for 47 fonts, out of 3000000 for 9000
+ 2477 strings out of 492973
+ 33020 string characters out of 3127135
+ 98768 words of memory out of 3000000
+ 6299 multiletter control sequences out of 15000+200000
+ 14941 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,43p,320b,203s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
-lic/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fon
-ts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiK
-TeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/P
-rograms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppD
-ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Use
-rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10
-.pfb>
-Output written on log_feb.pdf (1 page, 80311 bytes).
+ 41i,10n,43p,320b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1
+/public/amsfonts/cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9
+/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/L
+ocal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Al
+ex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><
+C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
+cmmi8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/a
+msfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Program
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Loc
+al/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex
+/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:
+/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+ti10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmtt10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/typ
+e1/public/amsfonts/symbols/msbm10.pfb>
+Output written on log_feb.pdf (4 pages, 176004 bytes).
 PDF statistics:
- 30 PDF objects out of 1000 (max. 8388607)
+ 75 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
