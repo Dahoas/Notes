@@ -88,8 +88,104 @@
 	The above propsition is useful for proving chain rule.
 \end{remark}
 
+\subsection{Cauchy Riemann Equations}
 
+\textbf{TAG:} ComplexAnalysis
 
+\begin{remark}
+	Cauchy riemann equations derived via simply differentiating f as a function of two varibles in real and comlex directions.
+\end{remark}
+
+\begin{quest}
+	Cauchy riemann conditions are necessary. Are they sufficient?
+\end{quest}
+
+\begin{ans}
+	Yes. 
+	\begin{theorem}
+		Let $f : \Omega \to \C$ with $f = u + iv$ and satisfying cauchy riemann. Then f is holomorphic.
+	\end{theorem}
+	\begin{proof}
+		Fix $z_0 = x_0 + i y_0$.
+		\begin{align*}
+			u(x_0+h_1,y_0+h_2) = u(x_0,y_0) + u_xh_1 + u_y h_2 + o(h)
+		\end{align*}
+
+		and similarly for v. Then write $f(z_0 + h) - f(z_0)$ in terms of above and massage using cauchy riemann to get form $ah + o(h)$. 
+	\end{proof}
+\end{ans}
+
+\begin{remark}
+	Determinant of jacobian is really magnitude of norm of complex derivative squared.
+\end{remark}
+
+\begin{example}
+	$f(x,y) = \sqrt{|x||y|}$ satisfies cauchy riemann but is  not holomorphic. 
+\end{example}
+
+\begin{theorem}
+	Radius of convergence R of power series is
+	\begin{align*}
+		R = \frac{1}{limsup |a_n|^{1/n}}
+	\end{align*}
+\end{theorem}
+
+\begin{proof}
+	Idea is to compare to geometric series. Set R as desired. Then just compute(since we used limsup) and see that geometric series converges and or diverges in desired cases. This is also why we have problems on boundary. 
+\end{proof}
+
+\subsection{Power Series}
+
+\textbf{TAG:} ComplexAnalysis
+
+\begin{theorem}
+	If f power series than $f'$ exists as $\sum n a_n z^{n-1}$ with same R, since $n^{1/n} \to 1$. 
+\end{theorem}
+
+\begin{proof}
+	Fix $|z_0| < r < R$. Set $g(z) = \sum na_nz^{n-1}$. Write
+	\begin{align*}
+		\frac{f(z_0+h)-f(z_0)}{h} - g(z) = \frac{S_N(z_0+h)-S_N(z_0)}{h} - S_N'(z_0) + S_N'(z_0)-g(z_0) + \frac{E_N(z_0+h) - E_N(z_0)}{h}
+	\end{align*}
+
+	The first term is small using triangle inequality and $(z_0 + h)^n - z_0^h = h((z_0+h)^{n-1}+(z_0+h)^{n-2}z_0 + ...)$ which is bounded in norm by something still in R once h gets small enough. Thus this third term converges.
+
+	The second term is small since this is a convergent power series.
+
+	The first term is small by definition. And we are done.
+
+	Notice this proof simultaneously asserts existence and shows what it is.
+\end{proof}
+
+\begin{proof}
+	I had another proof by writing $f'(z_0 + h) = f(z_0) + ah + o(h)$ where $a = f'(z_0)$.
+\end{proof}
+
+\begin{remark}
+	Power series are infinitely differentiable, since we have same disk of convergence. 
+\end{remark}
+
+\begin{quest}
+	Is this how we establish holomorphic functions are infinitely differentiable? Cause they're all power series? How is this done?
+\end{quest}
+
+\begin{ans}
+	Write holomorphic function as its taylor expansion and show they are close?
+\end{ans}
+
+\begin{theme}
+	Anytime we prove something using algebraic facts, we have a complex argument since we haven't used the changed, rigid geometry at all.
+\end{theme}
+
+\begin{quest}
+	What function is differentiable only once? Recall weierstrass cts everytwhere diff. nowhere
+\end{quest}
+
+\textbf{TAG:} ComplexIntegration
+
+\begin{quest}
+	Can we allow for a countable number of cuts? Will cutting in diff. ways countably lead to diff. integrals? Does this mess up notion of equivalency? What breaks? 
+\end{quest}
 
 \end{document}
 

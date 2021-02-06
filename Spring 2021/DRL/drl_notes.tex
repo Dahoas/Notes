@@ -71,5 +71,139 @@
 
 \section{Introduction}
 
+\textbf{TAG:} DRL
+
+\begin{quest}
+	what is computational design?
+\end{quest}
+
+\begin{remark}
+	Course link: 
+	\begin{verbatim}
+		https://cmudeeprl.github.io/403_website/
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	Katerina F.
+	\begin{verbatim}
+		"My genes have strong priors from the world"
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	Inconsistent rewards lead to addiction.
+\end{remark}
+
+\begin{remark}
+	For a long time large emphasis on discovering new behaiors in DRL. Now thinking we need to develop behavior repetoire and associate with some stimuli.
+\end{remark}
+
+\begin{remark}
+	Curiosity, a desire to see new things, very intrinsically powerful.
+\end{remark}
+
+\begin{remark}
+	Conor Igoe: 
+	\begin{verbatim}
+		For a fixed known opponent, the evolution of chess is markovian from the perspective of the main player.
+	\end{verbatim}
+
+	In some cases(such as driving) we need multiple frames/time steps to even attempt to play. But this can also be redefined as markovian by letting states correspond to multiple time steps.
+\end{remark}
+
+\begin{remark}
+	Model vs. non-model based. Can we learn via simulation or not.
+\end{remark}
+
+\begin{remark}
+	Cannot use gradient based optimization often in DRL. We can if we have a model.
+\end{remark}
+
+\subsection{The Embodiment Hypothesis}
+
+\begin{remark}
+	Link:
+	\begin{verbatim}
+		https://cogdev.sitehost.iu.edu/labwork/6_lessons.pdf
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	The six lessons from child deveopment:
+	\begin{enumerate}
+		\item Be multimodal
+	\end{enumerate}
+\end{remark}
+
+\textbf{TAG:} DRL
+
+\begin{remark}
+	Wolfer Ted Talk:
+	\begin{verbatim}
+		https://www.ted.com/talks/daniel_wolpert_the_real_reason_for_brains/transcript?language=en#t-1117820
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	Bayesian inference: data + prior knowledge informs action. Bayes rule: optimal rule for combining information.
+\end{remark}
+
+\begin{remark}
+	We are sensory predictors detecting exterior sensory and subtracting off interior prediction.
+\end{remark}
+
+\begin{remark}
+	Plan movements to minimize negative consequences of noise.
+\end{remark}
+
+\begin{remark}
+	Q value is expected returns, not rewards. Must be learned from experience. They are predictive.
+\end{remark}
+
+\begin{remark}
+	Intermediate reward shaping is hard because it can conflict and lead astray actions leading to final reward.
+\end{remark}
+
+\begin{quest}
+	Why learn a model via supervised learning instead of hardcoding it in?
+\end{quest}
+
+\begin{ans}
+	For some reason learning representation from data is very hard, even in supervised context. Representation is very important. Often times just don't generalize. This representation is more important in cases where we don't know how to hard code rules. This is a representation learning problem for the model, and representation is hard.
+\end{ans}
+
+\begin{quest}
+	Do we use supervised learning to speed up the basic manipulation aquistition action?
+\end{quest}
+
+\begin{ans}
+	In complex cases this is how the model must learn the world, because it cannot be "hard coded" in. 
+\end{ans}
+
+\begin{quest}
+	Need more example of using supervised learning to learn dynamics model. Clearly not necessary in some cases.
+\end{quest}
+
+\begin{remark}
+	Model free is no model, when is there is one it can be learned via supervised learning.
+\end{remark}
+
+\begin{quest}
+	Why do we need supervised learning to learn dynamics in chess? Maybe it's just to predict the opponents move. 
+\end{quest}
+
+\begin{ans}
+	Actually no it depends on if we include the opponent in the state or not but modula that its not really required if we have a "logical description" of the board. Sometimes neural network paramterizations of dynamics are nice though because they are less computationally expensive(than a newtonian description for example) and are differentiable(which is often useful).
+\end{ans}
+
+\begin{example}
+	An example of both is controlling nuclear fusion power plant: there are great physics simulators that are quite accurate at predicting the next state, but they take on the order of 8 hours to solve a single second worth of real world dynamic. This is because the simulator is solving a very complex system of PDEs. In contrast, if we distill the dynamics into a neural network, it is much faster to simulate, and opens the door for novel planning and control techniques (at the cost of model bias)
+\end{example}
+
+\begin{theme}
+	Theory and muscle learning are two ends of an extreme. Theory is exteremely generalizable but not particularly precise. Muscle learning is very precise but not particularly generalizable. This naturally occurs because the world is complex and more precision requires more information. How do we optimize between generalization and precision? This is the overfit problem
+\end{theme}
+
 \end{document}
 

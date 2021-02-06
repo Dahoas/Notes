@@ -97,7 +97,101 @@
 	Goal is to find weaker problem which provides good solution to wider class of subproblems.
 \end{theme}
 
+\section{Optimal Transport}
 
+\textbf{TAG:} OptimalTransport
+
+\begin{remark}
+	Villani's Optimal Transport: New and Old
+	\begin{verbatim}
+		https://ljk.imag.fr/membres/Emmanuel.Maitre/lib/exe/fetch.php?media=b07.stflour.pdf
+	\end{verbatim}
+	Presented from a probabilistic perspective.
+\end{remark}
+
+\begin{remark}
+	Via CoV, condition for transport map:
+	\begin{align*}
+		\rho(x) = \eta(T(x)) |det(DT(x))|
+	\end{align*}
+\end{remark}
+
+\begin{prop}
+	Change of variables formula justified via above:
+	\begin{align*}
+		\int_Y f(y) d\nu(y) = \int_X f(T(x))d\mu(x)
+	\end{align*}
+\end{prop}
+
+\begin{quest}
+	When does measure preserving map even exist between $\mu$ on X and $\nu$ on Y. 
+\end{quest}
+
+\begin{example}
+	Consider to the above the non-example $\mu(x) = 1$, $\nu(y_1) = \nu(y_2) = 1/2$. 
+\end{example}
+
+\begin{remark}
+	Transport plan is generalization of transport map that has the source and target measures as its marginals. If  we have a transport map then $(I \times T)_{\sharp}\mu$ is a transport plan. Effectively pushing measure onto graph of T(note I is identity). 
+\end{remark}
+
+\begin{quest}
+	Why does $\mu \times \nu$ not always work? 
+\end{quest}
+
+\begin{ans}
+	It does.
+\end{ans}
+
+\begin{remark}
+	Optimal Transport cost in terms of plans is always well defined since a plan exists and infimum is always a min(this is the Kantorovich formulation, first one is monge formulation)
+	\begin{align*}
+		C(\pi) = \int_{X \times Y} c(x,y) d\pi(x,y) = \int_{X \times Y} c(x,y) d(I \times T)_{\sharp} \mu = \int_X c(x,T(x))d\mu(x)
+	\end{align*}
+\end{remark}
+
+\begin{quest}
+	In kantorovich, how do we know infimum is always min?
+\end{quest}
+
+\subsection{Calculus of Variations}
+
+\textbf{TAG:} VariationalCalculus
+
+\begin{prop}
+	Norms are lsc
+\end{prop}
+
+\begin{example}
+	Picture of lsc function:
+	\includegraphics[width=250px]{C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png}
+\end{example}
+
+\begin{prop}
+	lsc functions achieve mins on compact sets
+\end{prop}
+
+\begin{proof}
+	Let m inf. Let $x_n$ s.t. $f(x_n) \to m$. Sequential compactness gives us subsequence so that limit x stays in X. Thus $f(x)$ is minimizer since it must be smaller than all other valuations. 
+\end{proof}
+
+\begin{theorem}
+	If X,Y compact and $c : X \times Y\to R$ then the kantorovich formulation has a solution
+\end{theorem}
+
+\begin{proof}
+	\textbf{Proof using direct method of calculus of variations}
+
+	$T_c : P(X\times Y) \to R$ is cts. w.r.t narrow convergence so $\int c \gamma = T_c(\gamma)$. Since $P(X \times Y)$ is tight and thus compact w.r.t narrow conv. Then if $\gamma_n \in \Pi(\mu,\nu)$ is a minimizing seq. then we have conv. subseq in product $P(X \times Y)$ for some $\gamma$. Need  $\gamma \in \Pi$. Doable by evauating marginals directly via  defintions above
+\end{proof}
+
+\begin{theme}
+	We study measures by looking at test functions, which all for equality. Key idea is to look for notions which allow us to gai equality.
+\end{theme}
+
+\begin{prop}
+	$\Pi(\mu,\nu)$ is convex.
+\end{prop}
 
 \end{document}
 

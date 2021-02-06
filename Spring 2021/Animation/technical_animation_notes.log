@@ -1,7 +1,10 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  4 FEB 2021 13:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  2 FEB 2021 21:55
 entering extended mode
-**"C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
-("C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
+**"C:/Users/Alex/Desktop/Notes/Spring 2021/Animation/technical_animation_notes.
+tex"
+
+("C:/Users/Alex/Desktop/Notes/Spring 2021/Animation/technical_animation_notes.t
+ex"
 LaTeX2e <2018-04-01> patch level 5
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -182,8 +185,8 @@ LaTeX Info: Redefining \bm on input line 207.
 \c@idea=\count111
 \c@example=\count112
 
-(log_feb.aux)
-\openout1 = `log_feb.aux'.
+(technical_animation_notes.aux)
+\openout1 = `technical_animation_notes.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
@@ -283,213 +286,26 @@ This may cause the page layout to be inconsistent, however.
 [1
 
 {C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.194 	T
-        he more assumptions you make on a measure the better approximation y...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-
-Package Fancyhdr Warning: \headheight is too small (13.59999pt): 
-Make it at least 25.2842pt.
-We now make it that large for the rest of the document.
-This may cause the page layout to be inconsistent, however.
-
-[2]
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.262 \end{remark}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[3]
-Overfull \hbox (128.39307pt too wide) in paragraph at lines 268--268
-[]\OT1/cmtt/m/n/10.95 For a fixed known opponent, the evolution of chess is mar
-kovian from the perspective of the main player.[] 
- []
-
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.329 \end{enumerate}
-                     
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[4]
-Overfull \hbox (116.89569pt too wide) in paragraph at lines 360--360
-[]\OT1/cmtt/m/n/10.95 https://www.researchgate.net/publication/326907399_Better
-_collisions_and_faster_cloth_for_Pixar's_Coco[] 
- []
-
-
-! LaTeX Error: \begin{interest} on input line 376 ended by \end{interst}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.378 \end{interst}
-                   
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.403 		\end{align*}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[5]
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.475 	\begin{verbatim}
-                       
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[6]
-Overfull \hbox (7.67062pt too wide) in paragraph at lines 477--477
-[]\OT1/cmtt/m/n/10.95 https://ljk.imag.fr/membres/Emmanuel.Maitre/lib/exe/fetch
-.php?media=b07.stflour.pdf[] 
- []
-
-
-LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png' not 
-found on input line 534.
-
-<C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png, id=35, 257.46187pt x 94.
-10156pt>
-File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png Graphic file (type p
-ng)
-<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png>
-Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png  
-used on input line 534.
-(pdftex.def)             Requested size: 250.93842pt x 91.7192pt.
-
-Overfull \hbox (34.661pt too wide) in paragraph at lines 533--535
-\OT1/cmr/m/it/10.95 Example \OT1/cmr/m/n/10.95 3\OT1/cmr/m/it/10.95 . \OT1/cmr/
-m/n/10.95 Pic-ture of lsc func-tion: 2021/pics/lsc.png [] 
- []
-
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.552 	$
-        T_c : P(X\times Y) \to R$ is cts. w.r.t narrow convergence so $\int ...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[7 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png>]
-Overfull \hbox (105.39832pt too wide) in paragraph at lines 571--571
-[]\OT1/cmtt/m/n/10.95 https://www.ted.com/talks/daniel_wolpert_the_real_reason_
-for_brains/transcript?language=en#t-1117820[] 
- []
-
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.612 \end{quest}
-                 
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[8]
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.666 	\includegraphics
-                       [width=250px]{C:/Users/Alex/Desktop/Notes/Spring 2021...
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[9]
-
-LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png' n
-ot found on input line 666.
-
-<C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png, id=48, 447.92343pt x 
-205.5178pt>
-File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png Graphic file (typ
-e png)
-<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png>
-Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.pn
-g  used on input line 666.
-(pdftex.def)             Requested size: 250.93842pt x 115.13622pt.
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.670 \end{document}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[10 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png>] (log_feb.aux) ) 
+(technical_animation_notes.aux) ) 
 Here is how much of TeX's memory you used:
- 2488 strings out of 492973
- 33538 string characters out of 3127135
- 99768 words of memory out of 3000000
- 6308 multiletter control sequences out of 15000+200000
- 14941 words of font info for 55 fonts, out of 3000000 for 9000
+ 2468 strings out of 492973
+ 33098 string characters out of 3127135
+ 96780 words of memory out of 3000000
+ 6291 multiletter control sequences out of 15000+200000
+ 12772 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,43p,577b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
-<
+ 41i,10n,43p,344b,203s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Progr
+ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Al
+ex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><
 C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Alex/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/
-Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Alex/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/A
-lex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb
-><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb>
-Output written on log_feb.pdf (10 pages, 314348 bytes).
+cmti10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmtt10.pfb>
+Output written on technical_animation_notes.pdf (1 page, 78147 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 30 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
