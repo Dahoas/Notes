@@ -472,5 +472,48 @@ Looking at fourier zeroes
 	How do the roots grow for $x^{2n}e^{-x^2/2}$?
 \end{quest}
 
+\section{2/4}
+ 
+None
+
+\section{2/5}
+
+None
+
+\section{2/6}
+
+Set $I_n(y)  = \mathcal{F}_+(x^n e^{-x^2/2}) = \int_{\R} x^ne^{-x^2/2}e^{-ixy}dx$.From integration by parts we can obtain $I_n(y) = (n-1)I_{n-2}(y) - iyI_{n-1}$
+
+\section{2/7}
+
+\textbf{TAG:} Research
+
+\subsection{Definitions}
+
+\begin{defi}
+	$Hypergeometric1F1[a,b,z]=\sum_{k=0}^{\infty} \frac{(a)_k}{(b)_k}\frac{z^k}{k!}$
+\end{defi}
+
+\subsection{Investigating Extremal powers larger than 2}
+
+Set $I_n(y)  = \mathcal{F}_+(x^n e^{-x^2/2}) = \int_{\R} x^ne^{-x^2/2}e^{-ixy}dx$.From integration by parts we can obtain $I_n(y) = (n-1)I_{n-2}(y) - iyI_{n-1}$
+
+\begin{remark}
+	On fourier transforms of this type:
+	\begin{verbatim}
+		https://math.stackexchange.com/questions/108633/fourier-transform-of-gaussian-times-polynomial-to-a-high-power
+	\end{verbatim}
+\end{remark}
+
+We know
+
+\begin{align*}
+	I_{n+1}(y) = i I_n'(y)
+\end{align*}
+
+\begin{quest}
+	How does interpolation of higher order densities work? Can we get khintchine inequalities for them?
+\end{quest}
+
 \end{document}
 

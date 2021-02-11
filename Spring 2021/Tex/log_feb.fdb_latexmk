@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1613012923 "log_feb.tex" "log_feb.pdf" "log_feb" 1613012923
+["pdflatex"] 1613013790 "log_feb.tex" "log_feb.pdf" "log_feb" 1613013791
   "/etc/texmf/web2c/texmf.cnf" 1606412821 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1136768653 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -85,9 +85,9 @@
   "C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png" 0 -1 0 ""
   "C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png" 0 -1 0 ""
   "C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png" 0 -1 0 ""
-  "log_feb.aux" 1613012923 4875 2d02e884ea871e561b063bb0d3c60787 "pdflatex"
-  "log_feb.tex" 1613012920 32451 15e5cbbe09806c0ef19ae8e74537cac3 ""
+  "log_feb.aux" 1613013791 6360 a8e31110724d77f68149f498622ae5cc "pdflatex"
+  "log_feb.tex" 1613013786 42270 066f8d3efa7668e301fb68182f106537 ""
   (generated)
-  "log_feb.pdf"
-  "log_feb.log"
   "log_feb.aux"
+  "log_feb.log"
+  "log_feb.pdf"
