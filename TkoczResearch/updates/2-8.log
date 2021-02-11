@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  7 FEB 2021 22:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  8 FEB 2021 13:11
 entering extended mode
-**"C:/Users/Alex/Desktop/Notes/Spring 2021/Chess/chess_notes.tex"
-("C:/Users/Alex/Desktop/Notes/Spring 2021/Chess/chess_notes.tex"
+**C:/Users/Alex/Desktop/Notes/TkoczResearch/updates/2-8.tex
+(C:/Users/Alex/Desktop/Notes/TkoczResearch/updates/2-8.tex
 LaTeX2e <2018-04-01> patch level 5
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -168,35 +168,25 @@ Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
 LaTeX Info: Redefining \bm on input line 207.
 )
-\c@theorem=\count100
-\c@prop=\count101
-\c@lemma=\count102
-\c@remark=\count103
-\c@defi=\count104
-\c@apps=\count105
-\c@quest=\count106
-\c@ans=\count107
-\c@interest=\count108
-\c@theme=\count109
-\c@back=\count110
-\c@idea=\count111
-\c@example=\count112
+\c@prop=\count100
+\c@lemma=\count101
+\c@theorem=\count102
 
-(chess_notes.aux)
-\openout1 = `chess_notes.aux'.
+(2-8.aux)
+\openout1 = `2-8.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
 ase.sty"
@@ -261,18 +251,31 @@ Package grfext Info: Graphics extension search list:
 G,.JBIG2,.JB2,.eps]
 (grfext)             \AppendGraphicsExtensions on input line 456.
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 70.
+LaTeX Font Info:    Try loading font information for U+msa on input line 71.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 70.
+LaTeX Font Info:    Try loading font information for U+msb on input line 71.
 
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
 LaTeX Warning: No \author given.
+
+<C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/small_p_convexity.png, id=1, 73
+7.00343pt x 310.15875pt>
+File: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/small_p_convexity.png Grap
+hic file (type png)
+<use C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/small_p_convexity.png>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/small_p
+_convexity.png  used on input line 79.
+(pdftex.def)             Requested size: 501.87683pt x 211.20804pt.
+
+Overfull \hbox (32.40637pt too wide) in paragraph at lines 79--80
+[][] 
+ []
 
 
 Package Fancyhdr Warning: \headheight is too small (12.0pt): 
@@ -282,12 +285,41 @@ This may cause the page layout to be inconsistent, however.
 
 [1
 
-{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map} <C:/Users/Ale
+x/Desktop/Notes/TkoczResearch/pics/small_p_convexity.png>]
+<C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity1.png, i
+d=18, 1405.50093pt x 278.54062pt>
+File: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity1.p
+ng Graphic file (type png)
+<use C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity1.pn
+g>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_at
+om_non_convexity1.png  used on input line 112.
+(pdftex.def)             Requested size: 501.87683pt x 99.46275pt.
+
+Overfull \hbox (32.40637pt too wide) in paragraph at lines 112--113
+[][] 
+ []
+
+<C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity2.png, i
+d=19, 591.71063pt x 403.5075pt>
+File: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity2.p
+ng Graphic file (type png)
+<use C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity2.pn
+g>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_at
+om_non_convexity2.png  used on input line 114.
+(pdftex.def)             Requested size: 501.87683pt x 342.25647pt.
+
+Overfull \hbox (32.40637pt too wide) in paragraph at lines 114--115
+[][] 
+ []
+
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.189 	\begin{verbatim}
-                       
+l.116 I
+       e. the function is not convex. Yet there do seem to be 2 zeroes when ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -300,73 +332,38 @@ Make it at least 25.2842pt.
 We now make it that large for the rest of the document.
 This may cause the page layout to be inconsistent, however.
 
-[2]
+[2 <C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity1.png
+>]
+<C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_2_zeroes.png, id=28, 
+494.59781pt x 344.03531pt>
+File: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_2_zeroes.png Gra
+phic file (type png)
+<use C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_2_zeroes.png>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_at
+om_2_zeroes.png  used on input line 118.
+(pdftex.def)             Requested size: 501.87683pt x 349.10028pt.
+
+Overfull \hbox (32.40637pt too wide) in paragraph at lines 118--119
+[][] 
+ []
+
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.277 	\begin{verbatim}
-                       
+l.120 S
+       o we could still hope to recover khintchine inequalities here using t...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[3]
+[3 <C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_non_convexity2.png
+>]
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.343 \end{remark}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[4]
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.405 \end{remark}
-                  
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[5]
-
-! LaTeX Error: \begin{remark} on input line 415 ended by \end{Remark}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.417 \end{Remark}
-                  
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-
-! LaTeX Error: \begin{remark} on input line 375 ended by \end{document}.
-
-See the LaTeX manual or LaTeX Companion for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.419 \end{document}
-                    
-Your command was ignored.
-Type  I <command> <return>  to replace it with another command,
-or  <return>  to continue without it.
-
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.419 \end{document}
+l.132 \end{document}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -374,32 +371,36 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[6] (chess_notes.aux) )
-(\end occurred inside a group at level 2)
-
-### semi simple group (level 2) entered at line 375 (\begingroup)
-### semi simple group (level 1) entered at line 373 (\begingroup)
-### bottom level 
+[4 <C:/Users/Alex/Desktop/Notes/TkoczResearch/pics/high_atom_2_zeroes.png>]
+(2-8.aux) ) 
 Here is how much of TeX's memory you used:
- 2471 strings out of 492973
- 32963 string characters out of 3127135
- 99766 words of memory out of 3000000
- 6293 multiletter control sequences out of 15000+200000
- 13080 words of font info for 48 fonts, out of 3000000 for 9000
+ 2455 strings out of 492973
+ 34055 string characters out of 3127135
+ 96557 words of memory out of 3000000
+ 6272 multiletter control sequences out of 15000+200000
+ 14773 words of font info for 54 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,10n,43p,346b,390s stack positions out of 5000i,500n,10000p,200000b,50000s
-<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
-blic/amsfonts/cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fo
-nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/M
-iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local
-/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/Ap
-pData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Us
-ers/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti1
-0.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfo
-nts/cm/cmtt10.pfb>
-Output written on chess_notes.pdf (6 pages, 107383 bytes).
+ 41i,11n,43p,396b,211s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/t
+ype1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Pro
+grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppDa
+ta/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users
+/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pf
+b><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
+cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publi
+c/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/
+type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 
+2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Al
+ex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/sy
+mbols/msbm10.pfb>
+Output written on 2-8.pdf (4 pages, 217691 bytes).
 PDF statistics:
- 49 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 

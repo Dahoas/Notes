@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  4 FEB 2021 13:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  10 FEB 2021 12:53
 entering extended mode
 **"C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
 ("C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
@@ -427,8 +427,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.666 	\includegraphics
-                       [width=250px]{C:/Users/Alex/Desktop/Notes/Spring 2021...
+l.670 	\begin{verbatim}
+                       
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -438,7 +438,7 @@ and I'll forget about whatever was undefined.
 [9]
 
 LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png' n
-ot found on input line 666.
+ot found on input line 684.
 
 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png, id=48, 447.92343pt x 
 205.5178pt>
@@ -446,50 +446,205 @@ File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png Graphic file (typ
 e png)
 <use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png>
 Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.pn
-g  used on input line 666.
+g  used on input line 684.
 (pdftex.def)             Requested size: 250.93842pt x 115.13622pt.
+
+Overfull \hbox (13.7212pt too wide) detected at line 709
+[]
+ []
+
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.670 \end{document}
-                    
+l.717 	N
+        otice this proof simultaneously asserts existence and shows what it is.
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[10 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png>] (log_feb.aux) ) 
+[10 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png>]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.789 	\end{verbatim}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[11]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.831 \end{proof}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[12]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 861.
+
+ ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 861.
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.893 \end{theme}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[13]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.947 \end{remark}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[14]
+! Undefined control sequence.
+l.959 	\itm
+            1400 Chess
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
+                                                  \Delta ^{k+1}} f| 
+l.990 	\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
+                                                  \Delta ^{k+1}} f| 
+l.990 	\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.1000 \end{proof}
+                  
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[15]
+! Undefined control sequence.
+l.1007 	Let $D \susbeteq
+                         \C$ be a disc, $f: D \to \C$ holomorphic then f has...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+
+LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png' not 
+found on input line 1035.
+
+<C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png, id=70, 395.22656pt x 214
+.55156pt>
+File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png Graphic file (type p
+ng)
+<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png  
+used on input line 1035.
+(pdftex.def)             Requested size: 250.93842pt x 136.22562pt.
+
+Overfull \hbox (17.75113pt too wide) in paragraph at lines 1034--1036
+\OT1/cmr/m/it/10.95 Remark \OT1/cmr/m/n/10.95 71\OT1/cmr/m/it/10.95 . \OT1/cmr/
+m/n/10.95 CCD Il-lus-tra-tion: 2021/pics/ccd.png [] 
+ []
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.1040 \end{remark}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[16 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png>]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.1064 \end{document}
+                     
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[17] (log_feb.aux) ) 
 Here is how much of TeX's memory you used:
- 2488 strings out of 492973
- 33538 string characters out of 3127135
+ 2510 strings out of 492973
+ 34106 string characters out of 3127135
  99768 words of memory out of 3000000
- 6308 multiletter control sequences out of 15000+200000
+ 6327 multiletter control sequences out of 15000+200000
  14941 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 41i,11n,43p,577b,398s stack positions out of 5000i,500n,10000p,200000b,50000s
-<
-C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
-amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX
- 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/AppData/Local/Pro
-grams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/Alex/AppDat
-a/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/
-Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr10.pfb
-><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public
-/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/t
-ype1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2
-.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/Alex/AppData/Local/Progr
-ams/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/Alex/AppData/
-Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/A
-lex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmtt10.pfb
-><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/s
-ymbols/msbm10.pfb>
-Output written on log_feb.pdf (10 pages, 314348 bytes).
+ 41i,11n,43p,577b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/
+Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/A
+lex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmmi8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/ty
+pe1/public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2
+.9/fonts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Progra
+ms/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Lo
+cal/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:
+/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cm
+sy8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/ams
+fonts/cm/cmti10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.
+9/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on log_feb.pdf (17 pages, 388488 bytes).
 PDF statistics:
- 100 PDF objects out of 1000 (max. 8388607)
+ 128 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

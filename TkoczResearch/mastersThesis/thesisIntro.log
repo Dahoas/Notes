@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  13 NOV 2020 13:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  4 FEB 2021 13:04
 entering extended mode
-**C:/Users/Alex/Desktop/Tkocz/thesisIntro.tex
-(C:/Users/Alex/Desktop/Tkocz/thesisIntro.tex
+**C:/Users/Alex/Desktop/Notes/TkoczResearch/mastersThesis/thesisIntro.tex
+(C:/Users/Alex/Desktop/Notes/TkoczResearch/mastersThesis/thesisIntro.tex
 LaTeX2e <2018-04-01> patch level 5
 ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
 Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
@@ -453,12 +453,12 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 526.
  ) 
 Here is how much of TeX's memory you used:
  6321 strings out of 492973
- 91660 string characters out of 3127135
+ 91912 string characters out of 3127135
  195467 words of memory out of 3000000
  10042 multiletter control sequences out of 15000+200000
  13624 words of font info for 51 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 28i,9n,28p,764b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 28i,9n,28p,792b,432s stack positions out of 5000i,500n,10000p,200000b,50000s
 <C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/
 cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/publ
 ic/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/font
@@ -480,7 +480,7 @@ s/cm/cmsy7.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pub
 lic/amsfonts/cm/cmti10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fon
 ts/type1/public/amsfonts/symbols/msbm10.pfb><C:/Users/Alex/AppData/Local/Progra
 ms/MiKTeX 2.9/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on thesisIntro.pdf (9 pages, 278978 bytes).
+Output written on thesisIntro.pdf (9 pages, 278819 bytes).
 PDF statistics:
  277 PDF objects out of 1000 (max. 8388607)
  86 named destinations out of 1000 (max. 500000)
