@@ -801,7 +801,327 @@ Prekopa lindler is $\alpha = 0$
 	\item Clean up lists
 \end{enumerate}
 
+\section{2/7}
 
+\begin{enumerate}
+	\item Resarch progress: 4 hours
+	\item Thesis: 5 pages
+	\item Clean up lists
+\end{enumerate}
+
+\section{2/8}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Resarch progress: 4 hours
+	\item Thesis: 3 pages
+	\item Clean up lists
+	\item Text Tessa
+\end{enumerate}
+
+\subsection{Complex Analysis}
+
+\begin{theorem}
+	If $f$ has primitive then $\int_{\gamma} f(z)dz = F(\omega_2) - F(\omega_1)$
+\end{theorem}
+
+\begin{proof}
+	Ports from real results by construction.
+\end{proof}
+
+\begin{example}
+	$\int_{\gamma} dz/z=2\pi i$ where $\gamma$ is unit circle and hence $1/z$ must not have primitive(otherwise would be 0 on closed curve).
+\end{example}
+
+\begin{theorem}
+	Gauss Lucas
+\end{theorem}
+
+\begin{proof}
+	Exercise. Very algebraic. Probably write roots as convex combinations. Just compute by taking derivative
+
+	In fact bring out missing roots by taking quotient $P'/P$. Easier to work with these than the complement set of sums and products(often working with quotients easier to access new roots).
+\end{proof}
+
+\begin{theorem}
+	When $P(z) = \sum a_k a^k$ with real coeffiecients and only real zeroes then coefficients binomial(ultra) log concave.
+\end{theorem}
+
+\begin{proof}
+	One line proof via gauss-lucas. So derivatives have real roots. Reciprocal poly also has real roots. Then to get the inequality consider $z^{n-k+1}P^{(k-1)}(1/z)$ which has real roots and take $n-k-1$ derivatives resulting in two deg poly. The coefficients of this thing gives desired result by looking at the discriminant.
+\end{proof}
+
+\begin{theme}
+	This is common technique to show common sequences log-concave
+\end{theme}
+
+\begin{example}
+	\begin{itemize}
+		\item Stirling numbers of first kind
+		\item Stirling numbers of second kind
+		\item $t_k$ ultra log-concave where $t_k$ number of matchings of size $k$ in arbitrary graph G
+	\end{itemize}
+\end{example}
+
+\subsection{Technical Animation}
+
+\begin{remark}
+	3 techniques for animation: motion capture, procedural, and keyframing.
+\end{remark}
+
+\begin{remark}
+	CMU Panoptic Studio Dataset: Mocap data
+\end{remark}
+
+\begin{remark}
+	Motion Capture Data Explained
+\end{remark}
+
+\subsection{Random Sign Sums and Hypercube Geometry}
+
+\begin{quest}
+Tomaszewski's Conjecture: $P(|X| > 1) \leq 1/2$ for $X = \sum a_i \epsilon_i$?
+\end{quest}
+
+\begin{remark}
+	Random sign distributions "somewhat" log concave. Ie. log of distribution is log concave
+\end{remark}
+
+\begin{theme}
+	Random sign sums are like gaussians. 
+\end{theme}
+
+\begin{interest}
+	To show a probabilistic inequality find an injective map from A to B which is measure preserving. 
+
+	To show $P(|X-a| \leq t) \leq P(|X| \leq t)$ we use reflection of a random walk.
+\end{interest}
+
+\subsection{DRL}
+
+\textbf{TAG:} DRL
+
+\subsection{Evolutionary Methods}
+
+\begin{remark}
+	Basic reinforcement naive search: randomly choose parameters and see which ones are optimal. Then sample around optimal ones to see if we can do better.
+\end{remark}
+
+\begin{quest}
+	How do we combat local optimum?
+\end{quest}
+
+\begin{ans}
+	Restart by initially choosing start parameters uniformly.But certainly not fullproof. In general RL super prone to local optimum.
+\end{ans}
+
+\begin{quest}
+	Why is our density gaussian and not something else for mutation/parameter updates?
+\end{quest}
+
+\begin{ans}
+	 I have to assume it's just for ease of computation. Easy to learn and parameterize
+\end{ans}
+
+\begin{remark}
+	Distributed computing for evolutionary workers has known random seeds
+\end{remark}
+
+\subsection{Modeling Evolution}
+
+\textbf{TAG:} ModelingEvolution
+
+\begin{remark}
+	Why do we care about a basic model with wrong assumptions? Provides a basis for which we can compare parameters against(for example then varying popluation size and looking at divergence of effects from model).
+\end{remark}
+
+\begin{theme}
+	Model cost(information cost to store) vs. model explanatory power. Some kind of ratio is the efficiency? Also how do we take into account the computational power necessary to answer questions.
+
+	Applying computational complexity to model theory? Often computational complexity is applied to a single question. But maybe it should be applied to a theory answering a collection of questions? Allows for ammortized analysis of collection of questions.
+\end{theme}
+
+\begin{remark}
+	How to model? Hard to say except use common sense. very complex. Important to understand what features we want to capture and make sure our model reflects parameters that take this into account.
+\end{remark}
+
+\section{2/10}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish complex homework
+	\item Read complex notes	
+	\item Research : 3 hors
+	\item Thesis : 3 pages
+	\item Read Technical Animation Paper
+	\itm 1400 Chess
+\end{enumerate}
+
+\subsection{Blockers}
+
+\begin{enumerate}
+	\item Problem 3 complex
+	\item Back problems
+\end{enumerate}
+	
+\subsection{Complex Analysis}
+
+\begin{remark}
+	To show mulitiplicative/additive property of exponential show $e^ze^(c-z)$ constant.
+\end{remark}
+
+\begin{theorem}
+	(Goursout's Theorem): If $\Omega \subseteq \C$ open and $f : \Omega \to \C$ holomorphic with $\Delta \subseteq \Omega$ triangle then 
+	\begin{align*}
+		\int_{\partial \Delta} f = 0
+	\end{align*}
+\end{theorem}
+
+\begin{proof}
+	Bisect $\Delta$ noting
+	\begin{align*}
+		\int_{\partial \Delta^{(0)}} f = \int_{\partial \Delta^{(1)}_1} f + ... + \int_{\partial \Delta^{(1)}_4} f
+	\end{align*}
+
+	We continue recursively bisecting so that
+	\begin{align*}
+		|\int_{\partial \Delta^{(k)}} f| \leq 4 |\int_{\partal \Delta^{k+1}} f|
+	\end{align*}
+
+	The diameters $d_n \to 0$ and perimeters go to 0 so $\bigcap_{n=1}^{\infty} \Delta^{(n)} = \{z_0\}$(nested compact sets with diameter going to 0).
+
+	We argue
+	\begin{align*}
+		4^n |\int_{\partial \Delta^{(n)}} f| \to 0
+	\end{align*}
+
+	since f is holomorphic. Write $f(z) = f(z_0) + f'(z_0)(z-z_0) + o(z)(z-z_0)$. Clearly $f(z_0)$ and $f'(z_0)(z-z_0)$ have primitives. Thus we are only actually integrating $(z-z_0)o(z)$. Upper bounding $(z-z_0)$ by diameter and $o(z)$ by some $sup_{\Delta^{(n)}} |f(z)|$ we have the bound $p_n d_n \sup$. Recall $p_n = 1/2p_{n-1}$ and $d_n = 1/2 d_{n-1}$ and so we're done.
+\end{proof}
+
+\begin{prop}
+	Now since we have triangles we can also show for rectangles and by approximation most sets(tesselation). 
+\end{prop}
+
+\begin{theorem}
+	Let $D \susbeteq \C$ be a disc, $f: D \to \C$ holomorphic then f has a primitive. 
+\end{theorem}
+
+\begin{proof}
+	Suppose $D$ centered at 0. Write $F(z) = \int_{\gamma_z} f(w)dw$ where $\gamma_z$ is a triangular curve connecting z to 0. 
+
+	Now compute with aim $F(z+h) - F(z) = hf(z)+ho(h) $
+	\begin{align*}
+		\int_{\gamma_{z+h}} f - \int_{\gamma_z}f = \int_{\gamma{z \to z+h}} f 
+	\end{align*}
+
+	by looking at paths and conidering goursout
+
+	Then we conclude by using continuity 
+\end{proof}
+
+\begin{remark}
+	Notice this argument relies on convexity. The problem is with holes(like the punctured disk).
+\end{remark}
+
+\subsection{Technical Animation}
+
+\textbf{TAG:} TechnicalAnimation InverseKinematics
+
+\subsection{Inverse Kinematics}
+
+\begin{remark}
+	CCD Illustration:
+	\includegraphics[width=250px]{C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png}
+\end{remark}
+
+\begin{remark}
+	Long chains of links tend to wrap up. Can also decide to iterate top to bottom affector or bottom to top. To address this can repeat recursion for every top level: whatever gets recursed more seems to bend more.
+\end{remark}
+
+\begin{remark}
+	Basic model/fast but some limitations. Fabric better repacement
+\end{remark}
+
+
+\begin{remark}
+	Alternative approach is jacobian based inverse kinematics: Introduction to Invers Kinematics with Jacobian Transpose, Pseudoinverse and Damped Leaster Squares
+	\begin{verbatim}
+		http://math.ucsd.edu/~sbuss/ResearchWeb/ikmethods/iksurvey.pdf
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	We write jacobian as:
+	\begin{align*}
+		\dot{s} = J(\theta)\dot{\theta}
+	\end{align*}
+
+	for speeds on the affectors and their bending angles as we move to a target point. Ie. the change in $s$(position of end affector) against the change in angles.
+\end{remark}
+
+\begin{prop}
+	\begin{align*}
+		\frac{\partial s}{\partial \theta_j} = v_j \times (s - p_j)
+	\end{align*}
+	where $v_j$ is the axis of rotation for each joint. We take the cross product of line from joint to end affector and rotation axis to get the direction of movement due to that joint(think single arm rotating around line gives tangent to the line)
+\end{prop}
+
+\begin{remark}
+	To solve $\dot{s} = J\dot{\theta}$ would just want to take inverse but not always possible obviously
+\end{remark}
+
+\begin{remark}
+	The jacobian transpose always at least does not move away from target: $\langle  J J^T e, e \rangle \geq0$. Often less expensive than pseudoinverse $J^{-1}$ method. 
+\end{remark}
+
+\begin{remark}
+	For pseudoinverse method we get
+	\begin{align*}
+		\Delta\theta = J^T(JJ^T)^{-1}e
+	\end{align*}
+	Note e is $\Delta s$
+\end{remark}
+
+\begin{remark}
+	Anoter option is damped least squares(really l2 regression). Then
+	\begin{align*}
+		\Delta \theta = J^T(JJ^T + \lambda^2I)^{-1}e
+	\end{align*}
+
+	which we know will be invertible
+
+	Can be solved with line search(grid search) or other techniques
+\end{remark}
+
+\begin{remark}
+	Example: Want robot hand with 24 degrees of freedom to hit 10 points. So highly underconstrained and thus was resulting in weird, nonnatural solutions. Use Nullspace technique to add some constraint.
+	\begin{align*}
+		\Delta \theta = J^+e+ (I-J^+J)\phi
+	\end{align*}
+
+	want to damp inner joints without affecting result on end affector
+\end{remark}
+
+\section{2/11}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish complex homework
+	\item Read complex notes	
+	\item Research : 1.5 hours
+	\item Thesis : 3 pages
+	\item Read Technical Animation Paper
+	\item Start technical homework
+\end{enumerate}
+
+\subsection{Blockers}
+
+\begin{enumerate}
+	\item temp
+\end{enumerate}
 
 \end{document}
 

@@ -205,5 +205,31 @@
 	Theory and muscle learning are two ends of an extreme. Theory is exteremely generalizable but not particularly precise. Muscle learning is very precise but not particularly generalizable. This naturally occurs because the world is complex and more precision requires more information. How do we optimize between generalization and precision? This is the overfit problem
 \end{theme}
 
+\subsection{Evolutionary Methods}
+
+\begin{remark}
+	Basic reinforcement naive search: randomly choose parameters and see which ones are optimal. Then sample around optimal ones to see if we can do better.
+\end{remark}
+
+\begin{quest}
+	How do we combat local optimum?
+\end{quest}
+
+\begin{ans}
+	Restart by initially choosing start parameters uniformly.But certainly not fullproof. In general RL super prone to local optimum.
+\end{ans}
+
+\begin{quest}
+	Why is our density gaussian and not something else for mutation/parameter updates?
+\end{quest}
+
+\begin{ans}
+	 I have to assume it's just for ease of computation. Easy to learn and parameterize
+\end{ans}
+
+\begin{remark}
+	Distributed computing for evolutionary workers has known random seeds
+\end{remark}
+
 \end{document}
 

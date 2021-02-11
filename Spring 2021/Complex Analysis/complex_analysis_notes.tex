@@ -187,5 +187,106 @@
 	Can we allow for a countable number of cuts? Will cutting in diff. ways countably lead to diff. integrals? Does this mess up notion of equivalency? What breaks? 
 \end{quest}
 
+\subsection{Complex Integration}
+
+\begin{theorem}
+	If $f$ has primitive then $\int_{\gamma} f(z)dz = F(\omega_2) - F(\omega_1)$
+\end{theorem}
+
+\begin{proof}
+	Ports from real results by construction.
+\end{proof}
+
+\begin{example}
+	$\int_{\gamma} dz/z=2\pi i$ where $\gamma$ is unit circle and hence $1/z$ must not have primitive(otherwise would be 0 on closed curve).
+\end{example}
+
+\begin{theorem}
+	Gauss Lucas
+\end{theorem}
+
+\begin{proof}
+	Exercise. Very algebraic. Probably write roots as convex combinations. Just compute by taking derivative
+
+	In fact bring out missing roots by taking quotient $P'/P$. Easier to work with these than the complement set of sums and products(often working with quotients easier to access new roots).
+\end{proof}
+
+\begin{theorem}
+	When $P(z) = \sum a_k a^k$ with real coeffiecients and only real zeroes then coefficients binomial(ultra) log concave.
+\end{theorem}
+
+\begin{proof}
+	One line proof via gauss-lucas. So derivatives have real roots. Reciprocal poly also has real roots. Then to get the inequality consider $z^{n-k+1}P^{(k-1)}(1/z)$ which has real roots and take $n-k-1$ derivatives resulting in two deg poly. The coefficients of this thing gives desired result by looking at the discriminant.
+\end{proof}
+
+\begin{theme}
+	This is common technique to show common sequences log-concave
+\end{theme}
+
+\begin{example}
+	\begin{itemize}
+		\item Stirling numbers of first kind
+		\item Stirling numbers of second kind
+		\item $t_k$ ultra log-concave where $t_k$ number of matchings of size $k$ in arbitrary graph G
+	\end{itemize}
+\end{example}
+
+\begin{remark}
+	To show mulitiplicative/additive property of exponential show $e^ze^(c-z)$ constant.
+\end{remark}
+
+\begin{theorem}
+	(Goursout's Theorem): If $\Omega \subseteq \C$ open and $f : \Omega \to \C$ holomorphic with $\Delta \subseteq \Omega$ triangle then 
+	\begin{align*}
+		\int_{\partial \Delta} f = 0
+	\end{align*}
+\end{theorem}
+
+\begin{proof}
+	Bisect $\Delta$ noting
+	\begin{align*}
+		\int_{\partial \Delta^{(0)}} f = \int_{\partial \Delta^{(1)}_1} f + ... + \int_{\partial \Delta^{(1)}_4} f
+	\end{align*}
+
+	We continue recursively bisecting so that
+	\begin{align*}
+		|\int_{\partial \Delta^{(k)}} f| \leq 4 |\int_{\partal \Delta^{k+1}} f|
+	\end{align*}
+
+	The diameters $d_n \to 0$ and perimeters go to 0 so $\bigcap_{n=1}^{\infty} \Delta^{(n)} = \{z_0\}$(nested compact sets with diameter going to 0).
+
+	We argue
+	\begin{align*}
+		4^n |\int_{\partial \Delta^{(n)}} f| \to 0
+	\end{align*}
+
+	since f is holomorphic. Write $f(z) = f(z_0) + f'(z_0)(z-z_0) + o(z)(z-z_0)$. Clearly $f(z_0)$ and $f'(z_0)(z-z_0)$ have primitives. Thus we are only actually integrating $(z-z_0)o(z)$. Upper bounding $(z-z_0)$ by diameter and $o(z)$ by some $sup_{\Delta^{(n)}} |f(z)|$ we have the bound $p_n d_n \sup$. Recall $p_n = 1/2p_{n-1}$ and $d_n = 1/2 d_{n-1}$ and so we're done.
+\end{proof}
+
+\begin{prop}
+	Now since we have triangles we can also show for rectangles and by approximation most sets(tesselation). 
+\end{prop}
+
+\begin{theorem}
+	Let $D \susbeteq \C$ be a disc, $f: D \to \C$ holomorphic then f has a primitive. 
+\end{theorem}
+
+\begin{proof}
+	Suppose $D$ centered at 0. Write $F(z) = \int_{\gamma_z} f(w)dw$ where $\gamma_z$ is a triangular curve connecting z to 0. 
+
+	Now compute with aim $F(z+h) - F(z) = hf(z)+ho(h) $
+	\begin{align*}
+		\int_{\gamma_{z+h}} f - \int_{\gamma_z}f = \int_{\gamma{z \to z+h}} f 
+	\end{align*}
+
+	by looking at paths and conidering goursout
+
+	Then we conclude by using continuity 
+\end{proof}
+
+\begin{remark}
+	Notice this argument relies on convexity. The problem is with holes(like the punctured disk).
+\end{remark}
+
 \end{document}
 

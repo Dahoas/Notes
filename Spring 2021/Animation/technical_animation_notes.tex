@@ -145,8 +145,100 @@
 
 \begin{interest}
 	Character controller using Motion VAEs interesting.
-\end{interst}
+\end{interest}
 
+\subsection{2/8}
+
+\begin{remark}
+	3 techniques for animation: motion capture, procedural, and keyframing.
+\end{remark}
+
+\begin{remark}
+	CMU Panoptic Studio Dataset: Mocap data
+\end{remark}
+
+\begin{remark}
+	Motion Capture Data Explained
+\end{remark}
+
+
+
+\section{Inverse Kinematics}
+
+\textbf{TAG:} TechnicalAnimation InverseKinematics
+
+\begin{remark}
+	CCD Illustration:
+	\includegraphics[width=250px]{C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png}
+\end{remark}
+
+\begin{remark}
+	Long chains of links tend to wrap up. Can also decide to iterate top to bottom affector or bottom to top. To address this can repeat recursion for every top level: whatever gets recursed more seems to bend more.
+\end{remark}
+
+\begin{remark}
+	Basic model/fast but some limitations. Fabric better repacement
+\end{remark}
+
+
+\begin{remark}
+	Alternative approach is jacobian based inverse kinematics: Introduction to Invers Kinematics with Jacobian Transpose, Pseudoinverse and Damped Leaster Squares
+	\begin{verbatim}
+		http://math.ucsd.edu/~sbuss/ResearchWeb/ikmethods/iksurvey.pdf
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	We write jacobian as:
+	\begin{align*}
+		\dot{s} = J(\theta)\dot{\theta}
+	\end{align*}
+
+	for speeds on the affectors and their bending angles as we move to a target point. Ie. the change in $s$(position of end affector) against the change in angles.
+\end{remark}
+
+\begin{prop}
+	\begin{align*}
+		\frac{\partial s}{\partial \theta_j} = v_j \times (s - p_j)
+	\end{align*}
+	where $v_j$ is the axis of rotation for each joint. We take the cross product of line from joint to end affector and rotation axis to get the direction of movement due to that joint(think single arm rotating around line gives tangent to the line)
+\end{prop}
+
+\begin{remark}
+	To solve $\dot{s} = J\dot{\theta}$ would just want to take inverse but not always possible obviously
+\end{remark}
+
+\begin{remark}
+	The jacobian transpose always at least does not move away from target: $\langle  J J^T e, e \rangle \geq0$. Often less expensive than pseudoinverse $J^{-1}$ method. 
+\end{remark}
+
+\begin{remark}
+	For pseudoinverse method we get
+	\begin{align*}
+		\Delta\theta = J^T(JJ^T)^{-1}e
+	\end{align*}
+	Note e is $\Delta s$
+\end{remark}
+
+\begin{remark}
+	Anoter option is damped least squares(really l2 regression). Then
+	\begin{align*}
+		\Delta \theta = J^T(JJ^T + \lambda^2I)^{-1}e
+	\end{align*}
+
+	which we know will be invertible
+
+	Can be solved with line search(grid search) or other techniques
+\end{remark}
+
+\begin{remark}
+	Example: Want robot hand with 24 degrees of freedom to hit 10 points. So highly underconstrained and thus was resulting in weird, nonnatural solutions. Use Nullspace technique to add some constraint.
+	\begin{align*}
+		\Delta \theta = J^+e+ (I-J^+J)\phi
+	\end{align*}
+
+	want to damp inner joints without affecting result on end affector
+\end{remark}
 
 
 \end{document}
