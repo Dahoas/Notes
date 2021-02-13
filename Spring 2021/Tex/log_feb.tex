@@ -52,6 +52,7 @@
 \newtheorem{back}{Background}
 \newtheorem{idea}{Idea}
 \newtheorem{example}{Example}
+\newtheorem{reminder}{Reminder}
 
 \setlength{\parindent}{0pt}
 \setlength{\parskip}{5pt plus 1pt}
@@ -1422,6 +1423,219 @@ Tomaszewski's Conjecture: $P(|X| > 1) \leq 1/2$ for $X = \sum a_i \epsilon_i$?
 \begin{enumerate}
 	\item temp
 \end{enumerate}
+
+\subsection{DRL}
+
+\textbf{TAG:} DRL
+
+\begin{remark}
+	Natural evolution strategy for distributed model, distributes unique seed to each worker and so do not need to share gradient vectors(only fitness scores)
+\end{remark}
+
+\begin{remark}
+	Evolutionary methods useful if low number of parameters(100s to 1000s) but has trouble scaling. Need above trick
+\end{remark}
+
+\begin{remark}
+	Sometimes rewards stochastic, in addition to the actions. Probably because partial information(think gambling).
+\end{remark}
+
+\subsection{Multi-Armed bandit}
+
+\begin{remark}
+	Winning at slot machines. 
+\end{remark}
+
+\begin{remark}
+	\begin{align*}
+		Q_n = \sum_{R_i}/(n-1)
+	\end{align*}
+
+	Is estimate of true q-value(action value)
+
+	Also sometimes problems can be nonstationary ie. action values change. 
+\end{remark}
+
+\begin{remark}
+	Sample multi-armed strategy: Fix exploration period under which we uniformly sample k-armed bandit and form q values for each action, then take the action which maximizes the reward.
+\end{remark}
+
+\begin{remark}
+	Other strategies:
+	\begin{enumerate}
+		\item $\epsilon$ exploration: with prob. $\epsilon$ expore new action
+		\item Optimistic: Initialize q values high to incentivize exploration
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+	Uncertainty guides exploration: want to explore actions whose expected mean have higher variance
+\end{remark}
+
+\begin{remark}
+	\begin{align*}
+		A_t = argmax_a[Q_t(a) + c\sqrt{log(t)/N_t(a)}]
+	\end{align*}
+\end{remark}
+
+\subsection{Modeling Evolution}
+
+\begin{remark}
+	Mean fitness:
+	\begin{align*}
+		\theta = ax + by
+	\end{align*}
+	where
+	\begin{align*}
+		&\dot{x} = x(a-\theta)\\
+		&\dot{y} = y(b-\theta)
+	\end{align*}
+	and a is fitness of x, b fitness of y
+\end{remark}
+
+\begin{remark}
+	Modeling heuristic: when product is in differential indicates some kind of mixing of populations
+\end{remark}
+
+\begin{quest}
+	What determines the "optimal mutation rate". DRL tells us it should be minimal? 
+\end{quest}
+
+\begin{ans}
+	But if we're too small then the population dies. What would this penalization effect have on DRL setting? What does this mean for rate in evolution?
+\end{ans}
+
+\begin{remark}
+	Symobls:
+	\begin{enumerate}
+		\item $V_A = \frac{w_A}{w_a}$ is relative fitness ratio of alleles
+		\item $S_d = \frac{w_A - w_a}{w_a}$ coefficient of selection
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+This is the haploid picture
+	\begin{align*}
+		\Delta p = p(t+1) - p(t) = (w_A - w_a)p(t)(1-p(t))/(w_Ap(t) + w_a(1-p(t)))
+	\begin{align*}
+\end{remark}
+
+\begin{remark}
+	Diploid picture: 1 locus, 2 alleles
+	\begin{align*}
+		\overline{w} = p^2 w_{AA} + 2pq W_{Aa} + q^2 w_{aa}
+	\end{align*}
+\end{remark}
+
+\section{2/12}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish complex homework
+	\item Read complex notes	
+	\item Research : 1.5 hours
+	\item Start technical homework
+	\item Start DRL
+\end{enumerate}
+
+\subsection{Blockers}
+
+\begin{enumerate}
+	\item temp
+\end{enumerate}
+
+\subsection{Complex Analysis}
+
+\textbf{TAG:} ComplexAnalysis ComplexIntegration
+
+\begin{theorem}
+	\textit{Cauchy's Theorem}: If f holomorphic in a disk and $\gamma$ closed curve in disk then $\int_{\gamma} f = 0$. 
+\end{theorem}
+
+\begin{remark}
+	Cauchy's theorem holds on 
+	\begin{itemize}
+		\item rectangles
+		\item triangles
+		\item sectants(triangles with one side smoothed out)
+		\item punctured half circle(set removed in neighborhood of 0)
+		\item keyhole
+	\end{itemize}
+
+	Where we just repeat the same argument as above
+\end{remark}
+
+\begin{theme}
+	Clever changes of variables are suggested by invariance of the function: for example gaussian rotationally invariant and thus should try polar coordinates
+\end{theme}
+
+\begin{remark}
+	Rigorously showing fourier transform of gaussian:
+	We integrate on some rectangle with width $2R$ centered and with base along $\R$. Call this $\gamma$. We know
+	\begin{align*}
+		\int_{\gamma} f = 0 = \int_{\gamma_1} f+ \int_{\gamma_2} f + \int_{\gamma_3} f + \int_{\gamma_4} f
+	\end{align*}
+
+	with 
+	\begin{align*}
+		&\int_{\gamma_1} f d = \int_{-R}^R e^{-\pi x^2}dx \to 1\\
+		&\int_{\gamma_3} f d = -\int_{-R}^R f(x+iy)dx = \int_{-R}^R e^{-\pi x^2}e^{-2 \pi i xy}e^{\pi y^2} dx
+	\end{align*}
+
+	and we see these will agree because the others will go to 0 as $R \to \infty$. 
+\end{remark}
+
+\begin{remark}
+	This is an example of contour integration: Extracting integral we're interested in by pulling it out as a piece of a contour. In general allows us to compute one integral as another along a different path
+\end{remark}
+
+\begin{prop}
+	Computing:
+	\begin{align*}
+		\int_0^{\infty} \frac{1-cos(x)}{x^2}dx = \frac{\pi}{2}
+	\end{align*}
+	via computing contour for $f(z) = \frac{1-e^{iz}}{z^2}$. We integrate over contour:
+	\includegraphics[width=250px]{C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indentedsemicirclecontour.PNG}
+
+	In the limit we'll get what we want. Note integral is 0 to start. So suffices to compute another integral along different path
+
+	\begin{align*}
+		\int_{\gamma_{\epsilon}} \frac{1-e^{iz}}{z^2}dz = \int_{\gamma_{\epsilon}} \frac{-iz + g(z)}{z^2}dz = \int_{\gamma_{\epsilon}} \frac{-i}{z}dz = - \pi
+	\end{align*}
+
+	where $g(z)$ is remainder of power series which is holomorphic. Value of the integral comes from the singularity
+\end{prop}
+\begin{theme}
+	Note we used linearity of the integral + the powerseries to make integration easier, and recover a holomorphic function(which is often made nonholomorphcic by singularities 1/z)
+\end{theme}
+
+\subsection{PDEs and Data}
+
+\textbf{TAG:} OptimalTransport
+
+\begin{theme}
+	When trying to solve optimization problems, try to relax problem and solve that, then show is equivalent to original. Primal dual is sometimes example of this
+\end{theme}
+
+\begin{reminder}
+	Arzela-Ascoli: equicontinuous and uniformly bounded(otherwise could blow up to infinity) functions converge uniformly on compact domains(given some pointwise convergnce). 
+\end{reminder}
+
+\begin{remark}
+	Optimal trasport maps not unique often(think of point masses on a square).
+\end{remark}
+
+\begin{remark}
+	Pulling something out of nothing: finding a transport map, playing with necessary conditions:
+	\begin{align*}
+		y_0 = x_0 - (\nabla h)^{-1}(\nabla \phi(x_0))
+	\end{align*}
+\end{remark}
+
+
+
+
 
 \end{document}
 

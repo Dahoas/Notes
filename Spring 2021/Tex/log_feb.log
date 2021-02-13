@@ -1,236 +1,274 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.11.26)  10 FEB 2021 22:23
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6730 64-bit) (preloaded format=pdflatex 2020.7.13)  12 FEB 2021 09:45
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
-**log_feb.tex
-(./log_feb.tex
-LaTeX2e <2020-02-02> patch level 2
-L3 programming layer <2020-02-14>
-(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2019/12/20 v1.4l Standard LaTeX document class
-(/usr/share/texlive/texmf-dist/tex/latex/base/size11.clo
-File: size11.clo 2019/12/20 v1.4l Standard LaTeX file (size option)
+**"C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
+("C:/Users/Alex/Desktop/Notes/Spring 2021/Tex/log_feb.tex"
+LaTeX2e <2018-04-01> patch level 5
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\article.cls"
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count167
-\c@section=\count168
-\c@subsection=\count169
-\c@subsubsection=\count170
-\c@paragraph=\count171
-\c@subparagraph=\count172
-\c@figure=\count173
-\c@table=\count174
-\abovecaptionskip=\skip47
-\belowcaptionskip=\skip48
-\bibindent=\dimen134
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2020/01/20 v2.17e AMS math features
-\@mathmargin=\skip49
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty
+"
+Package: amsmath 2017/09/02 v2.17a AMS math features
+\@mathmargin=\skip43
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amstext.sty
+"
 Package: amstext 2000/06/29 v2.01 AMS text
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
+ ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty
+"
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks14
-\ex@=\dimen135
+\ex@=\dimen103
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
-\pmbraise@=\dimen136
-)
-(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
+\pmbraise@=\dimen104
+) ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsmath\amsopn.st
+y"
 Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count175
-LaTeX Info: Redefining \frac on input line 227.
-\uproot@=\count176
-\leftroot@=\count177
-LaTeX Info: Redefining \overline on input line 389.
-\classnum@=\count178
-\DOTSCASE@=\count179
-LaTeX Info: Redefining \ldots on input line 486.
-LaTeX Info: Redefining \dots on input line 489.
-LaTeX Info: Redefining \cdots on input line 610.
-\Mathstrutbox@=\box45
-\strutbox@=\box46
-\big@size=\dimen137
-LaTeX Font Info:    Redeclaring font encoding OML on input line 733.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 734.
-\macc@depth=\count180
-\c@MaxMatrixCols=\count181
-\dotsspace@=\muskip16
-\c@parentequation=\count182
-\dspbrk@lvl=\count183
+\inf@bad=\count88
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count89
+\leftroot@=\count90
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count91
+\DOTSCASE@=\count92
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen105
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count93
+\c@MaxMatrixCols=\count94
+\dotsspace@=\muskip10
+\c@parentequation=\count95
+\dspbrk@lvl=\count96
 \tag@help=\toks15
-\row@=\count184
-\column@=\count185
-\maxfields@=\count186
+\row@=\count97
+\column@=\count98
+\maxfields@=\count99
 \andhelp@=\toks16
-\eqnshift@=\dimen138
-\alignsep@=\dimen139
-\tagshift@=\dimen140
-\tagwidth@=\dimen141
-\totwidth@=\dimen142
-\lineht@=\dimen143
+\eqnshift@=\dimen106
+\alignsep@=\dimen107
+\tagshift@=\dimen108
+\tagwidth@=\dimen109
+\totwidth@=\dimen110
+\lineht@=\dimen111
 \@envbody=\toks17
-\multlinegap=\skip50
-\multlinetaggap=\skip51
+\multlinegap=\skip44
+\multlinetaggap=\skip45
 \mathdisplay@stack=\toks18
-LaTeX Info: Redefining \[ on input line 2859.
-LaTeX Info: Redefining \] on input line 2860.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amssymb.st
+y"
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\amsfonts.s
+ty"
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
-LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\fancyhdr\fancyhdr.s
+ty"
 Package: fancyhdr 2019/01/31 v3.10 Extensive control of page headers and footer
 s
-\f@nch@headwidth=\skip52
-\f@nch@O@elh=\skip53
-\f@nch@O@erh=\skip54
-\f@nch@O@olh=\skip55
-\f@nch@O@orh=\skip56
-\f@nch@O@elf=\skip57
-\f@nch@O@erf=\skip58
-\f@nch@O@olf=\skip59
-\f@nch@O@orf=\skip60
+\f@nch@headwidth=\skip46
+\f@nch@O@elh=\skip47
+\f@nch@O@erh=\skip48
+\f@nch@O@olh=\skip49
+\f@nch@O@orh=\skip50
+\f@nch@O@elf=\skip51
+\f@nch@O@erf=\skip52
+\f@nch@O@olf=\skip53
+\f@nch@O@orf=\skip54
 )
-(/usr/share/texlive/texmf-dist/tex/latex/amscls/amsthm.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amscls\amsthm.sty"
 Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks19
 \thm@bodyfont=\toks20
 \thm@headfont=\toks21
 \thm@notefont=\toks22
 \thm@headpunct=\toks23
-\thm@preskip=\skip61
-\thm@postskip=\skip62
-\thm@headsep=\skip63
+\thm@preskip=\skip55
+\thm@postskip=\skip56
+\thm@headsep=\skip57
 \dth@everypar=\toks24
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2019/11/30 v1.2a Enhanced LaTeX Graphics (DPC,SPQR)
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphicx.s
+ty"
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\keyval.sty
+"
 Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks25
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2019/11/30 v1.4a Standard LaTeX Graphics (DPC,SPQR)
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\graphics.s
+ty"
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-cfg\graphi
+cs.cfg"
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 105.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 
-(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\graphics-def\pdftex
+.def"
 File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-\Gin@req@height=\dimen144
-\Gin@req@width=\dimen145
+\Gin@req@height=\dimen112
+\Gin@req@width=\dimen113
 )
-(/usr/share/texlive/texmf-dist/tex/latex/tools/dcolumn.sty
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\dcolumn.sty"
 Package: dcolumn 2014/10/28 v1.06 decimal alignment package (DPC)
 
-(/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
-Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
-\col@sep=\dimen146
-\ar@mcellbox=\box47
-\extrarowheight=\dimen147
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2018/04/30 v2.4h Tabular extension package (FMi)
+\col@sep=\dimen114
+\ar@mcellbox=\box28
+\extrarowheight=\dimen115
 \NC@list=\toks26
-\extratabsurround=\skip64
-\backup@length=\skip65
-\ar@cellbox=\box48
+\extratabsurround=\skip58
+\backup@length=\skip59
+\ar@cellbox=\box29
 ))
-(/usr/share/texlive/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2019/07/24 v1.2d Bold Symbol Support (DPC/FMi)
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\tools\bm.sty"
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup6
 \symboldletters=\mathgroup7
 \symboldsymbols=\mathgroup8
 LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
-LaTeX Info: Redefining \bm on input line 209.
+LaTeX Info: Redefining \bm on input line 207.
 )
-\c@theorem=\count187
-\c@prop=\count188
-\c@lemma=\count189
-\c@remark=\count190
-\c@defi=\count191
-\c@apps=\count192
-\c@quest=\count193
-\c@ans=\count194
-\c@interest=\count195
-\c@theme=\count196
-\c@back=\count197
-\c@idea=\count198
-\c@example=\count199
+\c@theorem=\count100
+\c@prop=\count101
+\c@lemma=\count102
+\c@remark=\count103
+\c@defi=\count104
+\c@apps=\count105
+\c@quest=\count106
+\c@ans=\count107
+\c@interest=\count108
+\c@theme=\count109
+\c@back=\count110
+\c@idea=\count111
+\c@example=\count112
 
-(/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-pdfmode.def
-File: l3backend-pdfmode.def 2020-02-03 L3 backend support: PDF mode
-\l__kernel_color_stack_int=\count266
-\l__pdf_internal_box=\box49
-)
-(./log_feb.aux)
+(log_feb.aux)
 \openout1 = `log_feb.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
 LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
 LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
 
-(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
-[Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count267
-\scratchdimen=\dimen148
-\scratchbox=\box50
-\nofMPsegments=\count268
-\nofMParguments=\count269
-\everyMPshowfont=\toks27
-\MPscratchCnt=\count270
-\MPscratchDim=\dimen149
-\MPnumerator=\count271
-\makeMPintoPDFobject=\count272
-\everyMPtoPDFconversion=\toks28
-) (/usr/share/texlive/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
-Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\epstopdf-b
+ase.sty"
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\infwarer
+r.sty"
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\grfext.sty
+"
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvdefine
+keys.sty"
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.
+sty"
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.
+sty"
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\kvsetkey
+s.sty"
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\etexcmds
+.sty"
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifluatex
+.sty"
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\pdftexcm
+ds.sty"
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\generic\oberdiek\ifpdf.st
+y"
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
-85.
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+LaTeX Font Info:    Try loading font information for U+msa on input line 70.
 
-(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-LaTeX Font Info:    Trying to load font information for U+msa on input line 70.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsa.fd"
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 70.
+LaTeX Font Info:    Try loading font information for U+msb on input line 70.
 
-
-(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 
@@ -244,7 +282,7 @@ This may cause the page layout to be inconsistent, however.
 
 [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+{C:/Users/Alex/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 ! Undefined control sequence.
 <argument> \mycourse 
                      
@@ -343,31 +381,32 @@ Overfull \hbox (7.67062pt too wide) in paragraph at lines 477--477
 LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png' not 
 found on input line 534.
 
+<C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png, id=35, 257.46187pt x 94.
+10156pt>
+File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png Graphic file (type p
+ng)
+<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png  
+used on input line 534.
+(pdftex.def)             Requested size: 250.93842pt x 91.7192pt.
 
-! Package pdftex.def Error: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/
-lsc.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.534 ...x/Desktop/Notes/Spring 2021/pics/lsc.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (34.661pt too wide) in paragraph at lines 533--535
+\OT1/cmr/m/it/10.95 Example \OT1/cmr/m/n/10.95 3\OT1/cmr/m/it/10.95 . \OT1/cmr/
+m/n/10.95 Pic-ture of lsc func-tion: 2021/pics/lsc.png [] 
+ []
 
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.535 \end{example}
-                   
+l.552 	$
+        T_c : P(X\times Y) \to R$ is cts. w.r.t narrow convergence so $\int ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[7]
+[7 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/lsc.png>]
 Overfull \hbox (105.39832pt too wide) in paragraph at lines 571--571
 []\OT1/cmtt/m/n/10.95 https://www.ted.com/talks/daniel_wolpert_the_real_reason_
 for_brains/transcript?language=en#t-1117820[] 
@@ -376,8 +415,8 @@ for_brains/transcript?language=en#t-1117820[]
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.576 \end{remark}
-                  
+l.612 \end{quest}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -388,7 +427,7 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.639 	\begin{verbatim}
+l.670 	\begin{verbatim}
                        
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -401,31 +440,15 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png' n
 ot found on input line 684.
 
+<C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png, id=48, 447.92343pt x 
+205.5178pt>
+File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png Graphic file (typ
+e png)
+<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.pn
+g  used on input line 684.
+(pdftex.def)             Requested size: 250.93842pt x 115.13622pt.
 
-! Package pdftex.def Error: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/
-growth.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.684 ...esktop/Notes/Spring 2021/pics/growth.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
-
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.693 	\item R
-              esearch 3 hours
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[10]
 Overfull \hbox (13.7212pt too wide) detected at line 709
 []
  []
@@ -433,8 +456,20 @@ Overfull \hbox (13.7212pt too wide) detected at line 709
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.754 \end{remark}
-                  
+l.717 	N
+        otice this proof simultaneously asserts existence and shows what it is.
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[10 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/growth.png>]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.789 	\end{verbatim}
+                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -445,8 +480,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.810 \end{enumerate}
-                     
+l.831 \end{proof}
+                 
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -454,10 +489,18 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [12]
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 861.
+
+ ("C:\Users\Alex\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 861.
+
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.857 \end{theme}
+l.893 \end{theme}
                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -469,8 +512,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.936 	W
-        hy do we care about a basic model with wrong assumptions? Provides a...
+l.947 \end{remark}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -488,10 +531,32 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
+<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
+                                                  \Delta ^{k+1}} f| 
+l.990 	\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
+                                                  \Delta ^{k+1}} f| 
+l.990 	\end{align*}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
 <argument> \mycourse 
                      
-l.978 	\end{align*}
-                   
+l.1000 \end{proof}
+                  
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -499,28 +564,6 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [15]
-! Undefined control sequence.
-<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
-                                                  \Delta ^{k+1}} f| 
-l.990 	\end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
-                                                  \Delta ^{k+1}} f| 
-l.990 	\end{align*}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
 ! Undefined control sequence.
 l.1007 	Let $D \susbeteq
                          \C$ be a disc, $f: D \to \C$ holomorphic then f has...
@@ -534,23 +577,24 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png' not 
 found on input line 1035.
 
+<C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png, id=70, 395.22656pt x 214
+.55156pt>
+File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png Graphic file (type p
+ng)
+<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png  
+used on input line 1035.
+(pdftex.def)             Requested size: 250.93842pt x 136.22562pt.
 
-! Package pdftex.def Error: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/
-ccd.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1035 .../Desktop/Notes/Spring 2021/pics/ccd.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (17.75113pt too wide) in paragraph at lines 1034--1036
+\OT1/cmr/m/it/10.95 Remark \OT1/cmr/m/n/10.95 71\OT1/cmr/m/it/10.95 . \OT1/cmr/
+m/n/10.95 CCD Il-lus-tra-tion: 2021/pics/ccd.png [] 
+ []
 
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.1036 \end{remark}
+l.1040 \end{remark}
                    
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -558,12 +602,12 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[16]
+[16 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png>]
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.1068 \end{prop}
-                 
+l.1108 	\item T
+               hesis: 5 pages
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -574,8 +618,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.1127 \end{theorem}
-                    
+l.1163 		\item $
+                t_k$ ultra log-concave where $t_k$ number of matchings of si...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -586,8 +630,8 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.1193 \end{theme}
-                  
+l.1236 	W
+         hy do we care about a basic model with wrong assumptions? Provides ...
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -595,18 +639,6 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 [19]
-! Undefined control sequence.
-<argument> \mycourse 
-                     
-l.1247 \end{remark}
-                   
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-[20]
 ! Undefined control sequence.
 l.1259 	\itm
              1400 Chess
@@ -617,31 +649,9 @@ spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
 ! Undefined control sequence.
-<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
-                                                  \Delta ^{k+1}} f| 
-l.1291 	\end{align*}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
-<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
-                                                  \Delta ^{k+1}} f| 
-l.1291 	\end{align*}
-                    
-The control sequence at the end of the top line
-of your error message was never \def'ed. If you have
-misspelled it (e.g., `\hobx'), type `I' and the correct
-spelling (e.g., `I\hbox'). Otherwise just continue,
-and I'll forget about whatever was undefined.
-
-! Undefined control sequence.
 <argument> \mycourse 
                      
-l.1298 	\end{align*}
+l.1279 	\end{align*}
                     
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -649,7 +659,29 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[21]
+[20]
+! Undefined control sequence.
+<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
+                                                  \Delta ^{k+1}} f| 
+l.1291 	\end{align*}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+! Undefined control sequence.
+<argument> ...a ^{(k)}} f| \leq 4 |\int _{\partal 
+                                                  \Delta ^{k+1}} f| 
+l.1291 	\end{align*}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 ! Undefined control sequence.
 l.1308 	Let $D \susbeteq
                          \C$ be a disc, $f: D \to \C$ holomorphic then f has...
@@ -663,18 +695,17 @@ and I'll forget about whatever was undefined.
 LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png' not 
 found on input line 1336.
 
+File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png Graphic file (type p
+ng)
+<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png  
+used on input line 1336.
+(pdftex.def)             Requested size: 250.93842pt x 136.22562pt.
 
-! Package pdftex.def Error: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/
-ccd.png' not found: using draft setting.
-
-See the pdftex.def package documentation for explanation.
-Type  H <return>  for immediate help.
- ...                                              
-                                                  
-l.1336 .../Desktop/Notes/Spring 2021/pics/ccd.png}
-                                                  
-Try typing  <return>  to proceed.
-If that doesn't work, type  X <return>  to quit.
+Overfull \hbox (17.75113pt too wide) in paragraph at lines 1335--1337
+\OT1/cmr/m/it/10.95 Remark \OT1/cmr/m/n/10.95 91\OT1/cmr/m/it/10.95 . \OT1/cmr/
+m/n/10.95 CCD Il-lus-tra-tion: 2021/pics/ccd.png [] 
+ []
 
 ! Undefined control sequence.
 <argument> \mycourse 
@@ -687,12 +718,24 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
+[21]
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.1385 \end{remark}
+                   
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
 [22]
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.1383 	\end{align*}
-                    
+l.1436 \end{remark}
+                   
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
 misspelled it (e.g., `\hobx'), type `I' and the correct
@@ -703,7 +746,136 @@ and I'll forget about whatever was undefined.
 ! Undefined control sequence.
 <argument> \mycourse 
                      
-l.1426 \end{document}
+l.1491 	\end{align*}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[24]
+Runaway argument?
+ 
+! Paragraph ended before \align* was complete.
+<to be read again> 
+                   \par 
+l.1521 
+       
+I suspect you've forgotten a `}', causing me to apply this
+control sequence to too much text. How can we recover?
+My plan is to forget the whole thing and hope for the best.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1521 
+       
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing } inserted.
+<inserted text> 
+                }
+l.1521 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.1521 
+       
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \@@par 
+l.1521 
+       
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Extra }, or forgotten \endgroup.
+\par ...m \@noitemerr {\@@par }\fi \else {\@@par }
+                                                  \fi 
+l.1521 
+       
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.1553 \end{theorem}
+                    
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[25]
+
+LaTeX Warning: File `C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indentedsemic
+irclecontour.PNG' not found on input line 1598.
+
+<C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indentedsemicirclecontour.PNG, id
+=104, 452.4403pt x 208.52907pt>
+File: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indentedsemicirclecontour.PN
+G Graphic file (type png)
+<use C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indentedsemicirclecontour.PNG
+>
+Package pdftex.def Info: C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indenteds
+emicirclecontour.PNG  used on input line 1598.
+(pdftex.def)             Requested size: 250.93842pt x 115.65544pt.
+
+Overfull \hbox (52.83463pt too wide) in paragraph at lines 1596--1599
+\OT1/cmr/m/it/10.95 via com-put-ing con-tour for $\OML/cmm/m/it/10.95 f\OT1/cmr
+/m/n/10.95 (\OML/cmm/m/it/10.95 z\OT1/cmr/m/n/10.95 ) = []$\OT1/cmr/m/it/10.95 
+. We in-te-grate over con-tour: 2021/pics/indentedsemicirclecontour.PNG
+ []
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.1599 \end{prop}
+                 
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+[26]
+
+! LaTeX Error: \begin{align*} on input line 1517 ended by \end{document}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.1601 \end{document}
+                     
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Undefined control sequence.
+<argument> \mycourse 
+                     
+l.1601 \end{document}
                      
 The control sequence at the end of the top line
 of your error message was never \def'ed. If you have
@@ -711,36 +883,43 @@ misspelled it (e.g., `\hobx'), type `I' and the correct
 spelling (e.g., `I\hbox'). Otherwise just continue,
 and I'll forget about whatever was undefined.
 
-[24] (./log_feb.aux) ) 
+[27 <C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indentedsemicirclecontour.PNG
+>] (log_feb.aux) )
+(\end occurred inside a group at level 2)
+
+### semi simple group (level 2) entered at line 1517 (\begingroup)
+### semi simple group (level 1) entered at line 1515 (\begingroup)
+### bottom level 
 Here is how much of TeX's memory you used:
- 2804 strings out of 481239
- 37029 string characters out of 5920376
- 272621 words of memory out of 5000000
- 18026 multiletter control sequences out of 15000+600000
- 543980 words of font info for 66 fonts, out of 8000000 for 9000
+ 2514 strings out of 492973
+ 34425 string characters out of 3127135
+ 100768 words of memory out of 3000000
+ 6331 multiletter control sequences out of 15000+200000
+ 14941 words of font info for 55 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 30i,11n,45p,531b,423s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-ts1.e
-nc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/sha
-re/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-di
-st/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/font
-s/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/public/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmr17.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfon
-ts/cm/cmr6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-r8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
-></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/
-share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/share/
-texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb></usr/share/texliv
-e/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texmf/f
-onts/type1/public/cm-super/sfrm1095.pfb>
-Output written on log_feb.pdf (24 pages, 252834 bytes).
+ 41i,11n,43p,577b,399s stack positions out of 5000i,500n,10000p,200000b,50000s
+<C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmbx10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/Alex/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/Alex/AppData/Loca
+l/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/Alex/
+AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/
+Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmm
+i8.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsf
+onts/cm/cmr10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmr12.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/f
+onts/type1/public/amsfonts/cm/cmr17.pfb><C:/Users/Alex/AppData/Local/Programs/M
+iKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/Alex/AppData/Local/
+Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/Alex/AppD
+ata/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Use
+rs/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy8.
+pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfont
+s/cm/cmti10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/pu
+blic/amsfonts/cm/cmtt10.pfb><C:/Users/Alex/AppData/Local/Programs/MiKTeX 2.9/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on log_feb.pdf (27 pages, 466200 bytes).
 PDF statistics:
- 151 PDF objects out of 1000 (max. 8388607)
- 106 compressed objects within 2 object streams
+ 162 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 21 words of extra memory for PDF output out of 10000 (max. 10000000)
 
