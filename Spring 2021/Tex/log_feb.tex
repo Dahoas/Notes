@@ -1734,10 +1734,66 @@ This is the haploid picture
 \begin{theorem}
 	\textit{Reflection Principle}: Let $\Omega \subseteq \C$ sym. about $\R$. Let $\Omega^+$ be part above real line. Let I be real part. 
 
-	\textit{Symmetry Princple:} Let $f^{+/-}: \Omega^{+/-} \to \C$ holo, both extend cts to I. And extensions agree. Then gluing everyting together we get f a holomorphic function. 
+	\textit{Symmetry Princple:} Let $f^{+/-}: \Omega^{+/-} \to \mathbb{C}$ holo, both extend cts to I(maybe not holomorphcally). And extensions agree. Then gluing everyting together we get f a holomorphic function. 
 
 	
 \end{theorem}
+
+\begin{proof}
+	Simply need to check boundary. After showing continuity use morera's theorem(converse to gousard). 
+
+	Hardest case is triangle over interval. Then we simply subdivide and integrate each function along restricted sub-divisions. We use continuous extension by shifting triangles down by $\epsilon$. 
+\end{proof}
+
+\begin{remark}
+	Real line is irrelevant, can be any curve. Also note holomorphicity is extended by continuity.
+\end{remark}
+
+\begin{theorem}
+	Schwarz Refletion Principle: Let $f^+: \Omega^+ \to \mathbb{C}$ holo, $f^+$ extends cts to I, $f|_I \in \mathbb{R}$ and reflecting over it.
+\end{theorem}
+
+\begin{proof}
+	Define $f^-$ and argue using reflection. Set $f^-(z) = \overline{f(\overline{z})}$. Simply need to check holomorphicity(since agreement on real line). 
+
+	To show holo. we use power series. Note bar distributes over multiplication and we're done.
+\end{proof}
+	
+\begin{theorem}
+	\textit{Runge's Theorem}: Let $K \subseteq \mathbb{C}$ with f holo. in neighborhood of K. Then f can be approximuated uniformly by rational functions with singularities in $K^C$. 
+
+	If $K^C$ connected then the rational functions can be polynomials. 
+\end{theorem}
+
+\begin{proof}
+	Use cauchy's formula plus riemann sums. 
+
+	Connectedness(in $K^C$) is used to push away singularities.
+\end{proof}
+
+\begin{example}
+	$e^{1/z}$ has essential singularity at 0(blows up faster than any rational function at 0). 
+\end{example}
+
+\begin{remark}
+	We can locally write $f(z) = (z-z_0)^n g(z)$ for a zero $z_0$ of f for g nonvanishing locally.
+\end{remark}
+
+\section{2/23}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Thesis
+	\item Read schnectmann
+	\item Technical animation
+	\item Start complex
+\end{enumerate}
+
+
+
+
+
 
 
 

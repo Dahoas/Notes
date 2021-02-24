@@ -75,6 +75,10 @@
 	Proving non-analyticity. Show different limit in two diff. directions. Often useful to consider $h \in \R$ and $h \in i \R$. 
 \end{idea}
 
+\begin{example}
+	Consider $\overline{z}$
+\end{exmaple}
+
 \begin{prop}
 	Often convenient to regard holomorphic definition as
 	\begin{align*}
@@ -103,7 +107,7 @@
 \begin{ans}
 	Yes. 
 	\begin{theorem}
-		Let $f : \Omega \to \C$ with $f = u + iv$ and satisfying cauchy riemann. Then f is holomorphic.
+		Let $f : \Omega \to \C$ with $f = u + iv$ and satisfying cauchy riemann and u,v continuously differentiable. Then f is holomorphic.
 	\end{theorem}
 	\begin{proof}
 		Fix $z_0 = x_0 + i y_0$.
@@ -287,6 +291,256 @@
 \begin{remark}
 	Notice this argument relies on convexity. The problem is with holes(like the punctured disk).
 \end{remark}
+
+\begin{theorem}
+	\textit{Cauchy's Theorem}: If f holomorphic in a disk and $\gamma$ closed curve in disk then $\int_{\gamma} f = 0$. 
+\end{theorem}
+
+\begin{remark}
+	Cauchy's theorem holds on 
+	\begin{itemize}
+		\item rectangles
+		\item triangles
+		\item sectants(triangles with one side smoothed out)
+		\item punctured half circle(set removed in neighborhood of 0)
+		\item keyhole
+	\end{itemize}
+
+	Where we just repeat the same argument as above
+\end{remark}
+
+
+
+\begin{theme}
+	Clever changes of variables are suggested by invariance of the function: for example gaussian rotationally invariant and thus should try polar coordinates
+\end{theme}
+
+\begin{remark}
+	Rigorously showing fourier transform of gaussian:
+	We integrate on some rectangle with width $2R$ centered and with base along $\R$. Call this $\gamma$. We know
+	\begin{align*}
+		\int_{\gamma} f = 0 = \int_{\gamma_1} f+ \int_{\gamma_2} f + \int_{\gamma_3} f + \int_{\gamma_4} f
+	\end{align*}
+
+	with 
+	\begin{align*}
+		&\int_{\gamma_1} f d = \int_{-R}^R e^{-\pi x^2}dx \to 1\\
+		&\int_{\gamma_3} f d = -\int_{-R}^R f(x+iy)dx = \int_{-R}^R e^{-\pi x^2}e^{-2 \pi i xy}e^{\pi y^2} dx
+	\end{align*}
+
+	and we see these will agree because the others will go to 0 as $R \to \infty$. 
+\end{remark}
+
+\begin{remark}
+	This is an example of contour integration: Extracting integral we're interested in by pulling it out as a piece of a contour. In general allows us to compute one integral as another along a different path
+\end{remark}
+
+\begin{prop}
+	Computing:
+	\begin{align*}
+		\int_0^{\infty} \frac{1-cos(x)}{x^2}dx = \frac{\pi}{2}
+	\end{align*}
+	via computing contour for $f(z) = \frac{1-e^{iz}}{z^2}$. We integrate over contour:
+	\includegraphics[width=250px]{C:/Users/Alex/Desktop/Notes/Spring 2021/pics/indentedsemicirclecontour.PNG}
+
+	In the limit we'll get what we want. Note integral is 0 to start. So suffices to compute another integral along different path
+
+	\begin{align*}
+		\int_{\gamma_{\epsilon}} \frac{1-e^{iz}}{z^2}dz = \int_{\gamma_{\epsilon}} \frac{-iz + g(z)}{z^2}dz = \int_{\gamma_{\epsilon}} \frac{-i}{z}dz = - \pi
+	\end{align*}
+
+	where $g(z)$ is remainder of power series which is holomorphic. Value of the integral comes from the singularity
+\end{prop}
+\begin{theme}
+	Note we used linearity of the integral + the powerseries to make integration easier, and recover a holomorphic function(which is often made nonholomorphcic by singularities 1/z)
+\end{theme}
+
+\begin{theorem}
+	Suppose f is holomorphic in an open set that contains the closure of a disc D. If C denotes the boundary circle of this disc with the positive orientation, then
+	\begin{align*}
+		f(z) = \frac{1}{2 \pi i} \int_C \frac{f(\zeta)}{\zeta - z}d \zeta
+	\end{align*}
+
+	for any point in closure of disc D.
+\end{theorem}
+
+\begin{proof}
+	Fix $z \in D$ and consider with keyhole $\Gamma_{\delta,\epsilon}$, omitting z. 
+
+	Clearly $\int_{\Gamma_{\delta,\epsilon}} F(\zeta) d\zeta = 0$ since holomorphic away from singularity. We let $\delta \to 0$ and use continuity of F to see the limit the integrals of corridors cancel. 
+
+	$F(\zeta) = \frac{f(\zeta) - f(z)}{\zeta - z} + \frac{f(z)}{\zeta  - z}$ this give us the result in the limit.
+
+	The key is to use holomorphicity to rewrite expression and then factor out an $f(z)$. 
+
+\end{proof}
+
+\begin{prop}
+	If f is holomorphic in an open set $\Omega$, the f has infinitely many complex derivatives in $\Omega$. Moreover if $C \subseteq \Omega$ is a circle whose interior is also contained in $\Omega$ then
+	\begin{align*}
+		f^{(n)}(z) = \frac{n!}{2 \pi i} \int_C \frac{f(\zeta)}{(\zeta - z)^{n+1}}
+	\end{align*}
+\end{prop}
+
+\begin{prop}
+	Cauchy's Inequalities: If f is holomorphic in an open set that contains the closure of disc D centered at $z_0$ and of radius R, then
+	\begin{align*}
+		|f^{(n)}(z_0)| \leq \frac{n!}{R^n}||f||_C
+	\end{align*}
+\end{prop}
+
+\begin{theorem}
+	\textit{Rigidity}: If $f : \Omega \to \C$ holomorphic, and has $z_n$ which converges in $\Omega$ to $w$, with all $f(z_n) = 0$. Then f = 0
+\end{theorem}
+
+\begin{proof}
+	First we show f 0 near w. 
+
+	Use power series expansion. AFSOC not 0 near w. Then we have an $a_n \neq 0$. Take minimal one. Compute $f(z) = a_m(z-w)^m(1+g(z))$ where g holomorphic. But as we take a point close enough, we know $f(z_n)$ should be 0 but the product above cannot be. So done in a set
+
+	Let $U = int\{z: f(z) = 0\}$. We know U nonempty. U open, but U also closed because f continuous. Furthermore we can find a neighborhood around z in U(by first part). So it must be U everything since U connected. 
+\end{proof}
+
+\begin{theorem}
+	Morera's Theorem:
+	If cts f vanishes on triangles then it's holomorphic. 
+\end{theorem}
+
+\begin{proof}
+	We know we can find a primitive via the proof of cauchy's theorem. Further it's holomorphic. Then f is holomorphic. 
+\end{proof}
+
+\begin{prop}
+	Uniqueness of analytic continuation. If two holomorphic f,g equal on sequence of points then equal everywhere.
+\end{prop}
+
+\begin{proof}
+	True by regularity(look at difference). 
+\end{proof}
+
+\begin{quest}
+	When is there a continuation?
+\end{quest}
+
+\begin{ans}
+	There should only be a problem at boundary(can think of compact functions going to 0).
+\end{ans}
+
+\begin{remark}
+	Miracles of holomorphicity: Closedness, regularity, unique extension(rigidity).
+\end{remark}
+
+\begin{theorem}
+	Morera's Theorem: Converse to cauchy's theorem.
+
+	Suppose $f$ cts on $f : D \to \C$ s.t. for all triangles we have 0 then f holomorphic.
+\end{theorem}
+
+\begin{proof}
+	From cauchy we know we have $F$ holo on D with $F' = f$.(via this triangle property). Since F holomorphic then f holomorphic. 
+\end{proof}
+
+\begin{prop}
+	Uniform limits of holo. functions are holo
+\end{prop}
+
+\begin{proof}
+	If we can show the limit vanishes on triangles then done by Morera. Note we know unif. limits of cts functions are cts. But this is clear just from DCT.
+\end{proof}
+
+\begin{remark}
+	Recall this does not hold in real case: think weierstrass's theorem(polynomials can uniformly approximate any cts function).
+\end{remark}
+
+\begin{theorem}
+	Derivative of limit is limit of derivatives of holo. function
+\end{theorem}
+
+\begin{proof}
+	We go for a bound on the derivative in terms of f: $||F'||_{\infty,\Omega_{\delta}} \leq \frac{1}{\delta}||F||_{\infty,\Omega_{\Omega}}$. This is enough when we look at diferences of the derivatives(take out limit)
+
+	We go by cauchy's formula:
+	\begin{align*}
+		|F'(z)| = |\frac{1}{2\pi i}\int_{\partial D_{\delta}(z)}\frac{F(w)}{(w-z)^2}dw|
+	\end{align*}
+
+	and apply triangle inequality
+\end{proof}
+
+\begin{remark}
+	True for higher order derivatives. Amazing that knowing holomorphicity gives control of limit of all derivatives. 
+\end{remark}
+
+\begin{theme}
+	Constructing holomorphic functions: look at series of holomorphic functions(assuming unif. convergence on compact sets)
+
+	Also often useful to define as integrals of holomorphic functions of a parameter.
+\end{theme}
+
+\begin{prop}
+	Let $F : \Omega \times [0,1] \to \C$. be s.t. 
+
+	i) $z \to F(z,s)$ is holo. for all s
+
+	ii) F cts on $\Omega \times [0,1]$. Then 
+
+	$f(z) = \int_0^1 F(z,s) ds $
+\end{prop}
+
+\begin{proof}
+	We argue the integral is the uniform limit of the riemanns sums. 
+
+	Write $f_n(z) = \frac{1}{n}\sum^n F(z,k/n)$. Uniform bound comes from continuity: cause we're on a comapct set
+\end{proof}
+
+\begin{theorem}
+	\textit{Reflection Principle}: Let $\Omega \subseteq \C$ sym. about $\R$. Let $\Omega^+$ be part above real line. Let I be real part. 
+
+	\textit{Symmetry Princple:} Let $f^{+/-}: \Omega^{+/-} \to \mathbb{C}$ holo, both extend cts to I(maybe not holomorphcally). And extensions agree. Then gluing everyting together we get f a holomorphic function. 
+
+	
+\end{theorem}
+
+\begin{proof}
+	Simply need to check boundary. After showing continuity use morera's theorem(converse to gousard). 
+
+	Hardest case is triangle over interval. Then we simply subdivide and integrate each function along restricted sub-divisions. We use continuous extension by shifting triangles down by $\epsilon$. 
+\end{proof}
+
+\begin{remark}
+	Real line is irrelevant, can be any curve. Also note holomorphicity is extended by continuity.
+\end{remark}
+
+\begin{theorem}
+	Schwarz Refletion Principle: Let $f^+: \Omega^+ \to \mathbb{C}$ holo, $f^+$ extends cts to I, $f|_I \in \mathbb{R}$ and reflecting over it.
+\end{theorem}
+
+\begin{proof}
+	Define $f^-$ and argue using reflection. Set $f^-(z) = \overline{f(\overline{z})}$. Simply need to check holomorphicity(since agreement on real line). 
+
+	To show holo. we use power series. Note bar distributes over multiplication and we're done.
+\end{proof}
+	
+\begin{theorem}
+	\textit{Runge's Theorem}: Let $K \subseteq \mathbb{C}$ with f holo. in neighborhood of K. Then f can be approximuated uniformly by rational functions with singularities in $K^C$. 
+
+	If $K^C$ connected then the rational functions can be polynomials. 
+\end{theorem}
+
+\begin{proof}
+	Use cauchy's formula plus riemann sums. 
+
+	Connectedness(in $K^C$) is used to push away singularities.
+\end{proof}
+
+\begin{example}
+	$e^{1/z}$ has essential singularity at 0(blows up faster than any rational function at 0). 
+\end{example}
+
+\begin{remark}
+	We can locally write $f(z) = (z-z_0)^n g(z)$ for a zero $z_0$ of f for g nonvanishing locally.
+\end{remark}
+
 
 \end{document}
 
