@@ -44,7 +44,7 @@
 \newtheorem{exmp}[theorem]{Example}
 
 
-\title{\vspace{-3em}A Study of Khintchine Type Inequalities for Random Variables}
+\title{\vspace{-3em}A Survey of Khintchine Type Inequalities for Random Variables}
 \author{Alex Havrilla}
 
 
@@ -53,17 +53,59 @@
 
 \maketitle
 
+\begin{abstract}
+	We present a collection of Khintchine type inequalities for random variables and some applications in convex geometry and functional analysis. In particular we present new results for symmetric discrete distributions and for the class of Type L random variables.
+\end{abstract}
+
+\newpage
+
 \section{Introduction}
 
-The classical Khinchin's Inequality deals with comparing the moments of sums independent random signs with the sums' second moment. For $\epsilon_i \sim \{-1,1\}$ uniformly, $a \in \R^n$, write $S_a = \sum_{i=1}^n a_i \epsilon_i$. Then we have
+The study of Khintchine inequalities examines inequalities for the moments of sums of independent identically distributed(iid) random variables. Recall the pth moment of a random variable $X$ as
 
 \begin{align*}
-	\norm{S_a}_2 = \sqrt{\E S_a^2} = \sqrt{\E\sum_i a_i^2 \epsilon_i + \E\sum_{i,j}a_ia_j \epsilon_i\epsilon_j} = \sqrt{\sum_i a_i^2}
-\end{align*} 
+	||X||_p = (\E|X|^p)^{1/p}
+\end{align*}
 
-Then
+where $\E$ denotes expectation.
 
-\begin{theorem}\textit{Khintchin's Inequality}
+The classical Khintchine inequality compares for $0 < p,q < \infty$ the pth and qth moments of sums of iid random signs with coefficients $a_i \in \R$
+\begin{align*}
+	S = \sum_i^n a_i \epsilon_i
+\end{align*}
+
+where we recall $\Pp(\epsilon = 1) = \Pp(\epsilon = -1) = \frac{1}{2}$. 
+
+\begin{theorem}Khintchine's Inequalities:
+
+	$\forall p,q > 0 \exists C_{p,q} > 0$ and $\forall n, a \in \R^n$ we have
+	\begin{align*}
+		||S||_p \leq C_{p,q} ||S||_q
+	\end{align*}
+\end{theorem}
+
+
+Of particular interest is finding sharp constants $C_{p,q}$. This is easy when $p < q$, as then $C_{p,q} = 1$. However the case $p > q$ is difficult. In general we only know comparisons for arbitrary p and $q=2$ and for $p,q$. 
+
+There are a number of ways to generalize moment comparison inequalities of this form. Optimal constants for distributions other than the random sign have been studied, yielding the same constants as in the random sign case. Generalizations to vector coefficients have also been made with applications in Banach space theory.
+
+\section{Khintchine Inequalities for Various Distributions}
+
+This section seeks to present a collection of Khintchine type results with optimal constants for variously distributed random variables. We start with progenitor case of random signs.
+
+\subsection{Random Signs}
+
+In this section we deal strictly with sums of random signs $\epsilon_i$. First we establish constants $C_{p,2}$ and $C_{2,p}$ do exist for $||S||_p \leq C_{p,2} ||S||_2$, $ ||S||_2 \leq C_{2,p}||S||_p$ where $S = \sum a_i \epsilon_i$. We argue as in \cite{LT}. This is a natural starting point since second moment of sums is easily computable:
+
+\begin{align*}
+	\norm{S}_2 = \sqrt{\E S_a^2} = \sqrt{\E\sum_i a_i^2 \epsilon_i + \E\sum_{i,j}a_ia_j \epsilon_i\epsilon_j} = \sqrt{\sum_i a_i^2}
+\end{align*}
+
+ie. the second moment of the sum is just the sum of squares of the coefficients. Often without loss of generality we will choose $a_i$ s.t. $\sum_i a_i^2 = 1$.  
+
+We adopt the convention $A_p = C_{2,p}$ and $B_p = C_{p,2}$. First we establish the existence of such constants. 
+
+\begin{theorem}Khinchin's Inequality:
 	
 	For $0 < p < \infty, \exists A_p,B_p > 0$ s.t. for $a \in \R^n$,
 	\begin{align*}
@@ -71,51 +113,174 @@ Then
 	\end{align*}
 \end{theorem}
 
-%proof in probability in banach spaces
+We argue as in \cite{LT}.
 
 \begin{proof}
 	Via homogeneity we may suppose $\sum_i a_i^2 = 1$. Then via layer cake and chebyshev we may write:
 	\begin{align*}
-		\E |\sum_i \epsilon_i a_i|^p = \int_0^{\infty} P(|\sum_i \epsilon_i a_i | > t) dt^p \leq 2 \int_0^{\infty} e^{-t^2/2}dt^p = B_p^p
+		\E |\sum_i \epsilon_i a_i|^p = \int_0^{\infty} \Pp(|\sum_i \epsilon_i a_i | > t) dt^p \leq 2 \int_0^{\infty} e^{-t^2/2}dt^p = B_p^p
 	\end{align*}
-	For the LHS write
+	For the other side write
 	\begin{align*}
-		1 = \E(\sum_i \epsilon_i a_i)^2 \leq (\E |\sum_i \epsilon_i a_i|^p)^{2/3}(\E |\sum_i \epsilon_i a_i|^{6-2p})^{1/3} 
+		1 = \E(\sum_i \epsilon_i a_i)^2 \leq (\E |\sum_i \epsilon_i a_i|^p)^{2/3}(\E |\sum_i \epsilon_i a_i|^{6-2p})^{1/3} \leq (\E|\sum_i \epsilon_i a_i|^p)^{2/3} B_{6-2p}^{2-2p/3}
 	\end{align*}
-	where it STC $p < 2$.
-\end{proof}
+	at which point we are done.
+\end{proof
 
-%Contraction principle page 95
 
-The Khintchine-Kahane inequalities follow as a vector valued generalization of Khintchine:
+So we know such comparisons are possible but we seek to find optimal constants. The case for $p \geq 3$ turns out to be relatively easy via some convexity arguments by Young in \cite{Y}. 
 
-\begin{theorem}
-	Let S a Rademacher series in banach B with $\sigma = \sigma(S)$. Let $M = M(S)$ denote the median of $\norm{S}$. Then $\forall t > 0$
-	\begin{align*}
-		\Pp (|\norm{S}- M| > t) \leq 4 e^{-t^2/8\sigma^2}
-	\end{align*}
-	and in particular $\exists \alpha > 0$ s.t. $\E e^{\alpha \norm{S}^2} < \infty$ and all moments of S are equivalent, ie. for $0 < p , q < \infty$ we have $\exists C_{p,q}$ s.t.
-	\begin{align*}
-		\norm{S}_p \leq C_{p,q} \norm{S}_q
-	\end{align*}
+\begin{theorem}Young:
+
+For $3 \leq p < \infty$ we have $B_p = 2^{1/2}(\Gamma((p+1)/2)/\sqrt{\pi})^{1/p}$	
 \end{theorem}
 
-Sharp constants were first shown by Haagerup in \cite{H}
+The proof crucially relies on the convexity of a certain function h for $p \geq 3$ which inspires relevant ideas later. 
+
+\begin{lemma}
+	Define for $z \in \C$
+	\begin{align*}
+		h_p(z,t) = |1-tz|^{p-2} + |1+tz|^{p-2} 
+	\end{align*}
+	For $p \geq 3$ $h_p$ is convex in t.
+\end{lemma}
+
+%Supply a proof of this later!!!
+
+In \cite{H} Haagerup concluded the search for random signs by treating $0 < p < 2$ and $2 < p < 3$ and which establishes the following constants:
 
 
+\begin{align*}
+	A_p = 
+	\begin{cases}
+		2^{1/2-1/p} & 0 < p \leq p_0 \\
+		2^{1/2}(\Gamma((p+1)/2)/\sqrt{\pi})^{1/p} & p_0 < p < 2\\
+		1 & 2 \leq p < \infty
+	\end{cases}
+\end{align*}
 
-\section{Ultra Sub-Gaussanity and Strong Log Concavity}
+and 
 
-Here we discuss the notions of Ultra Sub-Gaussanity and Strong Log Concavity of a Random Variable. First recall
+\begin{align*}
+	B_p = 
+	\begin{cases}
+		1 & 0 < p \leq 2\\
+		2^{1/2}(\Gamma((p+1)/2)/\sqrt{\pi})^{1/p} & 2 < p < \infty
+	\end{cases}
+\end{align*}
+
+where $p_0$ is the solution to $\Gamma((p+1)/2) = \sqrt{\pi}/2$ in $[1,2]$. Szarek \cite{S} showed $A_1 = 1/\sqrt{2}$. Haagerup extended this result for $0 < p < p_0$ and and established optimality of $B_p$ for $2 < p <3$. Note this is seen to be sharp by way of Central Limit Theorem, as the sum $\sum_i \frac{1}{\sqrt{n}}\epsilon_i \to g \sim N(0,1)$ which achieves the $B_p$ in the limit. Note the $1/\sqrt{2}$ is achieved by the sum of two random signs.
+
+While it would be nice to give complete proofs of these sharp constants, Haagerups arguments in particular are quite technical and not entirely enlightening. Instead we elect to present a proof via Nazarov, F. Podkorytov \cite{NP} which relies on crucial elements of Haagerups proof while using distribution functions to "simplify" some more technical details. This treats the $0 < p <2$ case. In \cite{M} Mordhorst treats $2 < p < 3$ using the same technique.
+
+Now we must present a lemma on distribution functions.
+
+\begin{lemma}
+	Let $Y > 0$, $f,g : \mathcal{M} \to [0,Y]$ be any two measurable functions on $(\mathcal{M},\mu)$. Let $F_*$ and $G_*$ be their modified distribution functions. Assume both $F_*(y)$ and $G_*(y)$ are finite for every $y \in (0,Y)$. Assume also $\exists ! y_0$ s.t. $F_*-G_* = 0$. Furthermore at $y_0$ we need a change in sign from $+$ to $-$. Let $S = \{s > 0: f^s - g^s \in L^1(\mathcal{M},\mu)\}$. Then
+	\begin{align*}
+		\phi(s) = \frac{1}{sy_0^s}\int_{\mathcal{M}}f^s - g^s d\mu
+	\end{align*}
+	is monotone increasing on S. 
+\end{lemma}
+
+%Should I include proof???
+
+We will use this to show an integral inequality in the following proof.
+
+Here we present a sketch of Nazarov and Podkorytov's approach:
+
+\begin{proof}
+	First we reduce the case $0 < p < p_0$ to $p = p_0$. Let $S = \sum_i a_i \epsilon_i$ and suppose $\E|S|^p \geq 2^{p_0 - 2/2}$ where $\sum_ a_i^2 = 1$. Via holder we have
+	\begin{align*}
+		\E|S|^{p_0} \leq (\E|S|^p)^{2-p_0/2-p}(\E|S|^2)^{p_0-p/2-p} = (\E|S|^p)^{2-p_0/2-p}
+	\end{align*} 
+	since $\E|S|^2 = 1$ by assumption. So we only consider now $p_0 \leq p \leq 2$. 
+
+	As in Haagerup's argument, we crucially rely on an integral representation of these moments
+	\begin{align*}
+		\E|S|^p = C_p\int_0^{\infty}\frac{1-\prod_{k=1}^n cos(a_k u)}{u^{p+1}}
+	\end{align*}
+
+	where we note the product of cosines the product of characteristic functions of the scaled random signs.
+
+	Using this representation we can reduce to question to an integral inequality. We have the comparison via AM-GM
+	\begin{align*}
+		\prod_{k=1}^n cos(a_k u) \leq \prod_{k=1}^n |cos(a_k u)| \leq \sum_{k=1}^n a_k^2|cos(a_k u)|^{q/a_k^2} = 1 - \sum_{k=1}^na_k^2(1- |cos(a_k u)|^{1/a_k^2})
+	\end{align*}
+
+	Define 
+	\begin{align*}
+		I_p(s) = C_p\int_0^{\infty}(1-|cos(\frac{u}{\sqrt{s}})|^2)\frac{du}{u^{p+1}}
+	\end{align*}
+
+	Then we can write
+	\begin{align*}
+		\E|S|^p \geq \sum_{k=1}^na_k^2 I_p(\frac{1}{a_k^2})
+	\end{align*}
+	so it suffices to treat $I_p$. We know for $I_p(2) = 2^{p-2/2}$ via the integral representation. For $lim_{s \to \infty}I_p(s)$ we may apply DCT to see get $C_p \int_0^{\infty}(1-e^{-u^2/2})\frac{du}{u^{p+1}}$ as well $\lim_{s \to \infty}I_p(s) = 2^{p-2/2}\frac{\Gamma(p+1/2)}{\Gamma(3/2)}$ via a CLT arugment. Then showing $I_p(s) \geq I_p(\infty)$ would allow us to conclude. Ie write
+
+	\begin{align*}
+		H(p,s) = \int_0^{\infty}(e^{-sx^2/2} - |cos(x)|^s)\frac{dx}{x^{p+1}} \geq 0 
+	\end{align*}
+
+	It is this kind of integral inequality to which we can apply the distribution function lemma. We must compute
+	\begin{align*}
+		&F_*(y) = \mu\{x > 0 : e^{-x^2/2} < y\} = \frac{1}{p}2ln(1/y)^{-p/2}\\
+		&G_*(y) = \mu\{x > 0: |cos(x)| < y\} = \frac{1}{p}\sum_{k=0}^{\infty}\frac{1}{(\pi k + arccos(y))^p} - \frac{1}{(\pi k + \pi - arccos(y))^p}
+	\end{align*}
+
+	and show the difference only changes sign once on the interval $(0,\pi/2)$. This is shown using an extension of the difference to the complex plane.
+
+	After this it remains to treat the case of large coefficient, ie. one of the $a_k > \frac{1}{2}\sum_{k=1}^na_k^2$. To do this we go by induction. The observation
+	\begin{align*}
+		\E|S|^p(a) = \frac{\E|S|^p(a^+) + \E|S|^p(a^-)}{2}
+	\end{align*}
+
+	where $a^+ = (a_1,...,a_{n-2},a_{n-1}+a_n)$ and $a^-$ analagously allows us to absorb large coefficients into smaller term expressions. Thus letting $\phi_p(x)$ be a particular convex function we end up with the estimate
+	\begin{align*}
+		\E|S|^p(a) = \frac{\E|S|^p(a^+) + \E|S|^p(a^-)}{2} \geq A_p \frac{\phi_p(x^+)+\phi_p(x^-)}{2} \geq A_p\phi_p((x^++x^-)/2) = A_p \phi_p(x) \geq A_p \psi_p(x)
+	\end{align*}
+
+	where $\psi_p(x) = (1+x)^{p/2}$ and $\phi$ dominates $\psi$ and $x = a_2^2 + ... + a_n^2$. Which allows us to conclude.
+
+	%Need to clean this end up.
+\end{proof}
+
+Moving forward it is good to keep these sharp constants in mind, and the techniques used to prove them. Via the CLT arguments we see in $B_p$ does not change if we change the distribution of the terms being summed. Similarly convexity arguments seem to continue to work well for $p \geq 3$. 
+
+This concludes our discussion of Khintchine type inequalities for random signs. We now move on to discussing generalizations with other distributions.
+
+\subsection{Ultra Sub-Gaussian Random Variables}
+
+This section examines a result via Nayar and Oleszkiewicz in \cite{NO} which significantly generalizes the class of random variables considered and achieves comparisons for all even moments via log-concavity.
+
+First we discuss the notions of Ultra Sub-Gaussanity and Strong Log Concavity of a Random Variable. Recall
 
 \begin{defn}
 	A sequence $(a_i)_{i=0}^{\infty}$ of non-negative real numbers is called \textit{log-concave} if $a_i^2 \geq a_{i-1}a_{i+1}$.
 \end{defn}
 
-Then we can define the notion of \textit{Ultra Sub-Gaussanity} for $\R^n$ valued random vectors.
+Then we can define the notion of \textit{Ultra Sub-Gaussanity} for $\R^n$ valued random vectors from \cite{NO}.
 
 \begin{defn}
 	$\R^n$ valued $X$ is \textit{Ultra sub-Gaussian} if $X=0$ or X is rotation invariant, has finite moments, and has gaussian log-concave even moments ie. $a_i = \E \norm{X}^{2i}/\E \norm{G}^{2i}$ are log-concave.
+\end{defn}
+
+The results crucially use Walkup's Theorem concerning preservation of log-concavity under convolution:
+
+\begin{theorem}
+	Let $(a_i)_{i=0}^{\infty}$ and $(b_i)_{i=0}^{\infty}$ be two log-concave sequences of positive real numbers. We define:
+	\begin{align*}
+		c_n = \sum_{i=0}^n {n \choose i} a_i b_{n-i}
+	\end{align*}
+
+	Then the $(c_n)_{n=0}^{\infty}$ is log-concave
+\end{theorem}
+
+This tells us the collection $\textbf{ULCS}$ of ultra log-concave sequences is closed under convolution:
+
+\begin{defn}
+	$(a_i)_{i=0}^{\infty}$ is ultra log-concave if $(i! a_i)_{i=0}^{\infty}$ is log-concave.
 \end{defn}
 
 Given X Ultra Sub-Gaussian we can extract a khintchine type inequality of the following form.
@@ -129,15 +294,60 @@ Given X Ultra Sub-Gaussian we can extract a khintchine type inequality of the fo
 	where $S = \sum_i X_i$
 \end{theorem}
 
-The proof of which rests crucially on the clsoure of \textbf{USG} under sums:
+The proof rests on some lemmas we highlight now.
+
+\begin{lemma}
+	Let $\Prod: \R^n \to \R$ be projection to first coordinate. For $p > 0$ assume X rotation invariant random vector on $\R^n$ with finite pth moment. Then
+	\begin{align*}
+		\frac{\E|\Prod X|^p}{\E |G|^p} = \frac{\E||X||^p}{\E||G||^p}
+	\end{align*}
+\end{lemma}
+
+Notably the class of ultra sub-gaussian random variables is closed under sums.
 
 \begin{lemma}
 	If $X,Y \in \textbf{USG}$ are independent random vectors then $X+Y \in \textbf{USG}$.
 \end{lemma}
 
-\section{A Discrete Generalization of Random Signs}
+\begin{proof}
+	We may assume X and Y nonzero constant. Setting
+	\begin{align*}
+		&a_i = \E||X||^{2i}/\E||G||^{2i} = \E(\prod X)^{2i}/\EG^{2i}\\
+		&b_i = \E||Y||^{2i}/\E||G|^{2i} = \E(\prod Y)^{2i}/\E G^{2i}\\
+		&b_i = \E||X+Y||^{2i}/\E||G|^{2i} = \E(\prod (X+Y))^{2i}/\E G^{2i}
+	\end{align*}
+	and then note
+	\begin{align*}
+		c_n  = \frac{1}{(2n-1)!!}\sum_{i=0}^{n}{2n \choose 2i} \E(\Prod X)^{2i} \E(\Prod Y)^{2n - 2i} = \sum_{i=0}^n \frac{(2n)!!}{(2i)!!(2n-2i)!!}a_ib_{n-i} = \sum_{i=0}^n {n \choose i}a_i b_{n-i}
+	\end{align*}
+	and we conclude with Walkup's theorem.
+\end{proof}
 
-We recall that a random sign $\epsilon$ takes values on $\{-1,1\}$ with uniform probability. We now consider the generalization to $X ~ \{-L,,..,0,...,L\}$ with some mass $\Pp(X = 0) = \rho_0$ and otherwise uniformly distributed on the $\{-L,...,-1\} \cup \{1,...,L\}$. We have the following results.
+We must also note distributions producting with nonnegative random variables to a standard gaussian must ultra sub-gaussian.
+
+\begin{lemma}
+	Assume an $\R^d$ valued random vector X and non-negative random variable R are independent and that $R \cdot X$ has distribution $N(0,I d_d)$. Then X is ultra sub-gaussian
+\end{lemma}
+
+Now we establish the Khintchine-type inequality for ultra sub-gaussian random variables.
+
+\begin{proof}
+	Note first the constant is optimal as indicated by the central limit theorem.
+
+	If we show $S$ ultra log-concave then we know the sequence $a_k = \E||S||^{2k}/\E||G||^{2k}$ is log-concave which gives us our desired result since then we know $(a_s^{1/s})_{s=1}^{\infty}$ is non-increasing and in particular $a_{p/2}^{2/p} \leq a_{q/2}^{2/q}$. But S is clearly ultra log-concave as it is the sum of ultra log-concave random variables. So we are done.
+\end{proof}
+
+These results in turn relate to our discussion of type L random variables, where we discover every Type L random variable is ultra sub-gaussian.
+
+\subsection{Type L Random Variables}
+
+
+
+\subsection{Discrete Symmetric Distributions}
+
+We now consider the generalization of a random sign to a symmetric discrete random variables uniformly distributed outside 0. Ie. consider the generalization to $X ~ \{-L,,..,0,...,L\}$ with some mass $\Pp(X = 0) = \rho_0$ and otherwise uniformly distributed on the $\{-L,...,-1\} \cup \{1,...,L\}$. We have the following results.
+
+First note for small enough mass at 0 the random variables is ultra sub-gaussian and thus we have khintchine type-inequalities for all even moments.
 
 \begin{theorem}\label{thm:USG}
 Let $\rho_0 \in [0,1]$ and let $L$ be a positive integer. Let $X_1, X_2,\dots$ be i.i.d. copies of a random variable $X$ with $\p{X=0} = \rho_0$ and $\p{X = -j} = \p{X = j} = \frac{1-\rho_0}{2L}$, $j = 1,\dots,L$. Then $X$ is ultra sub-Gaussian if and only if $\rho_0 = 1$, or
@@ -151,11 +361,13 @@ If this holds, then, consequently, for positive even integers $q > p \geq 2$, ev
 with $C_{p,q} = \frac{[1\cdot 3\cdot\ldots \cdot (q-1)]^{1/q}}{[1\cdot 3\cdot\ldots \cdot (p-1)]^{1/p}}$ which is sharp.
 \end{theorem}
 
-Here we first need to recall the classical notions of majorisation and Schur-convexity. Given two nonnegative sequences $(a_i)_{i=1}^n$ and $(b_i)_{i=1}^n$, we say that $(b_i)_{i=1}^n$ \emph{majorises} $(a_i)_{i=1}^n$, denoted $(a_i) \prec (b_i)$ if
+ Here we first need to recall the classical notions of majorisation and Schur-convexity. Given two nonnegative sequences $(a_i)_{i=1}^n$ and $(b_i)_{i=1}^n$, we say that $(b_i)_{i=1}^n$ \emph{majorises} $(a_i)_{i=1}^n$, denoted $(a_i) \prec (b_i)$ if
 \[
 \sum_{i=1}^n a_i = \sum_{i=1}^n b_i \qquad \text{and} \qquad \sum_{i=1}^k a_i^* = \sum_{i=1}^k b_i^* \ \text{ for all } \ k = 1,\ldots,n,
 \]
 where $(a_i^*)_{i=1}^n$ and $(b_i^*)_{i=1}^n$ are nonincreasing permutations of $(a_i)_{i=1}^n$ and $(b_i)_{i=1}^n$ respectively. For example, $(\frac{1}{n},\frac{1}{n},\dots,\frac{1}{n}) \prec (a_1,a_2,\dots,a_n) \prec (1,0,\dots,0)$ for every nonnegative sequence $(a_i)$ with $\sum_{i=1}^n a_i = 1$. A function $\Psi\colon [0,\infty)^n \to \R$ which is symmetric (with respect to permuting the coordinates) is said to be \emph{Schur-convex} if $\Psi(a) \leq \Psi(b)$ whenever $a \prec b$ and \emph{Schur-concave} if $\Psi(a) \geq \Psi(b)$ whenever $a \prec b$. For instance, a function of the form $\Psi(a) = \sum_{i=1}^n \psi(a_i)$ with $\psi\colon [0,+\infty) \to \R$ being convex is Schur-convex.
+
+Now we consider a stronger claim for the case with no mass at 0.
 
 \begin{theorem}\label{thm:2-p>3}
 Let $L$ be a positive integer. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = -j} = \p{X = j} = \frac{1}{2L}$, $j = 1, \ldots, L$. For every $n \geq 1$, reals $a_1,\ldots,a_n$ and $p \geq 3$, we have
@@ -164,6 +376,8 @@ Let $L$ be a positive integer. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random
 \end{equation}
 with $C_p = \sqrt{2} \Big(\frac{\Gamma (\frac{p+1}{2})}{\sqrt{\pi}} \Big)^{1/p}$ which is sharp.
 \end{theorem}
+
+And if we restrict our attention to a random sign with some mass added at 0, we can achieve a Schur convexity type result, which in turn yields khintchine type inequalities.
 
 \begin{theorem}\label{thm:Schur}
 Let $\rho_0 \in [0,\frac{1}{2}]$. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = 0} = \rho_0$ and $\p{X = -1} = \p{X = 1} = \frac{1-\rho_0}{2}$. Let $p \geq 3$. For every $n \geq 1$ and reals $a_1,\ldots,a_n, b_1, \ldots, b_n$ such that $(a_i^2)_{i=1}^n \prec (b_i^2)_{i=1}^n$, we have
@@ -180,6 +394,8 @@ Under the assumptions of Theorem \ref{thm:Schur} for every $n \geq 1$ and reals 
 with $C_p = \sqrt{2} \Big(\frac{\Gamma (\frac{p+1}{2})}{\sqrt{\pi}} \Big)^{1/p}$ which is sharp.
 \end{corollary}
 
+Finally we consider the $p=1$ case and find the sharp constant agreeing with a random sign.
+
 \begin{theorem}\label{thm:L1-L2}
 Let $\rho_0 \in [\frac{1}{2},1]$ and let $L$ be a positive integer. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = 0} = \rho_0$ and $\p{X = -j} = \p{X = j} = \frac{1-\rho_0}{2L}$, $j = 1, \ldots, L$. For every $n \geq 1$ and reals $a_1,\ldots,a_n$, we have
 \begin{equation}\label{eq:L1-L2}
@@ -189,156 +405,113 @@ with $c_1 = \frac{\E|X|}{\sqrt{\E|X|^2}} = \sqrt{\frac{3(1-\rho_0)L(L+1)}{2(2L+1
 \end{theorem}
 
 
-\section{Known Examples of Type L Random Variables}
+\subsection{Uniform Random Variables}
 
-Relatively few examples of Type L random variables are known. The majority we do have follow from results of Polya in his study of kernels producing strictly real zeroes of fourier transforms of the form:
 
-\begin{align*}
-	\phi(z) = \int_{\R} K(x)cos(zx)dx
-\end{align*}
 
-for some kernel $K : \R \to \R$. This can naturally be interpreted as the inverse fourier transform of a random variable $X$ with density $K$. And (assuming symmetry and nice gaussanity conditions) if $\phi$ has strictly real zeroes then we know $\phi(iz) = \E e^{-zX}$ has strictly imaginary zeroes and hence X is type L.
+\subsection{Gaussian Mixtures}
 
-\subsection{Polya's Examples}
+First we look at \cite{ENT}. Gaussian measures very important in convex geometry and local banach space theory. 
 
-All of these examples can be found in Polya's \textit{Problems in Analysis} but the experience of retrieving them(and their proofs) is somewhat time consuming. Hopefully this presentation is somewhat less so. We attach proofs of these examples in an appendix. 
+Recall what a gaussian mixture is:
 
-\begin{theorem}[Decreasing Concave Density(173)] \label{CCDNSTY}
-	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ density $f$ s.t. $f',f'' < 0$. Then $X \in \lL$.
+\begin{defn}
+	A random variable X is a \textit{Gaussian mixture} if there exists a positive rando variable Y and standard Gaussian Z independent from Y s.t. X has the same distribution as YZ.
+\end{defn}
+
+\begin{exmp}
+	A random variable with density $f(x) = \sum_{j=1}^m p_j \frac{1}{\sqrt{2\pi}\sigma_j}e^{-x^2/2\sigma_j^2}$ is a gaussian mixture
+\end{exmp}
+
+We also recall definitions of majorization:
+
+\begin{defn}
+	$a \in \R^n$ is majorized by $b \in \R^n$, written $a \prec b$, if for $k = 1,...,n-1$ we have 
+	\begin{align*}
+		\sum_{j=1}^k a_j^* \leq \sum_{j=1}^k b_j^*
+	\end{align*}
+	,where $a^*$ is the decreasing rearrangement, and we have $\sum_{j=1}^n a_j = \sum_{j=1}^n b_j$. 
+\end{defn}
+
+\begin{defn}
+	Then a function preserving $\prec$ is Schur convex
+\end{defn}
+
+This allows us to state:
+
+\begin{theorem}
+	Let X be a Gaussin mixture and $X_1,...,X_n$ be independent copies of X. For two vectors $a,b \in \R^n$ with $p \geq 2$ we have
+	\begin{align*}
+		(a_1^2,...,a_n^2) \prec (b_1^2,...,b_n^2) \implies ||\sum_{i=1}^n a_iX_i||_p \leq ||\sum_{i=1}^n b_iX_i||_p
+	\end{align*}
 \end{theorem}
 
-\begin{theorem}[L1 Bounded Derivative(175)] \label{LBDER}
-	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ with density f s.t. $|f(1)| \geq \int_0^1 |f'(t)|dt$. Then $X \in \lL$. Note in particular this works for the case $f$ is increasing.
+%need to cover bernstein's theorem
+
+The proof relies on Bernstein's theorem:
+
+\begin{theorem}
+	$g : (0,\infty) \to \R$ is completely monotonic, ie. $(-1)^ng^{(n)} \geq 0$, if and only if $\exists$ non-negative Borel measure $\mu$ on $[0,\infty)$ s.t.
+	\begin{align*}
+		f(x) = \int_0^{\infty} e^{-tx}d\mu(t)
+	\end{align*}
 \end{theorem}
 
-\begin{theorem}[Exponential Density(170)] \label{EXPDEN}
-	Let $\alpha$ be even integer greater than 2. Then if $X$ a symmetric continuous random variable with density of the form $e^{-t^{\alpha}}$ then $X \in \lL$
+Bernstein in turn can be used to show the following:
+
+\begin{theorem}
+	A symmeric random variable X with density f is a Gaussian mixture if and only if $x \to f(\sqrt{x})$ is completely monotonic for $x > 0$. 
 \end{theorem}
 
-\begin{theorem}[Exponential Product Density(161)] \label{EXPPDEN}
-	Let $1 > \alpha \geq 0, 0 < \alpha_1 \leq \alpha_2 \leq ...$ and reciprocal convergent. Then if $g(z)= e^{-\alpha z} (1-\frac{z}{\alpha_1})(1-\frac{z}{\alpha_2})...$ we have for symmetric X with density $e^{-t^2} g(-t^2)$ then $X \in \lL$.
-\end{theorem}
+%Why???
 
-\begin{theorem}[Bessel Function(159)] \label{BF}
-	The symmetric continuous random variable X with density $\frac{2}{\pi\sqrt{1-t^2}}$ in $\lL$.
-\end{theorem} 
+\begin{proof}
+	Let X be a symmetric random variable with density f with $x \to f(\sqrt(x))$ is completely monotonic. By Bernstein there exists a non-negative Borel measure $\mu$ supported on $[0,\infty)$ s.t. $f(\sqrt{x}) = \int_0^{\infty}e^{-tx}d\mu(t)$. We can now compute
+	\begin{align*}
+		P(X \in A) = \int_A \int_0^{\infty} e^{-tx^2}d\mu(t)dx = \int_0^{\infty}\int_A e^{-tx^2}dxd\mu(t) = \int_0^{\infty} \int_{\sqrt{2t}A} \frac{1}{\sqrt{2\pi}}e^{-x^2/2}dx
+	\end{align*}
+	and then simplify to $\int_0^{\infty}\gamma_n(\sqrt{2t}A)d\nu(t)$ by writing $d\nu(t) = \sqrt{\frac{\pi}{t}}d\mu(t)$. We note this is a probability measure.
 
-\begin{theorem}[Large nth Coefficient(27)] \label{LNC}
-	Suppose X a discrete integer valued symmetric distribution. If $p_0 + 2p_1 +... + 2p_{n-1} < 2p_n$ then $X \in \lL$. 
-\end{theorem}
+	Now let $V$ be distributed via $\nu$. V is positive and hence we can write $Y = \frac{1}{\sqrt{2V}}$. Then
+	\begin{align*}
+		P(YZ \in A) = P(\frac{1}{2V} Z \in A) = \int_0^{\infty}\gamma_n(\sqrt{2t}A)d\nu(t) = P(X \in A)
+	\end{align*}
 
-%Am I missing one of the examples Tkocz went through? With increasing density or whatever?
+	which concludes the proof. The converse follows via bernstein and noting X has density $f(x) = \frac{1}{\sqrt{2 \pi}} \int_0^{\infty} e^{-x^2/2y^2}\frac{d\nu(y)}{y}$
+\end{proof}
 
-\subsection{Newman's Examples}
+Note this is a la \cite{LO}. Similarly inspired by \cite{BGMN} we have a result for vectors uniformly distributed on $l_p$ balls:
 
-Newman, who initiated our study in Type L random variables, produced some examples as well. 
+\begin{theorem}
+	Fix $q \in (0,2]$ and let $X = (X_1,...,X_n)$ a random vector uniformly distributed on $B_q^n$. For two vectors $(a_1,...,a_n)$ and $(b_1,...,b_n)$ in $\R^n$ with $p \geq 2$ we have
+	\begin{align*}
+		(a_1^2,...,a_n^2) \prec (b_1^2,...,b_n^2) \implies ||\sum^n a_i X_i||_p \leq ||\sum^n b_i X_i||_p
+	\end{align*}
 
-Perhaps one of the most basic examples of type L random variables are arithmetic progressions and uniform random variables.
-
-\begin{theorem}[Arithmetic Sequences] \label{them:AS}
-	Let the sequence X above be an arbitrary arithmetic progression, ie. of the form $x_1 = d$, $x_2 = d+c$,..., $x_L = d + (L-1)c$ for arbitrary $d \in \R, c > 0$. Then $S_X(z)$ has zeroes only on the imaginary axis.
-\end{theorem}
-
-\begin{theorem}[Uniform(Newman 7)] \label{UNI}
-	Let $X$ be random variable with density $\frac{d\mu}{dy} = 1$ if $|y| \leq A$ and 0 otherwise. $A > 0$. Then $X \in \lL$.
-\end{theorem}
-
-We also know marginals of uniformly random vectors on spheres are types L.
-
-\begin{theorem}[Newman (8)] \label{N8}
-	Density $(1-y^2)^{(d-2)/2}$ with $|y| \leq 1$ and 0 otherwise. For $d > 0$. 
-\end{theorem}
-
-\begin{theorem}[Newman (9)] \label{N9}
-	Density $e^{-\lambda cosh(y)}$, $\lambda >0$
-\end{theorem}
-
-(Some physics field theory context)
-
-\begin{theorem}[Newman (10)] \label{N10}
-	$e^{-ay^4-by^2}$ with $a>0$
-\end{theorem}
-
-\subsection{Other Examples}
-
-\begin{theorem}[Enestrom-Kakeya] \label{them:EK}
-	If $X$ integer valued symmetric with $0\leq p_0 \leq 2 p_1 \leq ... \leq 2p_n$ with $p_n >0$ then $X \in \lL$.
-\end{theorem}
-
-\begin{theorem}[Absolute Value] \label{them:ABS}
-	Let $a_0,a_1,...,a_n \in \R$ with $|a_0| + .. | a_{n-1}| \leq |a_n|$ then the trig polys $p_c(z) = \sum_{k=0}^n a_k cos(kz)$ and the sin one have only real zeroes
-\end{theorem}
-
-\subsection{Our Examples}
-
-\begin{theorem}[Rapidly Decreasing Polynomial] \label{RDP}
-	Suppose X has density $e^{-x^2/2}x^2$. Then $X \in \lL$.
-\end{theorem}
-
-\begin{theorem}[General Symmetrization] \label{GSYM}
-	Suppose $X -c$ is type L for some $c \in \lL$. Then $\epsilon X \in \lL$.
+	whereas for $p \in (-1,2)$ the second inequality is reversed
 \end{theorem}
 
 
-\section{Type L Example Proofs}
-
-\subsection{Problem ???}
-
-\begin{theorem}[V ???]
-	If $\alpha$ is an even integer greater than two, $f(z) = \int_0^{\infty} e^{-t^{\alpha}}cos(zt)dt$
-\end{theorem}
-
-\subsection{Problem 173 and Relevant Theorems}
 
 
-\begin{theorem}[V 173] \label{173}
-	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ density $f$ s.t. $f',f'' < 0$. Then $X \in \lL$.
-\end{theorem}
-
-\begin{theorem}[V 26] \label{26}
-	Let $A_1,...,A_n$ be non-zero real numbers and $a_1 < ... < a_n$. Then if $A_1 >0, ..., A_{n-1}>0$ or $A_1 > 0,..., A_{k-1} > 0, A_{k+1}>0,... A_n > 0$ with $\sum A_k < 0$ then $f(x) =\frac{A_1}{x-a_1} + ... + \frac{A_n}{x-a_n}$ has only real zeroes
-\end{theorem}
-
-\begin{theorem}[III 165]
-	Suppose entire $F(z)$ satisfies $|F(x+iy)| < Ce^{\rho |y|}$. 
-
-	Then $\frac{d}{dz}(\frac{F(z)}{sin(\rho z)}) = -\sum_{\Z} \frac{\rho (-1)^n F(\frac{n \pi }{\rho})}{(\rho z - n \pi)^2}$
-\end{theorem}
-
-\begin{theorem}[III 170(Precursor to 201)]
-	Suppose $f_1, ..., f_n,..$ are regular in open $U \subseteq \mathbb{R}$, and convering uniformly in any closed domain inside $\R$. Then limit f is regular
-\end{theorem}
-
-\begin{theorem}[III 194(Rouche)]
-	Suppose $f,\phi$ regular in interior of $\mathcal{D}$, cts on closed domain,, and $|f(z)| > |\phi(z)| \forall z \in \partial \mathcal{D}$. Then $f(z)+\phi(z)$ has exactly the same number of zeores as f inside $\mathcal{D}$.
-\end{theorem}
-
-\begin{theorem}[III 201(Hurwitz Theorem main tool for controlling limit zeros)]
-	Suppose $f_n \to f$ pointwise with $\mathcal{Z}$ the set of all zeroes of $f_n$ in $\R$. Then the zeroes of $f$ in $\R$ are the limit points of $\mathcal{Z}$ in $\R$.
-\end{theorem}
-
-\subsection{Problem 175 and Relevant Problems}
-
-\begin{theorem}[V 175] \label{175}
-	Let $f(t)$ be real and continuously differentiable for $0 \leq t \leq 1$. If we have $|f(1)| \geq \int_0^1 |f'(t)| dt$ then the entire function $F(z) = \int_0^1 f(t)cos(zt)dt$ has only real zeroes
-\end{theorem}
-
-\begin{theorem}[V 174]
-	Let $\phi(t)$ be properly integrable for $0 \leq t \leq 1$. If $\int_0^1 |\phi(t)| dt \leq 1$ then entire $F(z)=sin(z) \int_0^1 \phi(t) sin(zt)dt$ has only real zeroes
-\end{theorem}
-
-\begin{theorem}[V 27]
-	The trignometric polynomial $f(x) = a_0 + a_1 cos(x) + ... + a_ncos(nx)$ with real coefficients has only real zeroes if $|a_0| + |a_1| + ... + |a_{n-1}| < a_n$(note this also applies to sin via differentiation and rolle's thm)
-\end{theorem}
-
-\begin{theorem}[VI 14]
-	A trig poly with real coefficients $g(z) = \lambda_0 + \lambda_1 cos(z) +\mu_1sin(z) + ... + \lambda_n cos(nz)+\mu_n sin(nz)$ has exactly 2n zeroes(where shifting by $2\pi$ is not distinct)
-\end{theorem}
-
-
-%Am I missing one of the examples Tkocz went through? With increasing density or whatever?
+\subsection{Random Vectors Uniform on $\mathbb{S}^{n-1}$}
 
 \section{Applications}
+
+\subsection{Functional Analysis}
+
+The Khintchine-Kahane inequalities follow as a vector valued generalization of Khintchine:
+
+\begin{theorem}
+	Let S a Rademacher series in banach B with $\sigma = \sigma(S)$. Let $M = M(S)$ denote the median of $\norm{S}$. Then $\forall t > 0$
+	\begin{align*}
+		\Pp (|\norm{S}- M| > t) \leq 4 e^{-t^2/8\sigma^2}
+	\end{align*}
+	and in particular $\exists \alpha > 0$ s.t. $\E e^{\alpha \norm{S}^2} < \infty$ and all moments of S are equivalent, ie. for $0 < p , q < \infty$ we have $\exists C_{p,q}$ s.t.
+	\begin{align*}
+		\norm{S}_p \leq C_{p,q} \norm{S}_q
+	\end{align*}
+\end{theorem}
 
 \subsection{Type and Cotype of Banach Spaces}
 
@@ -372,131 +545,154 @@ The best we can possibly do is have type 2 and cotype 2, which is achieved in hi
 	A banach space B is of type 2 and cotype 2 $\iff$ it is isomorphic to a Hilbert space
 \end{theorem}
 
+\subsection{Convex Geometry}
 
-\section{Proofs}
+See
 
+\begin{verbatim}
+	Eskenazis, A. Nayar, P. Tkocz, T. Gaussian Mixtures: Entropy and Geometric Inequalities.
+\end{verbatim}
 
-\subsection{173 Proofs}
-
-\begin{proof}[Proof of Problem 173]
-	Via integration by parts twice we write $z^2 F(z) = zf(1)sin(z) - f'(0)(1-cos(z)) + \int_0^1 f''(t)(cos(z)-cos(zt))dt$. Compute $((2m-1)\pi)^2F((2m-1)\pi) = -2f'(0)+\int_0^1f''(t)(-1-cos((2m-1)\pi t) > 0$. Then compute $(2m \pi)^2F(2m\pi) = \int_0^1f''(t)(1-cos(2m\pi t)) < 0$ since $f'' < 0$. Which gives infinitely many zeroes. Note $F(0)>0$. The rational function
-
-	$f_n(z) = (-1)^n\frac{F(-n\pi)}{z+n\pi} + ... + \frac{F(-2\pi)}{z+2\pi}-\frac{F(-\pi)}{z+\pi}+\frac{F(0)}{z}-\frac{F(\pi)}{z-\pi}+...+(-1)^n\frac{F(n\pi)}{z-n\pi}$ can have via \textbf{26} either all real zeroes of 2n-2 real zeroes and 2 imaginary. Further it converges to $\frac{F(z)}{sin(z)}$ by integrating the result of \textbf{165}. So as we take the limit, the nonreal zeroes $\frac{F(z)}{sin(z)}$ as via \textbf{201} they are the limit points of approaching $f_n$ zeroes. In the case we have two nonreal zeroes, it must be the case they are strictly imaginary, as $F(z) = F(-z) =F(\overline{z})= 0$. But $F(ix) = \int_0^1 f(t)\frac{e^{xt}+e^{-xt}}{2}dt > 0$
-\end{proof}
-
-\begin{proof}[Proof of Problem 26]
-	Idea is to count zeroes intervals $(a_i,a_{i+1})$ via changes of sign. Write $f(x) = P(x)/Q(x)$ for $Q = (x-a_1)...(x-a_n)$ and $P$ a sum of n-1 deg polys. Via $\epsilon$ approximations $f(a_1+\epsilon) > 0$ and $f(a_2 -\epsilon) <0$ which continues alternating. Note that poles blow up as we get very close, dominating sign. Then regarding polynomial in numerator this is a full accounting.
-
-	(Can we still use IVT despite singularities? We look at intervals in between which do have continuity.) 
-\end{proof}
-
-\begin{proof}[Proof of Problem 165]
-	Somewhere in German Hurwitz-Courant
-\end{proof}
-
-\begin{proof}[Proof of Problem 170(Precursor to 201)]
-	Use Cauchy integral theorem on closed cts curve $L \subseteq \R$. Write $f_n(z) = \frac{1}{2 \pi i }\int_L \frac{f_n(\xi)}{\xi-z}d\xi$ via cauchy integral formula. We know uniformly on L $f_n(\xi)/(\xi - z) \to f(\xi)/(\xi -z)$ and further f cts(as uniform limit of continuous functions). So $f_n(z) \to \frac{1}{2 \pi i} \int_L \frac{f(\xi)}{\xi -z}d \xi$(why?). And the last function is regular(why?).
-\end{proof}
-
-\begin{proof}[Proof of problem 194(Rouche)!]
-	We the stronger symmetric form of Rouche: Let $C: [0,1] \to \C$ be simple closed curve whose image is boundary of $\partial K$. If $f,g$ holomorphic on K with $|f(z) - g(z)| < |f(z)|+|g(z)|$ on $\partial K$ then they have the same number of zeroes. 
-
-	Via the argument principle the number of zeroes of f in K is $\frac{1}{2 \pi i} \int_C \frac{f'(z)}{f(z)}dz = \frac{1}{2\pi i}\int_{f \circ C} \frac{dz}{z} = Ind_{f\circ C}(0)$ ie. the winding number of closed curve $f \circ C$. https://en.wikipedia.org/wiki/Rouch%C3%A9%27s_theorem
-\end{proof}
-
-\begin{proof}[Proof of Problem 201(Hurwitz Limit Theorem!)]
-	We use Rouche. Note $|f(z)| > |f_n(z) - f(z)|$ on boundary of D when n large(since no zeroes on boundary). Then apply rouche. So f has same number of zeroes as close $f_n$. Thus same zeroes(as we must have at least those approaching, and no more besides via rouche).
-\end{proof}
-
-\subsection{175 Proofs}
-
-\begin{proof}[Proof of Problem 175]
-	Write $\frac{z}{f(1)} \int_0^1 f(t)cos(zt)dt = sin(z) - \int_0^1 \frac{f'(t)}{f(1)}sin(zt) dt$ with integration by parts where the RHS has all real zeroes via \textbf{174}
-\end{proof}
-
-\begin{proof}[Proof of Problem 174]
-	Wlog suppose $\int_0^1 |\phi(t)| dt < 1$. Otherwise just scale by a multiplicative factor. Then for large $n \in \N$, $\frac{1}{n}|\phi(\frac{1}{n})| + ... + \frac{1}{n} |\phi(\frac{n-1}{n})| < 1$. So by \textbf{27} $sin(\frac{nz}{n}) - \frac{1}{n}\phi(\frac{1}{n}) sin(\frac{z}{n}) - \frac{1}{n}\phi(\frac{2}{n})sin(\frac{2 z}{n}) - ... - \frac{1}{n}\phi(\frac{n-1}{n})sin(\frac{n-1}{n}z)$ has no complex zeroes
-\end{proof}
-
-\begin{proof}[Proof of Problem 27]
-	We count the changes of sign. In particular $f(0) > 0, f(\pi/n) < 0, ..., f(\frac{2 n \pi}{n}) > 0$ where the largest term alternates sign. Hence we have $2n$ real zeroes on $[0,2\pi]$. Further via definition of complex sine and substiution of $x = e^{iz}$ this is the full number of zeroes we can have(since we have a polynomial of degree n). This is \textbf{14}
-\end{proof}
-
-\begin{proof}[Proof of Problem 14]
-	Use complex definitions of sine and cosine and make substutution $z=e^{i\theta}$.
-\end{proof}
-
-\subsection{Newman Proofs}
-
-
-
-\begin{proof}[Proof of Theorem \ref{them:AS}]
- Write 
-	\begin{align*}
-		S_X(z) = \sum_{n=1}^L e^(x_n z) = 0 \iff e^{x_1z}(\sum_{n=1}^L e^{(x_n-1x_1)z}) = 0 \iff \sum_{n=1}^L e^{(x_n-x_1)z} = 0
-	\end{align*}
-
-	since $e^{x_1z}$ has no zeroes. So wlog we may assume $x_1 = 0$, since the translation still results in an arithmetic sequence. Then we sum
-
-	\begin{align*}
-		\sum_{n=1}^L e^{x_1 z} &= \sum_{n=1}^L e^{(n-1)cz} = \sum_{n=0}^{L-1}(e^{cz})^{n} = \frac{e^{Lcz}-1}{e^{cz}-1}
-	\end{align*}
-
-	So 
-
-	\begin{align*}
-		S_X(z) = 0 \implies \frac{e^{Lcz}-1}{e^{cz}-1} = 0 \implies e^{Lcz} = 1 \implies z = ib
-	\end{align*}
-
-	for some $b \in \R$. In fact we must have $Lcz = 2\pi n \implies z = \frac{2 \pi n}{L c}$ for some $n \in \Z$
-\end{proof} 
-
-\begin{proof}[Proof of Theorem \ref{them:GSYM}]
-
-	%Actualy I think we could have more zeroes on imaginary axis possibly. Thionk about hadamard. But this is fine. Rouche precludes them elsewhere.
-	Alternatively $\E e^{z \epsilon X} = \E e^{z\epsilon (X-c)}e^{z\epsilon c} = \frac{1}{2}e^{zc}\E e^{z(X-c)}+\frac{1}{2}e^{-zc}\E e^{-z(X-c)} = \frac{1}{2}\E e^{z(X-c)}(e^{zc}+^{-zc})$ where we use symmetry. Note the last term only has roots on the imaginary axis.
-\end{proof}
-
-
-\begin{proof}[Proof of Theorem \ref{UNI}]
-	Wlog suppose $A = 1$. Then $f' = 0$ on $[-1,1]$ and hence by $\ref{LBDER}$ type L.
-	%Would like to get better at making nonoverlapping phase arguments
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{N8}]
-	Follows from a generalization of Iliya.
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{N9}]
-	Currently unknown.
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{N10}]
-	Proof by Newman. Comes from field theories.
-\end{proof}
-
-
-\begin{proof}[Proof of Theorem \ref{them:EK}]
-	Suppose $X$ symmetric, integer valued with probability distribution $0 \leq p_0 \leq 2p_1 \leq ... \leq 2p_n$. Then $\psi_X(iz) = p_0 + \sum 2p_k cos(kz)$. The Enestrom-Kakaya Theorem(2.17 from \cite{HP}) tells us all the zeroes of the polynomial $p_0 +2p_1x+...+2p_nx^n$ has all zeroes in the closed unit disk. So then $\psi_X$ has all zeroes on the imaginary axis via the argument from \ref{them:ISYM}.
-\end{proof}
-%\nocite{*}
-
-\begin{proof}[Proof of Theorem \ref{RDP}]
-	Take the inverse fourtier transform.
-\end{proof}
-
-\begin{proof}[Proof of Theorem \ref{them:GSYM}]
-
-	%Actualy I think we could have more zeroes on imaginary axis possibly. Thionk about hadamard. But this is fine. Rouche precludes them elsewhere.
-	Alternatively $\E e^{z \epsilon X} = \E e^{z\epsilon (X-c)}e^{z\epsilon c} = \frac{1}{2}e^{zc}\E e^{z(X-c)}+\frac{1}{2}e^{-zc}\E e^{-z(X-c)} = \frac{1}{2}\E e^{z(X-c)}(e^{zc}+^{-zc})$ where we use symmetry. Note the last term only has roots on the imaginary axis.
-\end{proof}
 
 
 \begin{thebibliography}{9}
 
-%Only put stuff I've already worked in here
+\bibitem{TT} Tkocz T. Khinchin Inequalities with Sharp Constants. 
+
+\begin{verbatim}
+	http://www.him.uni-bonn.de/fileadmin/him/Lecture_Notes/Khinchin_inequalities_-_slides_3.pdf
+\end{verbatim}
+
+\bibitem{H} Haagerup U. The Best Constants in the Khintchine Inequality. 
+
+\begin{verbatim}
+	https://eudml.org/doc/218383
+\end{verbatim}
+
+\bibitem{S} Szarek H. On the best constants in the Khinchin's inequality. 
+
+\begin{verbatim}
+	https://eudml.org/doc/218071
+\end{verbatim}
+
+\bibitem{HT} Havrilla. A, Tkocz. T, Sharp Khinchin-type inequalities for symmetric discrete uniform random variables. 
+
+\begin{verbatim}
+	https://arxiv.org/abs/1912.13345
+\end{verbatim}
+
+\bibitem{HNT} Havrilla .A, Nayar. P, Tkocz. T, Khinchin-type inequalities via Hadamard's factorisation. 
+
+\begin{verbatim}
+	https://arxiv.org/abs/2102.09500
+\end{verbatim}
+
+\bibitem{NO} Nayar. P, Oleszkiewicz. Khinchine type inequalties with optimal constants via ultra log-concavity. 
+
+\begin{verbatim}
+	https://link.springer.com/article/10.1007/s11117-011-0130-z
+\end{verbatim}
+
+\bibitem{KH} J.-P. Kahane, Sur les sommes vectorielles, C. R. Acad Sci. Paris 259(1964), 2577-2580
+
+\bibitem{LT} Ledoux. M, Talagrand. M, Probability in Banach Spaces. 
+
+\begin{verbatim}
+	https://link.springer.com/book/10.1007/978-3-642-20212-4
+\end{verbatim}
+
+\bibitem{M} Mordhorst, O. The optimal constants in Khintchine's inequality for the case $2 < p < 3^*$. 
+
+\begin{verbatim}
+	https://arxiv.org/pdf/1601.07850.pdf
+\end{verbatim}
+
+\bibitem{NP} Nazarov, F. Podkorytov, A. Ball, Haagerup, and Distribution Functions. 
+
+\begin{verbatim}
+	https://link.springer.com/chapter/10.1007/978-3-0348-8378-8_21
+\end{verbatim}
+
+\bibitem{ENT} Eskenazis, A. Nayar, P. Tkocz, T. Gaussian Mixtures: Entropy and Geometric Inequalities.
+
+\begin{verbatim}
+	https://arxiv.org/pdf/1611.04921.pdf
+\end{verbatim}
+
+\bibitem{LO} Latala, R. Oleszkiewicz, K. A note on sums of independent uniformly distributed random variables.
+
+\begin{verbatim}
+	https://www.mimuw.edu.pl/~rlatala/papers/cm6826.pdf
+\end{verbatim}
+
+\bibitem{BGMN} Barthe, F. Guedon, O. Mendelson, S. Naor, A. A Probabilistic Approach To The Geometry of the $l_P^N$-Ball.
+
+\begin{verbatim}
+	https://arxiv.org/pdf/math/0503650.pdf
+\end{verbatim}
+
+\bibitem{S} Szarek, S. On the best constants in the Khinchin inequality.
+
+\begin{verbatim}
+	https://eudml.org/doc/218071
+\end{verbatim}
+
+\bibitem{Y} Young, R. On the Best Possible Constants in the Khintchine Inequality.
+
+\begin{verbatim}
+	https://academic.oup.com/jlms/article/s2-14/3/496/2939431?login=true
+\end{verbatim}
+
+\bibitem{N} Newman, An Extension of Khintchines Inequality. 
+
+\begin{verbatim}
+	https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society-new-series/volume-81/issue-5/An-extension-of-Khintchines-inequality/bams/1183537247.full
+\end{verbatim}
 
 \end{thebibliography}
+
+\section{Appendix}
+
+\subsection{Examples of Type L Random Variables}
+
+We list some examples of probability distributions of type L. In what follows, $X$ is a symmetric random variable.
+
+\begin{enumerate}[(a)]
+
+\item 
+Let $X$ be integer-valued with $\p{X = 0} = p_0$ and $\p{X = -k} = \p{X = k} = p_k$, $k = 1, \dots, n$ for nonnegative $p_0, \dots, p_n$ with $p_0 + 2\sum_{k=1}^n p_k = 1$. 
+
+If $\frac{1}{2}p_0 \leq p_1 \leq \dots \leq p_n$, then $\E \cos(zX) = p_0 + \sum_{k=1}^n (2p_k)\cos(kz)$ has only real zeros, as it follows from the Enestr\"om-Kakeya theorem (see, e.g. Problem III.204 in \cite{PS1}). As a result, $X$ is of type $\sL$. In particular, if $X$ is uniform on $\{-n,\dots, 1, 1, \dots, n\}$ with a possible atom at $0$ satisfying $\p{X = 0} \leq \frac{1}{n+1}$, then $X$ is of type L
+
+By the symmetry of $X$, the polynomial $Q(w) = \E w^{X+n}$ is self-inversive (the sequence of its coefficients is a palindrome, in other words, $w^{2n}Q(1/w) = Q(w)$). In particular, all its roots are symmetric with respect to the unit circle, that is if $w_0$ is a root of $Q$, then so is $1/w_0$. For instance, if for some $\alpha \geq 1$,
+\[
+\frac{1}{2}p_0^\alpha + \sum_{k=1}^{n-1} p_k^\alpha \leq \left(\frac{2}{n-2}\right)^{\alpha-1}p_n^\alpha,
+\]
+where $n$ is the number of nonzero coefficients of $Q$, then $Q$ has zeros only on the unit circle, so $X$ is of type L
+
+\item
+Let $X$ take values in $[-1,1]$ and have a density $f$ (which is even). Each of the following conditions implies that $X$ is of type L.
+\begin{enumerate}[(i)]
+\item $f$ is  nondecreasing on $(0,1)$.
+
+\item $f$ is $C^2$ with $f' < 0$ and $f'' < 0$ on $(0,1)$.
+
+\item $f(t) = h(t)^{\alpha}$, where $\alpha > -1$ and $h$ is an entire even function which is real-valued on the real line, $h(1) = 0$, $h(0) > 0$ and $h'(iz)$ is  in the Laguerre-P\'olya class. In particular, $f(t) = \text{const}\cdot (1-t^{2m})^{\alpha}$ for a nonnegative integer $m$.  
+\end{enumerate}
+
+Moreover, if $X$ has a density on $\R$ of the following form, then it is of type L.
+
+\begin{enumerate}
+\item[(iv)] $f(t) = \text{const}\cdot e^{-t^{2m}}$ for a nonnegative integer $m$.  
+
+\item[(v)] $f(t) = (2\pi)^{-1/2}e^{-t^2/2}(1-b+ bt^2)$, $0 \leq b \leq 1$.
+\end{enumerate}
+
+
+\end{enumerate}
+
+
+
 
 \end{document}
 

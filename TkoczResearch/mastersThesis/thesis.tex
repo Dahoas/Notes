@@ -152,6 +152,160 @@ Banach space: absolute convergence of series.
 
 Banach: Permutation invariant, iff convering absolutely: If + and - is convering: Classical absolute convergene is too strong
 
+\section{Notes}
+
+\subsection{Ultra Sub Gaussanity}
+
+\begin{verbatim}
+	https://link.springer.com/content/pdf/10.1007/s11117-011-0130-z.pdf
+\end{verbatim}
+
+\begin{remark}
+	Haagerup finding best constants for $p \in (2,3)$ and $q$ in $(0,2)$ resolved parts important in applictaions since 2 norm easily computable
+\end{remark}
+
+\begin{remark}
+	Problem of finding optimal constants for general $C_{p,q}$ still open. Note $C_{p,q}$ is for $(\E|S|^p)^{1/p} \leq C_{p,q} (\E|S|^q)^{1/q}$
+\end{remark}
+
+\begin{remark}
+	Cases:
+	\begin{enumerate}
+		\item even p,q and p divisible by q: \begin{verbatim}Czerwi  ́nski, W.: Khinchine inequalities (in Polish). University of Warsaw, Master thesis (2008)\end{verbatim}
+		\item Replace random signs by rotationally invariant special density: \begin{verbatim} ajorization of sequences, sharp vector Khinchin inequalities,and bisubharmonic functions. Stud. Math \end{verbatim} and \begin{verbatim} Best Khintchine type inequalities for sums of independent, rotationally invari-ant random vectors \end{verbatim}
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+	Main tool to prove is walkups theorem
+\end{remark}
+
+\begin{remark}
+	Note: on \begin{verbatim} http://www.him.uni-bonn.de/fileadmin/him/Lecture_Notes/Khinchin_inequalities_-_slides_3.pdf \end{verbatim}
+\end{remark}
+
+\subsection{Gaussian Mixtures}
+
+\begin{verbatim}
+	https://arxiv.org/pdf/1611.04921.pdf
+\end{verbatim}
+
+\section{Papers to Investigate}
+
+See page 2 from 
+
+\begin{verbatim}
+	https://arxiv.org/pdf/1611.04921.pdf
+\end{verbatim}
+
+Latala and Oleszkiewicz show khintchine via schur concavity of some function of uniform random variables.
+
+\section{Questions}
+
+Should I include or omit some proofs?
+
+\section{Holding}
+
+\subsection{Type L Random Variables}
+
+Relatively few examples of Type L random variables are known. The majority we do have follow from results of Polya in his study of kernels producing strictly real zeroes of fourier transforms of the form:
+
+\begin{align*}
+	\phi(z) = \int_{\R} K(x)cos(zx)dx
+\end{align*}
+
+for some kernel $K : \R \to \R$. This can naturally be interpreted as the inverse fourier transform of a random variable $X$ with density $K$. And (assuming symmetry and nice gaussanity conditions) if $\phi$ has strictly real zeroes then we know $\phi(iz) = \E e^{-zX}$ has strictly imaginary zeroes and hence X is type L.
+
+\subsubsection{Examples of Type L Random Variables}
+
+\textbf{Polya's Examples:}
+
+All of these examples can be found in Polya's \textit{Problems in Analysis} but the experience of retrieving them(and their proofs) is somewhat time consuming. Hopefully this presentation is somewhat less so. We attach proofs of these examples in an appendix. 
+
+\begin{theorem}[Decreasing Concave Density(173)] 
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ density $f$ s.t. $f',f'' < 0$. Then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[L1 Bounded Derivative(175)] 
+	Let $X$ be a symmetric continuous random variable distributed on $[0,1]$ with density f s.t. $|f(1)| \geq \int_0^1 |f'(t)|dt$. Then $X \in \lL$. Note in particular this works for the case $f$ is increasing.
+\end{theorem}
+
+\begin{theorem}[Exponential Density(170)] 
+	Let $\alpha$ be even integer greater than 2. Then if $X$ a symmetric continuous random variable with density of the form $e^{-t^{\alpha}}$ then $X \in \lL$
+\end{theorem}
+
+\begin{theorem}[Exponential Product Density(161)]
+	Let $1 > \alpha \geq 0, 0 < \alpha_1 \leq \alpha_2 \leq ...$ and reciprocal convergent. Then if $g(z)= e^{-\alpha z} (1-\frac{z}{\alpha_1})(1-\frac{z}{\alpha_2})...$ we have for symmetric X with density $e^{-t^2} g(-t^2)$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Bessel Function(159)] 
+	The symmetric continuous random variable X with density $\frac{2}{\pi\sqrt{1-t^2}}$ in $\lL$.
+\end{theorem} 
+
+\begin{theorem}[Large nth Coefficient(27)] 
+	Suppose X a discrete integer valued symmetric distribution. If $p_0 + 2p_1 +... + 2p_{n-1} < 2p_n$ then $X \in \lL$. 
+\end{theorem}
+
+%Am I missing one of the examples Tkocz went through? With increasing density or whatever?
+
+\textbf{Newman's Examples}
+
+Newman, who initiated our study in Type L random variables, produced some examples as well. 
+
+Perhaps one of the most basic examples of type L random variables are arithmetic progressions and uniform random variables.
+
+\begin{theorem}[Arithmetic Sequences] 
+	Let the sequence X above be an arbitrary arithmetic progression, ie. of the form $x_1 = d$, $x_2 = d+c$,..., $x_L = d + (L-1)c$ for arbitrary $d \in \R, c > 0$. Then $S_X(z)$ has zeroes only on the imaginary axis.
+\end{theorem}
+
+\begin{theorem}[Uniform(Newman 7)] 
+	Let $X$ be random variable with density $\frac{d\mu}{dy} = 1$ if $|y| \leq A$ and 0 otherwise. $A > 0$. Then $X \in \lL$.
+\end{theorem}
+
+We also know marginals of uniformly random vectors on spheres are types L.
+
+\begin{theorem}[Newman (8)] 
+	Density $(1-y^2)^{(d-2)/2}$ with $|y| \leq 1$ and 0 otherwise. For $d > 0$. 
+\end{theorem}
+
+\begin{theorem}[Newman (9)] 
+	Density $e^{-\lambda cosh(y)}$, $\lambda >0$
+\end{theorem}
+
+(Some physics field theory context)
+
+\begin{theorem}[Newman (10)] 
+	$e^{-ay^4-by^2}$ with $a>0$
+\end{theorem}
+
+\textbf{Other Examples:}
+
+\begin{theorem}[Enestrom-Kakeya] 
+	If $X$ integer valued symmetric with $0\leq p_0 \leq 2 p_1 \leq ... \leq 2p_n$ with $p_n >0$ then $X \in \lL$.
+\end{theorem}
+
+\begin{theorem}[Absolute Value] 
+	Let $a_0,a_1,...,a_n \in \R$ with $|a_0| + .. | a_{n-1}| \leq |a_n|$ then the trig polys $p_c(z) = \sum_{k=0}^n a_k cos(kz)$ and the sin one have only real zeroes
+\end{theorem}
+
+\textbf{Our Examples:}
+
+\begin{theorem}[Rapidly Decreasing Polynomial] For every $a > 0$ and $b_1,b_2,... \geq 0$ with $\sum b_j \leq a$ the function 
+\begin{align*}
+	e^{-at^2/2} \prod_j (1-b_jt^2)
+\end{align*} 
+
+is the characteristic function of a type L random variable.
+\end{theorem}
+
+\begin{proof}
+	Let $X_1,X_2,...$ iid copies of $Z_1$ and $Z_0$ an independent standard gaussian. Then $\sum \sqrt{b_j} X_j + \sqrt{a - \sum b_j} Z_0$ is the desired random variable.
+\end{proof}
+
+\begin{theorem}[General Symmetrization] \label{GSYM}
+	Suppose $X -c$ is type L for some $c \in \lL$. Then $\epsilon X \in \lL$.
+\end{theorem}
+
 
 
 \begin{thebibliography}{9}
