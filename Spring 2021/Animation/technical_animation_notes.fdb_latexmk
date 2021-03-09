@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1613012847 "technical_animation_notes.tex" "technical_animation_notes.pdf" "technical_animation_notes" 1613012847
+["pdflatex"] 1614616865 "technical_animation_notes.tex" "technical_animation_notes.pdf" "technical_animation_notes" 1614616866
   "/etc/texmf/web2c/texmf.cnf" 1606412821 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1246382020 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -76,9 +76,9 @@
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1606412878 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1606412938 8255996 68626854fce833d2d90913c7262d0c75 ""
   "C:/Users/Alex/Desktop/Notes/Spring 2021/pics/ccd.png" 0 -1 0 ""
-  "technical_animation_notes.aux" 1613012847 416 d56ee63bc70b72c5a3548d61e893bf71 "pdflatex"
-  "technical_animation_notes.tex" 1613012846 6751 be7253fd7ad9eaf77b5398663f45c26e ""
+  "technical_animation_notes.aux" 1614616865 542 530af7155a73e959659812421be24beb "pdflatex"
+  "technical_animation_notes.tex" 1614616856 7000 6f70748c309eb140615374332c29a298 ""
   (generated)
   "technical_animation_notes.pdf"
-  "technical_animation_notes.aux"
   "technical_animation_notes.log"
+  "technical_animation_notes.aux"

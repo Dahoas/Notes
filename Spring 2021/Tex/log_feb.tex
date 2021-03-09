@@ -1790,13 +1790,257 @@ This is the haploid picture
 	\item Start complex
 \end{enumerate}
 
+\section{3/1}
+
+\begin{theorem}
+	Let f be meromorphic in $\mathbb{C}$ with a rem. sing at $\infty$ or a pole at $\infty$. Then f is rational function.
+\end{theorem}
+
+\begin{proof}
+	$H = f - f_{\infty} - \sum f_k$. H is entire and bounded and hence constant. Then f must be rational.
+\end{proof}
+
+\begin{theme}
+	Examine the case at $\infty$ by looking at $f(1/z)$ and the behavior at 0.
+\end{theme}
+
+%Often only other people have the baility to distract me from my thoughts: tkocz lecture
+
+\begin{theorem}
+	(Argument Principle): $Let f : \Omega \to \mathbb{C}$ meromorphic, $\overline{D}\subseteq \Omega$ a disk. If f has no poles and never vanishes on the boundary then
+
+	\begin{align*}
+		\frac{1}{2\pi i} \int_{\partial D} \frac{f'}{f} = \texttt{\#0s - \#poles(in disk)}
+	\end{align*}
 
 
+\end{theorem}
+
+\begin{proof}
+	Examine poles and 0s of $f'/f$ and use residue theorem: $\frac{1}{2 \pi i}\int_{\partial D} \frac{f'}{f} = \sum res(f'/f)$
+\end{proof}
 
 
+\section{3/2}
+
+\subsection{Goals}
+
+\subsection{DRL}
+
+\begin{remark}
+	Value functions are useful because they capture knowlege of agent regarding how good each state is for goal:
+	\begin{verbatim}
+		knowledge is represented as a large number of approximate value functions learned in parallel
+	\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	Better policy function: has higher values for all states?
+\end{remark}
+
+\begin{remark}
+	No need to explore in this search because we will know what happens at every branch. The problem is just to maximize each particular branch
+\end{remark}
+
+\section{3/3}
+
+\subsection{Goals}
+
+\subsection{Complex Analysis}
+
+\section{3/4}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish evolution
+	\item Finish complex
+	\item Work on thesis
+	\item Practice ukulele
+\end{enumerate}
 
 
+\subsection{Complex Analysis}
 
+\begin{theorem}
+	Let $f,g$ be holo in $\Omega$ containing closed disk with $|f| > |g|$ on $\partial D$. Then f,f+g have same num zeroes in D.
+\end{theorem}
+
+\begin{proof}
+	Define $f_t(z) = f(z) + tg(z)$. If $n_t$ is num zeroes in D want it constant. Note $|f_t| \geq |f| - t|g| \geq |f| - |g| > 0$. Ie. dominance is used to remove any zeroes.
+
+	Simply go by argument principle: write
+	\begin{align*}
+		n_t = \frac{1}{2\pi i}\int_{\partial D} \frac{f_t'(z)}{f_t(z)} dz
+	\end{align*}
+	by arg principle. Since the LHS is Z valued must be constant(otherwise problems with continuity).
+\end{proof}
+
+\begin{theorem}
+	Open mapping theorem: Let $f : \Omega \to \mathbb{C}$ be holo, then f is open. 
+\end{theorem}
+
+\begin{proof}
+	The key is to use Rouche. STS image open since $\Omega$ arbitrary.
+
+	Fix $w_0 \in f(\Omega)$ with $w_0 = f(z_0)$. Set $h(z) = f(z) - w = f(z) - w_0 + w_0 - w = F(z) + G(z)$. We can pick a small enough ball so that $|G| < |F|$ since z fixed. Then we can use Rouche to claim $f(z) - w$ has a zero since $f(z)-w_0$ has a zero. So it must be $D_{\epsilon}(w_0) \subseteq f(\Omega)$. 
+\end{proof}
+
+\subsection{DRL}
+
+\begin{remark}
+	Generalized policy iteration: interleaving of evaluation and greedification. Must converge. All RL methods version of GPI.
+\end{remark}
+
+\begin{remark}
+	To find optimal policy in $q^*$, just always take max action. To find optimal policy with $v^*$ 
+\end{remark}
+
+\begin{remark}
+	Reinforcement learning is efficient alternative to dynamic programming MDP model. We prioritize states to visit instead of treating them all equally.
+\end{remark}
+
+\begin{remark}
+	Bellman error is difference between bellman equation and $v_*$
+\end{remark}
+
+\begin{quest}
+	What does it mean to backup a state?
+\end{quest}
+
+\begin{remark}
+	Backup operators:
+		First depends on current policy:
+		\begin{align*}
+			v_{k+1}(s) = \sum_a \pi(a | s)(r(s,a)+\gamma \sum_{s'}p(s' | s,a)v_k(s'))
+		\end{align*}
+
+	while next depends on optimal policy:
+	\begin{align*}
+		v_{k+1}(s) = max_{a \in A}(r(s,a) + \gamma \sum_{s'\in S}p(s',s,a)v_k(s'))
+	\end{align*}
+\end{remark}
+
+\begin{remark}
+	Monte Carlo methods are used to learn value functions: via estimating with empirical means. No longer have access to full dynamics.
+\end{remark}
+
+\begin{quest}
+	MC methods seem to work surprisingly well. But in what situations does it not even come close to achieving optimal solution
+\end{quest}
+
+\begin{remark}
+	Note we do policy improvement on $q$ instead of v since we do not know dynamics and cannot look ahead via actions. So we just have $\pi(s) = argmax_a q(s,a)$
+\end{remark}
+
+\subsection{Modeling Evolution}
+
+\section{3/5}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Practice singing and ukulele
+	\item Finish complex
+	\item Research
+	\item Work on Thesis
+\end{enumerate}
+
+\subsection{Complex Analysis}
+
+\begin{theorem}
+	\textit{Max Principle:} Let $f : \Omega \to \mathbb{C}$ be holo, nonconstant. Then f cannot attain a maxim in $\Omega$
+\end{theorem}
+
+\begin{proof}
+	Suppose $\exists z_0 \in \Omega$ maximal. f open so all values near $f(z)$ are attained. A contradiction.
+\end{proof}
+
+\begin{remark}
+	Open maps on open sets cannot achive maximua
+\end{remark}
+
+\begin{theorem}
+	If $f : \Omega \to \mathbb{C}$ holo with $\gamma_0,\gamma_1$ homotopic then $\int_{\gamma_0} f = \int_{\gamma_1} f$
+\end{theorem}
+
+\begin{proof}
+	   Show integral does not change over small changes in curve and use telescoping trick with approximation trick: bootstrap from circle argument using primitives.
+
+	   very geometric, analytical argument. Not very algebraic. But note these arguments not ameniable to language, hence the length. 
+\end{proof}
+
+
+\begin{theorem}
+	Any holomorphic function in a simply conneted comain has a primitive.
+\end{theorem}
+
+\begin{proof}
+	Let $z_0 \in \Omega$ and write $F(z) = \int_{\gamma} f(w)dw$ where $\gamma$ is joining $z$ to $z_0$. Indepenent of curve via homotopy. 
+
+	Then $f(z+h) - F(z) = \int_{\eta}f(w)dw$ and we get f as the derivative. This also gives us cauchy's theorem
+\end{proof}
+
+\begin{remark}
+	This definition of simply connected domain not very useful: need one about pathwise connectedness.
+\end{remark}
+
+\begin{theorem}
+	Let $\Omega$ simply connected with $1 \in \Omega$ and $0 \notin \Omega$. Then in $\Omega$ there is a branch of the logarithm $F(z) = log_{\Omega}(z)$ s.t.
+	\begin{enumerate}
+		\item F is holomorphic
+		\item $e^{F(z)} = z$
+		\item $F(r) = log(r)$ when r real and near 1
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	F is constructed as  primitive of $1/z$. 
+
+	$1/z$ is holomorphic in $\Omega$. Let $log_{\Omega}(z) = F(z) = \int_{\gamma}f(w)dw$ where $\gamma$ connects 1 to z. Clearly F holomorphic.
+
+	We show $ze^{-F(z)} = 1$. Compute
+	\begin{align*}
+		\frac{d}{dz}[ze^{-F(z)}] = (1-zF'(z))e^{-F(z)} = 0
+	\end{align*}
+
+	so done with 2.
+
+	Finally compute for $r \in \R$
+	\begin{align*}
+		F(r) = \int_1^r \frac{dx}{x} = log(r)
+	\end{align*}
+\end{proof}
+
+\begin{theorem}
+	In the Split plane $\Omega = \mathbb{C}\backslash \{(-\infty,0]\}$ we have the principal branch of log:
+	\begin{align*}
+		log(z) = log(r) = i\theta
+	\end{align*}
+
+	where $z = re^{i\theta}$
+\end{theorem}
+
+\begin{proof}
+	Integrate first along the real axis then using polar with $1/x$ as primitive.
+\end{proof}
+
+\section{3/6}
+
+\begin{enumerate}
+	\item Research
+	\item Thesis
+	\item Finish complex
+\end{enumerate}
+
+\section{3/8}
+
+\subsection{Blockers}
+
+\begin{enumerate}
+	\item Complex 1.3
+	\item Complex 4
+\end{enumerate}
 
 \end{document}
 
