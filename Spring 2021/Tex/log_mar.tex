@@ -69,60 +69,37 @@
 
 \maketitle
 
-\section{2/1}
+\section{3/9}
 
-\subsection{Technical Animation}
+\subsection{Goals}
 
 \begin{enumerate}
-	\item Paper selection - Due 2/8 : Done
-	\item Web Blog following class - due 2/8
+	\item Work on thesis: finish 2 sections
+	\item Work on complex: finish 2 problems
+	\item Work on drl: finish 1 problem
 \end{enumerate}
 
 \subsection{DRL}
 
-\begin{enumerate}
-	\item Readings : Done
-	\item 2/4 Readings : Done
-\end{enumerate}
+\begin{remark}
+	Recall: Goal is to learn $v_{\pi}(s)$ from episodes of experiece under $\pi$.(In MC or TD learning)
 
+	For Monte Carlo: Update $V(S_t) := V(S_t) + \alpha(G_t -V(S_t))$ over random trajectories
+\end{remark}
 
-\subsection{2/7}
+\begin{remark}
+	Monte-Carlo: $G_t$ is unbiased estimator of $V_{\pi}(S_t)$. But potentially high variance
 
-\begin{enumerate}
-	\item PDE and Data lecture
-	\item DRL Recitation
-\end{enumerate}
+	Temportal Difference: $R_{t+1}+\gamma V(S_{t+1})$ is biased estimator but lower variance. True target $R_{t+1} + \gamma v_{\pi}(S_{t+1})$ is unbiased estimate of $v_{\pi}(S_t)$
+\end{remark}
 
-\subsection{2/12}
+\begin{remark}
+	Note this is idea of bootstrapping: using data to generate model which we then use in estimator: estimator uses another estimator.
+\end{remark}
 
-\begin{enumerate}
-	\item Complex homework - due 2/15
-	\item DRL Recitation - 2/5 and 2/12
-	\item DRL hw - due 2/28
-	\item DRL Reading
-	\item Technical animation - due 2/28
-	\item PDE and Data - Do notes for 2/8 and 2/5
-\end{enumerate}
-
-\section{2/24}
-
-\subsection{Complex}
-
-\begin{enumerate}
-	\item HW : due 3/1
-	\item Exam regrades: get done
-	\item Watch missed lecture
-\end{enumerat}
-
-\subsection{Technical}
-
-\begin{enumerate}
-	\item HW:Due 3/3
-	\item Paper: Should be working on it
-	\item Watch missed lectures
-\end{enumerate}
-
-
+\begin{remark}
+	SARAS and q-learning method of updating q values
+\end{remark}
 
 \end{document}
 
