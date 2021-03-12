@@ -423,6 +423,59 @@
 	TD/MC useful when we don't know the dynamics.
 \end{remark}
 
+\section{3/12}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish complex hw
+	\item 2 thesis chapters
+	\item Review complex: catch up on content
+	\item Work on transrciption
+\end{enumerate}
+
+Extra:
+
+\begin{enumerate}
+	\item start drl
+	\item practice singing/ukulele
+\end{enumerate}
+
+\subsection{DRL}
+
+\begin{remark}
+	Recall: Monte carlo requires evaluation of a full trajectory before updates can occur. Since computing $G_t$. TD can update after each action.
+
+	DP must look at all possible future actions and backup using those(instead of one action).
+\end{remark}
+
+\begin{remark}
+	MC and TD model free. DP model based. DP doesn't need to inteeract with environment
+\end{remar}
+
+\begin{remark}
+	Advantages of MC over TD:
+	\begin{enumerate}
+		\item Unbiased
+		\item less sensitive to initial values
+		\item good converegence
+		\item intuitive
+	\end{enumerate}
+
+	Advantages of TD over MC:
+	\begin{enumerate}
+		\item Lower variance
+		\item learning from incomplete trajectories
+		\item Applies to non-terminating environment
+		\item usually more efficient
+	\end{enumerate}
+
+	This is an example of bias-variance tradeoff
+\end{remark}
+
+\begin{remark}
+	providing $v_*$ without providing $p : S \times R \times A \times S : [0,1]$  ie. the dynamics model is insufficient for finding the optimal policy because we don't know how things are interconnected.
+\end{remark}
 
 \end{document}
 
