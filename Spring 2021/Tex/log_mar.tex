@@ -101,5 +101,328 @@
 	SARAS and q-learning method of updating q values
 \end{remark}
 
+\section{3/10}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish complex/study
+	\item Study DRL
+	\item Read evolution
+\end{enumerate}
+
+\subsection{Complex Analysis}
+
+\begin{quest}
+	If f entire can we expand in powerseries converging everywhere?
+\end{quest}
+
+\subsection{DRL Review}
+
+\begin{verbatim}
+	https://cmudeeprl.github.io/403_website/assets/lectures/s21/s21_rec2_gaussian_process.pdf
+\end{verbatim}
+
+\begin{remark}Gaussian Process OPtimization: 
+\begin{verbatim}
+	C. E. Rasmussen & C. K. I. Williams, Gaussian Processes for Machine Learning, the MIT Press, 2006
+\end{verbatim}
+\end{remark}
+
+\begin{remark}Kernel Cookbook:
+\begin{verbatim}
+	https://www.cs.toronto.edu/~duvenaud/cookbook/
+\end{verbatim}
+\end{remark}
+
+\begin{remark}
+	Example of learning continuous problem: ON some manifold: transition function is $T(s,a) = cos(sa)$ and reward function is $r(s,a) = -s^2$. 
+\end{remark}
+
+\begin{quest}
+	Difference between $GP-CEM$ and regular CEM?
+\end{quest}
+
+
+\begin{remark}
+	Limitations of GP:
+	\begin{enumerate}
+		\item Hard to approximate kernel in DRL
+		\item COmputation complexity of inference hard $O(n^3)$ (matrix inversion)
+		\item Hard to design differentiable policy/action optimization techniques
+		\item Designing multi-variante GPs is hard
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+	GP: Can fully represent epistemic uncertainty, but not allows practical. 
+\end{remark}
+
+\begin{remark}
+	Limitations of learning by interaction:
+	\begin{enumerate}
+		\item needs chance to try and fail many times
+		\item Hard when safety a concern
+		\item hard inr eal life which takes time
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+	Challenges in imitation learning:
+	\begin{enumerate}
+		\item Compounding errors
+		\item Non-markovian observation
+		\item Lack of generalization
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+	Compunding errors happen when we make an error which causes us to deviate farther from expert which makes us more likely to make error at next time step. 
+
+	Fix is to augment training with error cases so we can self correct when necessary
+\end{remark}
+
+\begin{remark}
+	Can concatenate states to make markovian issues nonissues. Just redfine "state". Or use RNNs, which are inherently nonmarkovian, since they feed input as well as transformed input
+\end{remark}
+
+\begin{remark}
+	There is always one optimal policy: $v_*(s) = max_{\pi}(\pi(s))$
+\end{remark}
+
+\begin{remark}
+	Solving the MDP is finding the state and action value functions given a policy
+\end{remark}
+
+\begin{remark}
+	Optimal value functions measure the best possible goodness of states or state/action pairs under all policies. So actually this is THE optimal policy vs. all others. 
+\end{remark}
+
+\begin{quest}
+	If the optimal policy is simply the one which maximizes return at each state, what's the problem?
+\end{quest}
+
+\begin{quest}
+	I guess the definition is recursive.
+\end{quest}
+
+\begin{remark}
+	\begin{align*}
+		\E[G_t | S_t = s] = \E[R_{t+1} + \gamma G_{t+1} | S_t = s]
+	\end{align*}
+	\begin{align*}
+		v_{\pi}(s) = \E[R_{t+1} + \gamma v_{\pi}(S_{t+1})] = \sum_a \pi(a|s) \sum_{s',r}p(s',r|s,a)[r+\gamma v_{\pi}(s')]
+	\end{align*}
+\end{remark}
+
+\begin{remark}
+	Bellman expectation equations give us a S equations linear where S is number of states. Can be solved with linear system solver. $q^*$ unique solution to system of nonlinear equtions
+\end{remark}
+
+\begin{remark}
+	MDP under fixed policy is MRP:
+
+	$v_{\pi}(s) = r_s^{\pi}+\gamma \sum_{s' \in S}T_{s's}^{\pi}v_{\pi}(s')$
+
+	where $r_s^{\pi} = \sum_{a \in A}\pi(a | s) r(s,a)$ and $T_{s's}^{\pi} = \sum_{a \in A}\pi(a|s)T(s'|s,a)$
+\end{remark}
+
+\begin{quest}
+	What does it mean under fixed policy? I thought policy already given? Do we mean deterministic rewards? THis is mathematically plausible
+\end{quest}
+
+\begin{remark}
+	$v_{\pi} = (I-\gamma T^{\pi})^{-1}r^{\pi}$ where we have a matrix over states $T^{\pi}$ which are transitions from one to the other. But matrix inversion costly 
+
+	The advantage in fixing a policy is that we have a transition matrix(since we know what actions we'll take).
+\end{remark}
+
+\begin{remark}
+	We know there is a unique optimal policy $\pi^*$ w.r.t total dominance partial ordering $\pi \geq \pi'$
+\end{remark}
+
+\section{3/11}
+
+\subsection{Goals}
+
+\subsection{Modeling Evolution}
+
+\begin{remark}
+	Stochastic Switching: phenotypic hetergeneity despite genotypic uniformity. A bet heding strategy when mutation isn't enough.
+\end{remark}
+
+\begin{quest}
+	How is phenotypic configuration preserved if genotype uniform(from one generation to next). What else is passed on (methylation patterns?).
+\end{quest}
+
+\begin{ans}
+	Epigenetic factors are the mediators. Internal fluctations in mRNA transcription and protein translation. Higher number of feedback loops allows for higher number of steady states leading to diff. expressions
+\end{ans}
+
+\begin{remark}
+	Assumptions:
+	\begin{enumerate}
+		\item Model assumes infinitely large popluation
+	\end{enumerate}
+\end{remark}
+
+\begin{quest}
+	Major vs. modifier locus?
+\end{quest}
+
+\begin{remark}
+	It seems optimal switching rate exactly inversely proportional to n-stability of environment.
+\end{remark}
+
+\begin{quest}
+	What about asymmetric environment conditions? Seem more relevant(stable conditions and then shock, followed by more stable conditions)
+\end{quest}
+
+\begin{quest}
+	When can a mutation invasion be successful?
+\end{quest}
+
+\begin{remark}
+	Mutation selection balance equation:
+	\begin{align*}
+		\mu_M w_A x^2 + (1-\mu_M)(w_A-w_a)x-\mu_Mw_a = 0
+	\end{align*}
+\end{remark}
+
+\begin{remark}
+	Equilibria $x^*$ stable if $\mu_m > \mu_M$ and unstable if $\mu_m < \mu_M$. Because of matrix eigenvalue stuff. If selection is too high then invader does not invade. No invasion if $\mu_m > \mu_M$. Independent of fitness of values. I $\mu_M > \mu_m$ then unstbale and invasion
+
+	0(with 0 mutation rate) cannot be invaded. Optimal mutation rate under this model
+\end{remark}
+
+\begin{remark}
+	Environemtnal sensing: switching phenotypes but in response, not stochastically
+\end{remark}
+
+\begin{remark}
+	Epigenetic transimssion: How are non-genetic factors inherited? Lots of controversial papers about epigenetic inheritance.
+
+	Somehow epigentic variance is less risky than genetic variance. So more workable in practice.
+\end{remark}
+
+\begin{remark}
+	Fitness matrix:
+	\begin{align*}
+		\begin{bmatrix}
+			1 & 1-s_0 \\
+			1-s_1 & 1
+		\end{bmatrix}
+	\end{align*}
+	where col corresponds to allele, row corresponds to environment
+\end{remark}
+
+\begin{quest}
+	When are reductions between models possible???
+\end{quest}
+
+\subsection{DRL}
+
+\begin{remark}
+	In TD can update q values after each action instead of after trajectory b/c of recursive update rule
+\end{remark}
+
+\begin{remark}
+	Dealing with large state spaces: Find parameterized function $\hat{v}(S,w)$, parameterized by w. Instead of having a table for all states.
+\end{remark}
+
+\begin{remark}
+	To solve want to minimize least squares problem over w parameters. But no supervisor so need to subsitute target for examples. For example TD Target $R+\gamma \hat{v}(S',\theta)$ is biased example of truth
+
+	$\theta \to \theta + \alpha(R + \gamma \hat{v}(S',\theta)-\hat{v}(S,\theta)]\nabla \hat{v}(S,\theta)$
+\end{remark}
+
+\begin{remark}
+	When you don't know the dynamics we need to use q values instead of state values to estimate.
+\end{remark}
+
+\begin{remark}
+	In a similar case when you don't know dynamics in continuous case we parameterize q with $\hat{q}$ and learn
+\end{remark}
+
+\subsection{DRL Review}
+
+\subsubsection{Path Perspective on Value Learning}
+
+\begin{verbatim}
+	https://distill.pub/2019/paths-perspective-on-value-learning/
+\end{verbatim}
+
+\begin{remark}
+	Unlike monte carlo, td updates merged intersections so that return flows backwards to all preceding states.
+\end{remark}
+
+\begin{remark}
+	MC averaging over real trajectories whereas TD averaging over all possible paths
+\end{remark}
+
+\begin{remark}
+	TD may tend to outperform MC in tabular environments becuase it averages over at least as many trajectories
+\end{remark}
+
+\begin{remark}
+	SARSA uses $r_t + \gamma Q(s_{t+1},a_{t+1})$ update rule but not ideal, really want to be using $V(s_{t+1})$. Q learning prunes away all but the highest valued paths
+\end{remark}
+
+\begin{remark}
+	Q learning is biased(cause self-referential) so try to use double q learning to correct
+\end{remark}
+
+\begin{remark}
+	Sarsa, Expected sarsa, q, and double q diff. ways of estimating $V(s_{t+1})$ in a td update
+\end{remark}
+
+\includegraphics[width=500px]{../pics/td_methods.png}
+	
+\subsubsection{Learning by Cheating}
+
+\begin{verbatim}
+	https://arxiv.org/abs/1912.12294
+\end{verbatim}
+
+\begin{remark}
+	Decompose imitation learning into two stages. First train cheating model copying expert and accessing ground state and then train sensorimotor model copying cheater
+\end{remark}
+
+\begin{remark}
+	Advantages:
+	\begin{enumerate}
+		\item Privileged agent operates on compact space representation
+		\item The priveleged agent provides stronger supervision
+		\item Internal state of privileged agent "white box" ie. can be examined at will
+	\end{enumerate}
+\end{remark}
+
+\subsubsection{A tutorial on bayesian optimization}
+
+\begin{verbatim}
+	https://arxiv.org/pdf/1012.2599.pdf
+\end{verbatim}
+
+\begin{remark}
+	Value iteration(and q iteration) independent of policy.
+\end{remark}
+
+\begin{remark}
+	Policy iteration vs. value iteration. Policy iteration faster under certain conditions. Simply becuase actions change less often. But hard to tell when we've converged.
+
+	Value iteration gives us more info. 
+
+	Note we still compute value function with policy iteration.
+
+	Value iteration converges when we have no change. Policy iteration converges when at every we take the maximal action. 
+
+	These only useful when we have full knowlege of the dynamics
+\end{remark}
+
+\begin{remark}
+	TD/MC useful when we don't know the dynamics.
+\end{remark}
+
+
 \end{document}
 
