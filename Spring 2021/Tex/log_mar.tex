@@ -423,6 +423,224 @@
 	TD/MC useful when we don't know the dynamics.
 \end{remark}
 
+\section{3/14}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish complex
+	\item Thesis
+	\item Review complex
+	\item Transcription
+\end{enumerate}
+
+\subsection{Complex Review}
+
+\subsubsection{Fourier Stuff}
+
+\begin{theorem}
+	Phragmen-Lindelof Lemma: bounds F in a sector if bounded on boundary and sub-exponential
+\end{theorem}
+
+\begin{proof}
+	$F_{\epsilon}(z) = F(z)e^{-\epsilon z^{3/2}}$. By construction $cos(3\theta /2)$ positive so we get good decay for $F_{\epsilon}$. Then if $|F_{\epsilon}| \leq 1$ then $|F| \leq 1$ via continuity.
+
+	Let $M = sup|F_{\epsilon}|$ then $\exists w_j \to w$ toward M. It must be $w \in \partial S$ which is bounded by 1. So done. Key is that $w_j$ are bounded since $F_{\epsilon} \to 0$ as $|z| \to \infty$. 
+\end{proof}
+
+\begin{theorem}
+	If $f \in \mathcal{F}_a$ then $|\hat{f}(\xi)| \leq B_f e^{-2\pib |\xi|}$ for $0 \leq b < a$
+\end{theorem}
+
+\begin{proof}
+	If $b=0$
+	\begin{align*}
+		\hat{f}(\xi) = \int_{\R}f(x)e^{-2\pi i x \xi}dx \implies |\hat{f}(\xi)| \leq \int_{\R}|f(x)|dx \leq \int_{\R}\frac{A_f}{1+x^2}dx = \pi A_f
+	\end{align*}
+	If $b > 0$ the idea is to shift contour of integration down imaginary line. Note vertical sides go to 0 as $R \to \infty$ since norm is large. So can shift down with a negation.
+\end{proof}
+
+\begin{theorem}Fourier Inversion:
+
+	$f(x) = \int_{\mathbb{R}} \hat{f}(\xi) e^{2\pi i x \xi}dx$
+\end{theorem}
+
+\begin{proof}
+	First note when $A > 0$ and B real
+	\begin{align*}
+		\int_0^{\infty} e^{-(A+iB)\xi}d\xi = \frac{1}{A+iB}
+	\end{align*}
+	Via checking the finite case and sending to $\infty$. 
+
+	Then we argue by splitting across im line. In the positive case we can simply use definition and interchange integration and resolve with cauchy's integral formula. For the other case we consider a reverse contour and apply the current result.
+\end{proof}
+	
+\begin{theorem}
+	If $f \in \mathcal{F}$ then
+	\begin{align*}
+		\sum_{n \in \Z} f(n) = \sum_{n \in \Z} \hat{f}(n)
+	\end{align*}	
+\end{theorem}
+
+\begin{proof}
+	Key Idea 1: Idea is to pick out points being summed as residues. First note $\frac{1}{e^{2\pi i z}-1}$ has simple poles with residue $1/2\pi i $ at integers. Then Apply residue formula to $\frac{f(z)}{e^{2\pi i z}-1}$ which generates residues with $\frac{f(n)}{2\pi i}$. Integrating over rectangle contour(off integers). 
+
+	Key idea 2: We then CLEVERLY rewrite $\frac{1}{e^{2\pi i z}-1} = -\sum e^{2\pi i n z}$ if $|z| < 1$ and similarly for complement case. Allows us to rewrite as fourier transform 
+\end{proof}
+
+\begin{remark}Residue Formula Computation Tools:
+
+Idea is to find contour s.t.
+\begin{align*}
+	\lim_{R \to \infty} \int_{\gamma_R} f(z)dz = \int_{-\infty}^{\infty}f(x)dx
+\end{align*}
+
+Which is easier to evaluate because we simply compute residues
+
+\textbf{EX 1:}
+
+Consider
+\begin{align*}
+	\int_{-\infty}^{\infty}\frac{dx}{1+x^2} = \pi 
+\end{align*}
+
+Using the half circle $\gamma_R$ we have
+\begin{align*}
+	\int_{\R}\frac{1}{1+x^2}dx = -\lim \int_{\gamma_R}\frac{1}{1+z^2}dz = -\lim \int_{\gamma_R}\frac{1}{(z-i)(z+i)}dz = 
+\end{align*}
+
+Partial fraction decomposion yields $\frac{1}{(z-i)(z+i)} = \frac{1}{2i}\frac{1}{z-i} - \frac{1}{2i}\frac{1}{z+i}$ so integrating over half ciricle gives $2\pi i/2 i = \pi$. 
+
+Further note we have equality since the integral over the polar section goes to 0(b/c of large norm). 
+
+\textbf{EX 2:}
+
+Compute
+\begin{align*}
+	\int_{-\infty}^{\infty}\frac{e^{ax}}{1+e^x}dx
+\end{align*}
+For $0 < a < 1$
+
+Consider the rectangle contour with height $2 \pi i$. Note $\pi i$ is a residue. To compute it we simply note
+
+\begin{align*}
+	\lim_{z \to \pi i} \frac{e^z - e^{\pi i}}{z - \pi i} = e^{\pi i} = -1
+\end{align*}
+
+showing it to be a simple pole(since we do not have blowup). 
+
+\begin{align*}
+	\int_{\gamma_R}\frac{e^{az}}{1+e^z}dz  = - 2\pi i e^{a \pi i} 
+\end{align*}
+
+Notice the vertical strips go to 0(Since $a < 1$) and we are done. 
+
+\textbf{Ex 3:}
+
+\begin{align*}
+	\int_{\R} \frac{e^{-2\pi i x \xi}}{cosh(\pi x)}dx = \frac{1}{cosh(\pi \xi)}
+\end{align*}
+
+Sticking point: algebraically recognize
+\begin{align*}
+	e^{-2\pi i z \xi} \frac{2(z-\alpha)}{e^{\pi z}+e^{-\pi z}} = 2e^{-2\pi i z \xi} e^{\pi z}\frac{2(z-\alpha)}{e^{2\pi z}+e^{-\pi \alpha}}
+\end{align*}
+
+where right hand side difference quotient of $e^{2\pi z}$ ie. derivative. Which we can compute
+
+Key Theme: Recognizing difference quotients and using them to compute
+	
+\end{remark}
+
+\begin{theorem}
+	Riemann theorem on removable singularities:
+\end{theorem}
+
+\begin{proof}
+	Key idea is to extend $f$ to $z_0$ with cauchy's formula. It suffices to show $f(z) = \int_C \frac{f(\xi)}{\xi -z} d\xi$. 
+
+	Using a double keyhole we evaluate the integral to see $\int_C \frac{f(\xi)}{\xi - z}d\xi + \int_{\gamma_{z_0}} \frac{f(\xi)}{\xi - z}d \xi + \int_{\gamma_{z}} \frac{f(\xi)}{\xi - z}d \xi = 0$. We know cauchy formula holds at $z$ and is small over $\gamma_{z_0}$ since boundedness and small $\epsilon$ circle. THIS IS WHERE WE USE BOUNDEDNESS, to control small circles around $z_0$
+
+	Remark:
+
+	1. Boundedness use to control small circles around $z_0$
+
+	2. Holomorphicity used for cauchy formula
+\end{proof}
+
+\begin{theorem}
+	Casorate-Weierstrass: f holomorphic. If $z_0$ not a removable discontinuity then the image dense in $\C$. 
+\end{theorem}
+
+\begin{proof}
+	We go by contradiction. Suppose not dense. To some $w \in \C$. Then consider $g(z) = \frac{1}{f(z) - w}$. Is bounded. Hence $g(z_0)$ removable singularity at $z_0$. If $g(z_0) \neq 0$ then $f(z) - w$ holomorphic at $z_0$ a contradiciont. Otherwise is a pole, again a contradiction. 
+
+	Key idea: Look at function combining w and f and examining singularities. 
+\end{proof}
+
+\begin{theorem}
+	Meromorphic functions in extended complex plane are rational
+\end{theorem}
+
+\begin{proof}
+	Decompose $f = f_k + g_k$ into principle and holomorphic parts at singularity $z_k$. Idea is to subtract off principal parts and principal reciprocal parts and show remainder constant. 
+\end{proof}
+
+\begin{quest}
+	Why does this suffice to show rational?
+\end{quest}
+
+\begin{theorem}
+	Argument Principle: Num zeroes - num poles = $\frac{1}{2 \pi i}\int_{D_R} \frac{f'}{f}$
+\end{theorem}
+
+\begin{proof}
+	The key is $f'/f = n/z-z_0 + g(z)$ at a zero where g holomorphic. Similar formula but minus for a singularity. 
+\end{proof}
+
+\begin{theorem}
+	Rouche: If $|f| \geq |g|$ both holo then $f$ and $f+g$ have same number of 0s in $\Omega$. 
+\end{theorem}
+
+\begin{proof}
+	We go by the argument principle. Both holo so $1/2\pi i \int_C f'/f$ counts zeroes. 
+
+	We define $h_t(z) = tf(z) +(1-t)g(z)$. 
+\end{proof}
+
+\section{3/15}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item exam
+	\item work on thesis/research
+	\item Transcription
+	\item complex homework
+	\item Bonus: Grind DRL
+\end{enumerate}
+
+\section{3/16}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Go to open house
+	\item Revamp site/apply to summer stuff
+	\item Finish DRL
+\end{enumerate}
+
+\subsection{Questions}
+
+\begin{remark}
+Complex:
+\begin{enumerate}
+	\item 1 on complex exam
+	\item 2 on complex exam
+\end{enumerate}
+\end{remark}
+
+
 
 \end{document}
 
