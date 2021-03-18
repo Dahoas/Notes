@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1615765296 "log_mar.tex" "log_mar.pdf" "log_mar" 1615765296
+["pdflatex"] 1616089788 "log_mar.tex" "log_mar.pdf" "log_mar" 1616089789
   "../pics/td_methods.png" 1615493940 77104 cce8d1f3ab8045d722d879b2daae2ef5 ""
   "/etc/texmf/web2c/texmf.cnf" 1606412821 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -81,8 +81,8 @@
   "/usr/share/texmf/web2c/texmf.cnf" 1581979058 38841 ce3692aa899bb693b90b87eaa5d4d84e ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1606412878 4770781 1ed1abab22da9c3e2cc82e4db562318b ""
   "/var/lib/texmf/web2c/pdftex/pdflatex.fmt" 1606412938 8255996 68626854fce833d2d90913c7262d0c75 ""
-  "log_mar.aux" 1615765296 2134 c9cb9a947f2a1475a2933e77e37400c6 "pdflatex"
-  "log_mar.tex" 1615765295 16525 a2cd242771d9405e38c814e770cf14bd ""
+  "log_mar.aux" 1616089789 3822 d57dc3509b8149614255ed7cfb0f67e2 "pdflatex"
+  "log_mar.tex" 1616089782 23000 21fbc1d277c8a0b3a1bac5dab4df550d ""
   (generated)
   "log_mar.aux"
   "log_mar.log"
