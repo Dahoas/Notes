@@ -1,0 +1,135 @@
+\documentclass[11pt]{article}
+%you can look for fun LaTeX packages to use hereasdf
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+
+%fun commands for fun sets
+%make sure to use these in math mode
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\m}{\mathcal{M}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\pa}{\partial}
+\newcommand{\dD}{\mathcal{D}}
+\newcommand{\E}{\mathbb{E}}
+
+
+
+\oddsidemargin0cm
+\topmargin-2cm    
+\textwidth16.5cm   
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Alex Havrilla}
+\newcommand{\myandrew}{alumhavr}
+\newcommand{\myhwnum}{Hw 1}
+
+\newtheorem{prop}{Prop}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\theoremstyle{remark}
+\newtheorem*{rem}{Remark}
+\newtheorem*{defi}{Def}
+\newtheorem*{apps}{Application}
+\newtheorem*{quest}{Question}
+\newtheorem*{ans}{Answer}
+\newtheorem*{interest}{Interesting}
+\newtheorem*{theme}{Theme}
+\newtheorem*{back}{Background}
+\newtheorem*{example}{Example}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{\mycourse}}
+
+\title{$1 \leq p \leq 2$ For Type L with enough Gausannity}
+
+\linespread{1.3}
+
+\begin{document}
+
+\maketitle
+
+\section{Results}
+
+Let $X^{(b)}$ be a random variable with density given by $\frac{1}{2\pi}(1-b+bx^2)e^{-x^2/2}$. Set $X^{(b)}_p = X^{(b)}/||X^{(p)}||_p$. 
+
+We rewrite with where S is a sum of iid $X^{(b_i)}_p$
+
+\begin{align*}
+	\E|X^{(b)}_p+S|^p = \frac{\E ||X^{(b)}|_p+S|^p+\E||X^{(b)}_p|-S|^p}{2}
+\end{align*}
+
+Then using technique of interlacing densities and the convexity of 
+\begin{align*}
+	h(x) = |x^{1/p}+1|^p + |x^{1/p}-1|^p
+\end{align*}
+
+via Lemma 12 from 
+
+\begin{verbatim}
+	https://www.math.cmu.edu/~ttkocz/mypapers/mathematics/khintchBpn.pdf
+\end{verbatim}
+
+we show for $b > 0$
+\begin{align*}
+	\E h(X^{(b)}_p) \geq \E h(X^{(0)}_p)
+\end{align*}
+
+which gives us a khintchine type lower bound since $X^{(0)}$ is gaussian. So it suffices to show the difference of densities $f^{(b)}_p(x) - f^{(0)}_p(x)$ has at most two zeroes. Note we already know there are at least 2 via both being probability distributions and agreeing on pth moments. We compute
+
+\begin{align*}
+	f^{(b)}_p(x) =\frac{1}{\sqrt{2}}e^{-1/2(\pi^{-1/2/p}\sqrt{2}&x((1+bp)\Gamma(1+p/2))^{1/p})^{2/p}}\pi^{-1/2-1/2p}(2^{p/2}(1+bp)\Gamma(1+p/2))^{1/p}\\
+	&(1-b+b(\pi^{-1/2/p}\sqrt{2}x(1+bp)\Gamma(1+p/2)^{1/p})^{2/p})
+\end{align*}
+
+ie. setting $||X^{(b)}||_p = C^{(b)}_p = (\frac{\sqrt{2^p}}{\sqrt{\pi}}(1+bp)\Gamma(1+p/2))^{1/p}$ which is clearly increasing in b we have
+
+\begin{align*}
+	f^{(b)}_p(x) = C^{(b)}_p (1-b+b(C^{(b)}_p x)^2)e^{-(C^{(b)}_px)^2/2}
+\end{align*}
+
+and in particular
+
+\begin{align*}
+	f^{(0)}_p(x) = C_p^{(0)}e^{-(C_p^{(0)}x)^2/2}
+\end{align*}
+
+The taking logs we know $f^{(b)}_p = f^{(0)}_p$ when
+
+\begin{align*}
+	& log(C^{(b)}_p) +log(1-b+b(C^{(b)}_px)^2)-(C^{(b)}_px)^2/2=log(C^{(0)}_p) -(C^{(0)}_px)^2/2 \iff \\
+	&  log(1-b+b(C_p^{(b)}x)^2) = (C_p^{(b)}^2-C_p^{(0)}^2)x^2/2+A_p^{(b)}
+\end{align*}
+
+where we clearly get two intersections when the affine term has a positive slope. Since the pth moment increasing in b, we have this. 
+
+Note this also establishes comparisons between $1>b_1,b_2 >0$ since pth moment increasing in b.
+
+\section{Continuations}
+
+\begin{enumerate}
+\item Comparing arbitrary $b_1,b_2$ instead $b,0$? - This seems to be resolved
+\item $p \in (0,1)$? 
+\end{enumerate}
+
+\end{document}
+
