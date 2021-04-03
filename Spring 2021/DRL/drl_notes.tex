@@ -231,5 +231,17 @@
 	Distributed computing for evolutionary workers has known random seeds
 \end{remark}
 
+\subsection{4/2}
+
+OH:
+
+\begin{remark}
+	Q-learning is basically q-value iteration but over an infinite input space. So instead of updating everything in an order we do so randomly based on the actions we hav selected. This is why we have target and new network
+
+	Normal update is done in passes, where pass k computes kth values and we update by taking max over reward plus discount plus max over next actions of next state.
+\end{remark}
+
+Tricks: use bitmasks for dones to avoid for loops
+
 \end{document}
 

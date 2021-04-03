@@ -792,6 +792,215 @@ Jazz:
 	\item Grind transcription
 \end{enumerate}
 
+\section{3/24}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Chapters of thesis
+	\item Finish DRL DQN
+	\item Rough out complex
+\end{enumerate}
+
+\subsection{DRL}
+
+%Remarks should be saved for my ideas: not raw text
+
+	Actor-critic learns both value function and policy by having two networks(one for value function and one for policy) where policy is learned by optimizing over value function(which is differentiable).
+
+
+
+	Policy based reinforcement learning is an optimization problem: find $\theta$ maximizing $U$ which is the policy objective function. Would be nice if U differentiable
+
+
+
+	Prefered over value based methods in high dimensions or continuos action spaces
+
+	Can also learn stochastic policies
+
+Update rule:
+
+\begin{align*}
+	\Delta \theta_t = \alpha G_t \nabla_{\theta} log \pi_{\theta}(s_t,a_t)
+\end{align*}
+
+Experience buffers used to prevent correlation between data, which happens when it arrives sequentialy. Instead just randomly sample from experience buffer to train
+
+If the dynamics don't change in response to your actions then it always makes sense to have deterministic policy(greedily taking max over actions).
+
+\begin{quest}
+	How exactly does the objective function connect to the policy?
+\end{quest}
+
+\begin{ans}
+	The objective function is the neural network parameterizing the policy which outputs probabilities for actions given a state.(should always be stochastic to ensure exploration). Then I want to maximize the objective function. 
+\end{ans}
+
+\begin{quest}
+	How do I know maximizing the objective function will give me the optimal policy?
+\end{quest}
+
+\subsection{Modeling Evolution}
+
+\begin{remark}
+	Project Ideas:
+	\begin{enumerate}
+		\item Aging and evolution. Why do we age?
+	\end{enumerate}
+	Relevant Papers:
+	\begin{enumerate}
+		\item \begin{verbatim}https://www.nature.com/articles/s41576-019-0183-6\end{verbatim}
+		\item \begin{verbatim}https://lifespanbook.com/blog/
+		\end{verbatim}
+		\item \begin{verbatim} https://www.pnas.org/content/117/49/31535\end{verbatim}
+	\end{enumerate}
+\end{remark}
+
+\begin{remark}
+	Overview of modeling and aging:
+	\begin{verbatim}
+		https://www.karger.com/Article/PDF/364928
+	\end{verbatim}
+	More overview:
+	\begin{verbatim}
+		https://pdf.sciencedirectassets.com/271048/1-s2.0-S0047637420X0008X/1-s2.0-S0047637420301998/main.pdf?X-Amz-Security-Token=IQoJb3JpZ2luX2VjEKX%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FwEaCXVzLWVhc3QtMSJHMEUCIQDtxztxTwmt1nAHIetcwl5tOV2MZbGwFF56V7zoK6XVxQIgAkcb3BUqITM4HPBHOtLAOi9i%2FY%2FSo1%2BSjgXREYBMLm4qvQMI3v%2F%2F%2F%2F%2F%2F%2F%2F%2F%2FARADGgwwNTkwMDM1NDY4NjUiDCs1pQ002Z9lSlmuQiqRA3ay0yM21QIS6bB0hmMSKiDonsywWZu0lvSN3nZb7c0szS3gOTGII6BrhavOViCecYMA4aTf%2BQmW6i57XLAL%2Fg%2FXf6wKHLXKqv0hU7XF1nZZlNHmuOVH7oBcWCwej8ZcjJIyfuEl4i0Iaog836gSpNx7bx6L%2BH6IohP27WxcDTL1NNCc49guVd8uuK4bYe0newZpfUJfOlnlQ%2Fsc%2BRzIjWC3n3%2FVvwW4kwFfbQYwJc%2FemATL5eTMNnZvrJ9aRa3M4QKXJHrvTB2cV9y5ut%2FQ8s1mnYgJOKwF6lIekrdT48fGVfVkKEQXu%2FXOyWZnDLY9Y8neQEgwFLHKV0DadwqjE78ApIZSi9k%2FSOoo%2BNEPW60DZAQcaiFPeQ55ZOntIIlokXZtGN%2FoWlMbR0zmLwKM94305XfqtYQSo%2Fsd2bhrgNKOrTOMKANSXnRYLS%2F2QrmFPYnZyWYmIrH0xVK9syTcrVQ9VBgcM0Ex57VJ2ZsLP3sVM%2FNYjrWVOs60fHNsVVtv8yqigGmAAic5efRPh34mZtduMMrS7oIGOusB%2BhnkKNSrh49bXSPVMwtT9Paw%2F9agOjWQYogGoIHGgpFoJaoZSI66FWHsdnOWhHs4%2F9vNKyIEsQHdiGebh8dAxlA%2FFb51TTNiBS2ud66tkqTYGxb%2FPHw7qv1qoYYQoX69E1rwQ5IuRxg65RvyPQ3tKkDAXvmaZxzCdz6mZirlSqKrzG9Wo8f%2B1MZoW2D2iIsZBRXsfgRLz2ZGpATgSkEw9tjXh1yvtAPF5D1GqJwFt1suMtKFFh0dB2eYSdRp0VQ1lpLgU%2Bu1ibAS%2BH%2BWT52GQ%2Fy2LbA8%2BpUK9fLbUJV4l3w5i8rOo7kzpaBMYQ%3D%3D&X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Date=20210324T224600Z&X-Amz-SignedHeaders=host&X-Amz-Expires=300&X-Amz-Credential=ASIAQ3PHCVTY5MOCIUXH%2F20210324%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Signature=0b28656c96133195ca2513b010cae6008631e425da17e092444eb2114662ed12&hash=73c0540d95dce1a910b53ce0a092c048ccde822e391807a6cfa179ae183dea6b&host=68042c943591013ac2b2430a89b270f6af2c76d8dfd086a07176afe7c76c2c61&pii=S0047637420301998&tid=spdf-b0c8a56a-12cf-409b-8a8f-c25ebfa6e84d&sid=d0ca89736bb48445d839b6b0ba244d3a2119gxrqa&type=client
+	\end{verbatim}
+\end{remark}
+
+\section{3/25}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Rough out complex
+	\item Finish drl
+	\item Add to thesis
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Email about thesis
+	\item Fill out mcs form
+\end{enumerate}
+
+\subsection{Complex Notes}
+
+\section{3/27}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Rough out complex
+	\item Finish drl
+	\item Add to thesis
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Email about thesis
+	\item Fill out mcs form
+\end{enumerate}
+
+\subsection{Complex Analysis}
+
+
+\section{3/29}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish complex
+	\item Start evolution
+	\item practice jazz
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Decide on thesis date
+	\item Fill out mcs form
+	\item Go through notes to self
+\end{enumerate}
+
+\subsection{Probability}
+
+Convergence of moments implies convergence in distribution:
+
+\begin{verbatim}
+	https://mathoverflow.net/questions/102964/convergence-of-moments-implies-convergence-to-normal-distribution
+\end{verbatim}
+
+Good note on convergence of moments:
+
+\begin{verbatim}
+	http://www.utstat.toronto.edu/keith/eco2402/prob.pdf
+\end{verbatim}
+
+Billingsley apparently a classic reference for this "moment problem"
+
+\begin{verbatim}
+	https://link.springer.com/content/pdf/10.1007/978-0-387-75971-5_6.pdf
+\end{verbatim}
+
+\subsection{Jazz}
+
+Think more about chord tones when improving. Use 1,3,5,7. Use 3 and 7s. Chris says guide tones are 3 and 7. Two five one should guide us. More time between notes equals longer phrases, note space and phrase length are inversely proportional. Maybe each phrase should be 8 to 12 notes total or something. Should start phrase with beginning and end in mind in fill in(guided by chords). Can also use melody to cheat. Melodic is something I could sing. 
+
+\section{3/30}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Start/Review Complex
+	\item DRL
+	\item Start modeling evolution
+	\item Do a little thesis
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Schedule thesis stuff
+\end{enumerate}
+
+\subsection{Propel}
+
+\subsection{DRL}
+
+\subsection{Modeling Evolution}
+
+\subsection{Review}
+
+On uniform continuity of the fourier transform
+
+\section{3/31}
+
+
+\begin{enumerate}
+	\item Review Complex
+	\item DRL
+	\item Start modeling evolution
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Schedule thesis 
+	\item Submit MCS honors form
+	\item Commit to Georgia Tech
+\end{enumerate}
+
+\subsection{DRL}
+
+Introduction of a baseline to REINFORCE is often useful in reducing variance.
+
+Natural baseline for REINFORCE is parameterized state-value function. 
+
+\subsection{Complex Review}
+
+
 
 \end{document}
 

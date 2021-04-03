@@ -1,0 +1,288 @@
+\documentclass[11pt]{article}
+%you can look for fun LaTeX packages to use hereasdf
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+
+%fun commands for fun sets
+%make sure to use these in math mode
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\m}{\mathcal{M}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\pa}{\partial}
+\newcommand{\dD}{\mathcal{D}}
+\newcommand{\E}{\mathbb{E}}
+
+
+
+\oddsidemargin0cm
+\topmargin-2cm    
+\textwidth16.5cm   
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Alex Havrilla}
+\newcommand{\myandrew}{alumhavr}
+\newcommand{\myhwnum}{Hw 1}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Prop}
+\theoremstyle{remark}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{defi}{Def}
+\newtheorem{apps}{Application}
+\newtheorem{quest}{Question}
+\newtheorem{ans}{Answer}
+\newtheorem{interest}{Interesting}
+\newtheorem{theme}{Theme}
+\newtheorem{back}{Background}
+\newtheorem{idea}{Idea}
+\newtheorem{example}{Example}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{\mycourse}}
+
+\linespread{1.3}
+
+\title{April Log}
+
+\begin{document}
+
+\maketitle
+
+\section{4/1}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Review Complex - Crush exam
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Schedule thesis 
+	\item Submit MCS honors form
+	\item Commit to Georgia Tech - Done
+\end{enumerate}
+
+
+\subsection{Complex Review}
+
+\begin{theorem}
+	Let $\hat{f}$ be such that 
+	\begin{align*}
+		|\hat{f}(\xi)| \leq Ae^{-2\pi a |\xi|}
+	\end{align*}
+	for some constants $A,a > 0$. 
+
+	Then f is the restriction to $\R$ of a function holomorphic in the strip $S_b = \{z \in \C : |Im(z)| < b\}$ for $0 < b < a$. 
+\end{theorem}
+
+\begin{proof}
+	We have the limiting approximation
+	\begin{align*}
+		f_n(z) = \int_{-n}^n \hat{f}(\xi)e^{2\pi i \xi}d\xi
+	\end{align*}
+
+	Can be extended to a definition in the strip $S_b$ by our assumption on boundedness of $\hat{f}$. Entireness comes from fact we are integrating a holomorphic integrand which is a limit of holomorphic functions(proved via Morera).
+
+	We have uniform convergence to f and thus f is holomorphic(as uniform limit of holomorphic functions).
+\end{proof}
+
+\begin{remark}
+	Note this implies f and $\hat{f}$ cannot both have compact support unless $f=0$. Since if f vanishes in an open interval then since it's holomorphic it must be 0 everywhere.
+\end{remark}
+
+\begin{theorem}
+	Let f be continuous with moderate decrease on $\R$. Then f has an extension to the complex plane that is entire with $|f(z)| \leq A e^{2\pi M |z|}$ for some $A > 0$ if and only if $\hat{f}$ is supported in the interval $[-M,M]$. 
+\end{theorem}
+
+\begin{proof}
+	Suppose $\hat{f}$ is supported in $[-M,M]$. Then
+	\begin{align*}
+		f(x) = \int_{-M}^M\hat{f}(\xi)e^{2 \pi i x \xi}d\xi \leq ||\hat{f}||_{\infty} \int_{-M}^M |e^{2 \pi i x \xi}|d\xi \leq ||\hat{f}||_{\infty} 2M e^{2 \pi M |x|}
+	\end{align*}
+
+	where we bound $|e^{2\pi i x \xi}|$ with $e^{2 \pi M |x|}$. Further f is entire since it is an integral of holomorphic integrand.
+
+	Now suppose $|f(x)| \leq A e^{2 \pi M |x|}$ and entire. Two observations:
+
+	1. The above argument gives us the stronger bound of $|f(z)| \leq e^{2 \pi M |y|}$ instead of in terms of $|z|$
+
+	2. But this is not enough as we need some control over decay at $\infty$
+
+	Step 1. Use the stronger bound $|f(z)| \leq \frac{e^{2\pi M |y|}}{1+x^2}$ to show $\hat{f}(z) = 0$ when $|z| > M$
+
+	Step 2. Use slightly stronger bound
+	$|f(z)| \leq e^{2\pi M |y|}$. 
+\end{proof}
+
+\begin{remark}
+	Note this means $\hat{f}$ cannot be extended when $f$ is exponentially bounded and entire since otherwise it is 0.
+\end{remark}
+
+\begin{theme}
+	A key idea here is to shift the fourier transform by some imaginary offset $iy$ and note this should still agree with real case via contour argument, as sides go to $\infty$.
+\end{theme}
+
+List of important tools:
+
+\begin{itemize}
+	\item Phragmen-Lindelof: Allows us to uniformly bound holomorphic functions over unbounded sections assuming uniform boundedness on the bondary and exponential boundedness inside
+\end{itemize}
+
+Proof Chains
+
+\begin{itemize}
+	\item Maximum-modulus $\implies$ Phragmen Lindelof $\implies$ Paley-Wiener
+\end{itemize}
+
+\begin{remark}
+	Often limiting arguments are examples of a reduction of more structure to less, like in the case of Phargmen Lindelof where we use $e^{-\epsilon\pi|z|^2}$ as a subduing function.
+
+	Let the limiting structure be the reducer, and the target structure be the reduced. Then the form of the reducer is guided by the reduced. In this case we need to recover the idenitty in the limit, and we need some sufficient decay.
+\end{remark}
+
+Problems:
+
+\begin{prop}
+	\begin{align*}
+		\sum_{n=-\infty}^{\infty} \frac{1}{(\tau + n)^k} = \frac{(2\pi i)^{k-1}}{(k-1)!} \sum_{m=1}^{\infty} m^{k-1}e^{2 \pi i m \tau}
+	\end{align*}
+\end{prop}
+
+\begin{proof}
+	First inclination was to take $f(x) = \frac{1}{(\tau+z)^k}$ but it works better if we take $f(z) = z^{k-1}e^{2\pi i \tau z}$
+
+	\begin{verbatim}
+		https://math.stackexchange.com/questions/2927148/the-fourier-transform-of-fx-xiy-k-for-y0-k2
+	\end{verbatim}
+\end{proof}
+
+\begin{remark}
+	Difficulties: Picking right function to take fourier transform of. Didn't know how to evaluate fourier transform.
+
+	Tricks: Picking right function, evaluating FT using integration by parts
+\end{remark}
+
+\begin{prop}
+	Show if $Im(\tau) > 0$
+	\begin{align*}
+		\frac{(2\pi i)}{1!} \sum_{m=1}^{\infty} me^{2 \pi i m \tau} = \frac{\pi^2}{sin(\pi \tau)^2}
+	\end{align*}
+\end{prop}
+
+\begin{proof}
+	Nothing too tricky. Must evalute the sum via exponential series which can be done since $e^{2 \pi i m \tau} \to 0$ as $m\to \infty$ since $Im(\tau) > 0$. If the sum is $f$ is the primitive $F$. We can evalute F then differentiate. Differentiation can be justified via DCT and the exponential convergence.
+\end{proof}
+
+\begin{remark}
+	Difficulties: none
+
+	Tricks: Using exponential power series closed formula and integrating to simplify sum.
+\end{remark}
+
+Goal: Do all SS problems in chapter 4
+
+1.
+
+\begin{proof}
+	Key point is that $\int_{-\infty}^tf(x)dx = 0$ for every t hence must be 0. 
+\end{proof}
+
+
+
+\begin{quest}
+	When can a functions fourier transform be extended to be entire?
+\end{quest}
+
+\begin{ans}
+	Sufficiently when we have sufficient decrease to bound the integral and apply DCT(like with gaussian). 
+
+	Necessary?
+\end{ans}
+
+
+\section{4/2}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish DRL
+	\item Start and do as much of evolution as possible
+	\item Work on thesis
+	\item Practice Jazz
+	\item Clean list
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Schedule thesis 
+	\item Submit MCS honors form
+\end{enumerate}
+
+\subsection{Exam Review}
+
+1. 
+\begin{prop}
+Fix $z_1,...,z_n \in \mathbb{S}^1$. Wanted to show we can find z on unit circle such that
+
+\begin{align*}
+	f(z) = \prod_{i=1}^n |z-z_i| = 1
+\end{align*}
+
+\end{prop}
+
+\begin{proof}
+	I tried an elementary method arguing the roots of unity are the worst case.
+
+	Slicker to notice $f(0) = 1$(I did not notice this) and then realize it must attain its maximum on boundary which is strictly greater than 1. And done by continuity since $f(z_j) = 0$(I did realize this). 
+\end{proof}
+
+\begin{prop}
+	If f entire with $|f(z)| \leq e^{-ax^2+by^2}$ we want to show
+	\begin{align*}
+		|\hat{f}(\xi)| \leq e^{-a'\xi^2} \quad \xi \in \R
+	\end{align*}
+\end{prop}
+
+\begin{proof}
+	To show this should have contour integrated along $x-iy$ off the real line but I didn't do this(thought of it right at end). Instead tried some weak fourier inversion stuff and that's it.
+\end{proof}
+
+\subsection{DRL}
+
+OH:
+
+\begin{remark}
+	Q-learning is basically q-value iteration but over an infinite input space. So instead of updating everything in an order we do so randomly based on the actions we hav selected. This is why we have target and new network
+
+	Normal update is done in passes, where pass k computes kth values and we update by taking max over reward plus discount plus max over next actions of next state.
+\end{remark}
+
+Tricks: use bitmasks for dones to avoid for loops
+
+
+\end{document}
+
