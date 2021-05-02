@@ -1,0 +1,1545 @@
+\documentclass[10pt]{article}
+
+
+\usepackage{amssymb,amsthm,amsmath}
+\usepackage{enumerate}
+\usepackage{graphicx,color}
+\usepackage[hidelinks]{hyperref}
+%\usepackage{refcheck}
+
+\newcommand{\dd}{\mathrm{d}}
+\newcommand{\Pp}{\mathbb{P}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\e}{\varepsilon}
+\newcommand{\1}{\textbf{1}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\C}{\mathbb{C}} 
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\sL}{\mathcal{L}}
+\newcommand{\p}[1]{\mathbb{P}\left( #1 \right)}
+\newcommand{\scal}[2]{\left\langle #1, #2 \right\rangle}
+\newcommand{\red}{\color{red}}
+\newcommand{\shift}{\vdash}
+\newcommand{\lL}{\mathcal{L}}
+\newcommand{\norm}[1]{||#1||}
+
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\sgn}{sgn}
+
+\usepackage[paper=a4paper, left=1.3in, right=1.3in, top=1in, bottom=1in]{geometry}
+\linespread{1.3}
+\pagestyle{plain}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+
+\newtheorem{conjecture}{Conjecture}
+
+\theoremstyle{definition}
+\newtheorem{defn}[theorem]{Definition}
+\newtheorem{exmp}[theorem]{Example}
+
+
+\title{\vspace{-3em}A Survey of Khintchine Type Inequalities for Random Variables}
+\author{Alex Havrilla}
+
+
+
+\begin{document}
+
+\maketitle
+
+\begin{abstract}
+	We present a collection of Khintchine type inequalities for random signs, uniform distributions, gaussian mixtures, and the ultra sub-Gaussian class. We also present new results for symmetric discrete distributions and the class of Type $\mathcal{L}$ random variables.
+\end{abstract}
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\section{Introduction} 
+
+%Note good introductions can also be found in all these papers
+
+The study of Khintchine inequalities, initiated by Aleksandr Khintchine in \cite{K}, seeks to find constants $C_{p,q}$ comparing pth and qth moments of linear combinations of independent identically distributed(i.i.d) random variables. 
+
+The classical Khintchine inequality compares for $0 < p,q < \infty$ the pth and qth moments of sums of iid random signs with coefficients $a_i \in \R$
+\begin{align*}
+	S = \sum_i^n a_i \epsilon_i
+\end{align*}
+
+where we recall $\Pp(\epsilon = 1) = \Pp(\epsilon = -1) = \frac{1}{2}$. 
+
+\begin{theorem}Khintchine's Inequalities:
+
+	$\forall p,q > 0 \exists C_{p,q} > 0$ and $\forall n, a \in \R^n$ we have
+	\begin{align*}
+		||S||_p \leq C_{p,q} ||S||_q
+	\end{align*}
+\end{theorem}
+
+
+Of particular interest is finding sharp constants $C_{p,q}$. This is easy when $p < q$, as then $C_{p,q} = 1$. However the case $p > q$ is difficult. In general we only know comparisons for arbitrary p and $q=2$ and for even $p,q$. A natural generalization of this inequality is to consider sums of random variables other than random signs. In some cases, particularly with type $\mathcal{L}$ random variables, we are even able to relax the independence between terms in the sum. 
+
+We can summarize what is known about optimal constants for the distributions  we present in the following table.
+
+\begin{itemize}
+	\item Random Signs: Optimal $C_{2,p}$ and $C_{p,2}$ known for $p \in [0,2]$ and $p \in [2,\infty)$. Optimal constants also known for even integer $C_{p,q}$ via ultra sub-Gaussianity.
+	\item Uniform distributions on line: Optimal $C_{p,2}$ known for $p \in [2,\infty)$ and $C_{2,p}$ known for $p \in [1,2]$.
+	\item Uniform distributions on $B_q^n$ for $q \in (0,2]$: Optimal constants $C_{p,2}$ and $C_{2,p}$ for $p \in [2,\infty)$ and $p \in (-1,2)$. 
+	\item Ultra sub-Gaussian class: Optimal $C_{p,q}$ for all even integer pairs $p,q$. 
+	\item Type $\mathcal{L}$ class: Optimal $C_{p,q}$ for all even integer pairs $p,q$ via ultra sub-Gaussianity. $C_{p,2}$ known for $p \geq 3$. 
+	\item The $\mathbb{L}$ class: Depends on $\rho_0$ the mass at 0. All even $p,q$ for small enough $\rho_0$. $C_{p,2}$ for $p \geq 3$ when $\rho_0 = 0$. $C_{p,2}$ for $p \geq 3$ when $L=1$ and $\rho_0$ small. $C_{1,2}$ for large $\rho_0$.
+\end{itemize}
+
+This list is by no means comprehensive and we shall attempt to paint a more complete albeit shallower picture in the next section.
+
+\newpage
+
+\section{Khintchine Inequalities for Various Distributions}
+
+This section contains a collection of Khintchine-type results with optimal constants for variously distributed random variables. We start with the progenitor case of random signs.
+
+\subsection{Random Signs - The Classical Story}
+
+In this section we deal strictly with sums of random signs $\epsilon_i$. First we establish constants $C_{p,2}$ and $C_{2,p}$ do exist for $||S||_p \leq C_{p,2} ||S||_2$, $ ||S||_2 \leq C_{2,p}||S||_p$ where $S = \sum a_i \epsilon_i$. We argue as in \cite{LT}. This is a natural starting point since second moment of sums is easily computable:
+
+\begin{align*}
+	\norm{S}_2 = \sqrt{\E S_a^2} = \sqrt{\E\sum_i a_i^2 \epsilon_i + \E\sum_{i,j}a_ia_j \epsilon_i\epsilon_j} = \sqrt{\sum_i a_i^2}
+\end{align*}
+
+ie. the second moment of the sum is just the sum of squares of the coefficients. Often without loss of generality we will choose $a_i$ s.t. $\sum_i a_i^2 = 1$.  
+
+We adopt the convention $A_p = C_{2,p}$ and $B_p = C_{p,2}$. First we establish the existence of such constants. 
+
+\begin{theorem}Khinchin's Inequality:
+	
+	For $0 < p < \infty, \exists A_p,B_p > 0$ s.t. for $a \in \R^n$,
+	\begin{align*}
+		A_p\sqrt{\sum_i a_i^2} \leq \norm{S_a}_p \leq B_p \sqrt{\sum_i a_i^2}
+	\end{align*}
+\end{theorem}
+
+We argue as in \cite{LT}.
+
+\begin{proof}
+	Via homogeneity we may suppose $\sum_i a_i^2 = 1$. Then via layer cake and chebyshev we may write:
+	\begin{align*}
+		\E |\sum_i \epsilon_i a_i|^p = \int_0^{\infty} \Pp(|\sum_i \epsilon_i a_i | > t) dt^p \leq 2 \int_0^{\infty} e^{-t^2/2}dt^p = B_p^p
+	\end{align*}
+	For the other side write
+	\begin{align*}
+		1 = \E(\sum_i \epsilon_i a_i)^2 \leq (\E |\sum_i \epsilon_i a_i|^p)^{2/3}(\E |\sum_i \epsilon_i a_i|^{6-2p})^{1/3} \leq (\E|\sum_i \epsilon_i a_i|^p)^{2/3} B_{6-2p}^{2-2p/3}
+	\end{align*}
+	at which point we are done.
+\end{proof}
+
+
+So we know such comparisons are possible but we seek to find optimal constants. The case for $p \geq 3$ turns out to be relatively easy via some convexity arguments by Young in \cite{Y}. Note this in fact first shown by Whittle in \cite{W}.
+
+\begin{theorem}Young:
+
+For $3 \leq p < \infty$ we have $B_p = 2^{1/2}(\Gamma((p+1)/2)/\sqrt{\pi})^{1/p}$	
+\end{theorem}
+
+The proof crucially relies on the convexity of a certain function h for $p \geq 3$ which inspires relevant ideas later:
+
+\begin{lemma}
+	Define for $z \in \C$
+	\begin{align*}
+		h_p(z,t) = |1-tz|^{p-2} + |1+tz|^{p-2} 
+	\end{align*}
+	For $p \geq 3$ $h_p$ is convex in t.
+\end{lemma}
+
+%Supply a proof of this later!!!
+
+In \cite{H} Haagerup concluded the search for random signs by treating $0 < p < 2$ and $2 < p < 3$ and which establishes the following constants:
+
+
+\begin{align*}
+	A_p = 
+	\begin{cases}
+		2^{1/2-1/p} & 0 < p \leq p_0 \\
+		2^{1/2}(\Gamma((p+1)/2)/\sqrt{\pi})^{1/p} & p_0 < p < 2\\
+		1 & 2 \leq p < \infty
+	\end{cases}
+\end{align*}
+
+and 
+
+\begin{align*}
+	B_p = 
+	\begin{cases}
+		1 & 0 < p \leq 2\\
+		2^{1/2}(\Gamma((p+1)/2)/\sqrt{\pi})^{1/p} & 2 < p < \infty
+	\end{cases}
+\end{align*}
+
+where $p_0$ is the solution to $\Gamma((p+1)/2) = \sqrt{\pi}/2$ in $[1,2]$. Szarek \cite{S} showed $A_1 = 1/\sqrt{2}$. Haagerup extended this result for $0 < p < p_0$ and and established optimality of $B_p$ for $2 < p <3$. Note this is seen to be sharp by way of Central Limit Theorem, as the sum $\sum_i \frac{1}{\sqrt{n}}\epsilon_i \to g \sim N(0,1)$ which achieves the $B_p$ in the limit. Note the $1/\sqrt{2}$ is achieved by the sum of two random signs.
+
+While it would be nice to give complete proofs of these sharp constants, Haagerups arguments in particular are quite technical and not entirely enlightening. Instead we elect to present a proof via Nazarov, F. Podkorytov \cite{NP} which relies on crucial elements of Haagerups proof while using distribution functions to "simplify" some more technical details. This treats the $0 < p <2$ case. In \cite{M} Mordhorst treats $2 < p < 3$ using the same technique.
+
+In preparation consider a lemma on distribution functions:
+
+\begin{lemma}
+	Let $Y > 0$, $f,g : \mathcal{M} \to [0,Y]$ be any two measurable functions on $(\mathcal{M},\mu)$. Let $F_*$ and $G_*$ be their modified distribution functions. Assume both $F_*(y)$ and $G_*(y)$ are finite for every $y \in (0,Y)$. Assume also $\exists ! y_0$ s.t. $F_*-G_* = 0$. Furthermore at $y_0$ we need a change in sign from $+$ to $-$. Let $S = \{s > 0: f^s - g^s \in L^1(\mathcal{M},\mu)\}$. Then
+	\begin{align*}
+		\phi(s) = \frac{1}{sy_0^s}\int_{\mathcal{M}}f^s - g^s d\mu
+	\end{align*}
+	is monotone increasing on S. 
+\end{lemma}
+
+%Should I include proof???
+
+We will use this to show an integral inequality in the following proof. Here we present a sketch of Nazarov and Podkorytov's approach:
+
+\begin{proof}
+	First we reduce the case $0 < p < p_0$ to $p = p_0$. Let $S = \sum_i a_i \epsilon_i$ and suppose $\E|S|^p \geq 2^{p_0 - 2/2}$ where $\sum_ a_i^2 = 1$. Via holder we have
+	\begin{align*}
+		\E|S|^{p_0} \leq (\E|S|^p)^{2-p_0/2-p}(\E|S|^2)^{p_0-p/2-p} = (\E|S|^p)^{2-p_0/2-p}
+	\end{align*} 
+	since $\E|S|^2 = 1$ by assumption. So we only consider now $p_0 \leq p \leq 2$. 
+
+	As in Haagerup's argument, we crucially rely on an integral representation of these moments
+	\begin{align*}
+		\E|S|^p = C_p\int_0^{\infty}\frac{1-\prod_{k=1}^n cos(a_k u)}{u^{p+1}}
+	\end{align*}
+
+	where we note the product of cosines the product of characteristic functions of the scaled random signs.
+
+	Using this representation we can reduce to question to an integral inequality. We have the comparison via AM-GM
+	\begin{align*}
+		\prod_{k=1}^n cos(a_k u) \leq \prod_{k=1}^n |cos(a_k u)| \leq \sum_{k=1}^n a_k^2|cos(a_k u)|^{q/a_k^2} = 1 - \sum_{k=1}^na_k^2(1- |cos(a_k u)|^{1/a_k^2})
+	\end{align*}
+
+	Define 
+	\begin{align*}
+		I_p(s) = C_p\int_0^{\infty}(1-|cos(\frac{u}{\sqrt{s}})|^2)\frac{du}{u^{p+1}}
+	\end{align*}
+
+	Then we can write
+	\begin{align*}
+		\E|S|^p \geq \sum_{k=1}^na_k^2 I_p(\frac{1}{a_k^2})
+	\end{align*}
+	so it suffices to treat $I_p$. We know for $I_p(2) = 2^{p-2/2}$ via the integral representation. For $lim_{s \to \infty}I_p(s)$ we may apply DCT to see get $C_p \int_0^{\infty}(1-e^{-u^2/2})\frac{du}{u^{p+1}}$ as well $\lim_{s \to \infty}I_p(s) = 2^{p-2/2}\frac{\Gamma(p+1/2)}{\Gamma(3/2)}$ via a CLT arugment. Then showing $I_p(s) \geq I_p(\infty)$ would allow us to conclude. Ie write
+
+	\begin{align*}
+		H(p,s) = \int_0^{\infty}(e^{-sx^2/2} - |cos(x)|^s)\frac{dx}{x^{p+1}} \geq 0 
+	\end{align*}
+
+	It is this kind of integral inequality to which we can apply the distribution function lemma. We must compute
+	\begin{align*}
+		&F_*(y) = \mu\{x > 0 : e^{-x^2/2} < y\} = \frac{1}{p}2ln(1/y)^{-p/2}\\
+		&G_*(y) = \mu\{x > 0: |cos(x)| < y\} = \frac{1}{p}\sum_{k=0}^{\infty}\frac{1}{(\pi k + arccos(y))^p} - \frac{1}{(\pi k + \pi - arccos(y))^p}
+	\end{align*}
+
+	and show the difference only changes sign once on the interval $(0,\pi/2)$. This is shown using an extension of the difference to the complex plane.
+
+	After this it remains to treat the case of large coefficient, ie. one of the $a_k > \frac{1}{2}\sum_{k=1}^na_k^2$. We must show
+	\begin{align*}
+		R_p(a) = \int_0^1|\sum_{k=1}^n a_kr_k(t)|^p dt \geq A_p(1+a_2^2+...+a_n^2)^{p/2}
+	\end{align*}
+	where we define $\phi_p(x) = (1+x)^ {p/2}$ with $A_p = 2^{p-2/2}\frac{\Gamma(p+1/2)}{\Gamma(3/2)}$ for $p \in [p_0,2)$. 
+
+	To do this we go by induction. The observation
+	\begin{align*}
+		\E|S|^p(a) = \frac{\E|S|^p(a^+) + \E|S|^p(a^-)}{2}
+	\end{align*}
+
+	where $a^+ = (a_1,...,a_{n-2},a_{n-1}+a_n)$ and $a^-$ analagously allows us to absorb large coefficients into smaller term expressions. For $n \geq 3$ we have the identity
+
+	\begin{align*}
+		\sum_{j=2}^n a_j^2 = \frac{1}{2}((a_2^-)^2 + ... +(a_{n-1}^-)^2 + (a_2^+)^2 + ... + (a_{n-1}^+)^2)
+	\end{align*}
+
+	Denoting $x = \sum_{j=2}^n a_j^2$ and correspondingly $x^+,x^-$ we could write
+
+	\begin{align*}
+		R_p(a) = \frac{R_p(a^+)+R_p(a^-)}{2} \geq A_p \frac{\phi_p(x^+)+\phi_p(x^-)}{2} \geq A_p \phi_p(\frac{x^++x^-}{2}) = A_p \phi_p(x)
+	\end{align*}
+
+	however $\phi_p$ is concave for $p < 2$. So instead we find a convex function $\Phi_p$ that dominates $\phi$ and show estimate using this instead. We find such a function by modifying $\phi_p$ on $[0,1]$:
+
+	\begin{align*}
+		\Phi_p(x) = 
+		\begin{cases}
+			\phi_p(x) & x \geq 1\\
+			2 \phi_p(1) - \phi_p(2-x) & 0 \leq x \leq 1
+		\end{cases}
+	\end{align*}
+
+	Here we have convexity for $x',x'' \geq 0$ with $\frac{x'+x''}{2} \leq 1$. 
+
+	Let $n \geq 3$ and assume the induction hypothesis. Set $a_1 = 1$ with x as before. If $a_1$ is the largest coefficient with $x \geq 1$ then we are just in the small coefficient regime. If $a_1$ is largest with $x < 1$ we can apply the convexity trick since $x = \frac{x^-+x^+}{2} < 1$. If $a_1$ is not the largest coefficient then $x > 1$. We may wlog rearrange and renormalize the coefficients so $a_1 =1$ and is the largest, falling into one of the two previous cases. 
+
+	So it suffices to finish the base case. We want to show $R_p(1,a_2) \geq A_p \Phi_p(a_2^2)$. Wlog suppose $a_1 =1$ is largest of coefficients. It is enough to prove the pointwise estimate
+
+	\begin{align*}
+		\frac{(1+\sqrt{x})^p + (1-\sqrt{x})^p}{2} \geq 2^{p-1}(2-(\frac{3-x}{2})^{p/2})
+	\end{align*}
+
+	After some rewriting we seek to show
+	\begin{align*}
+		a^p + b^p (1+2ab)^{p/2} \leq 2
+	\end{align*}
+
+	for $p \leq 2, a,b \geq 0$ with $a+b = 1$. We have equality at $p=2$ and notice we have convexity in p so we simply need to show  we are decreasing at $p=2$. This can be verified after straightforward computation and we are done.
+\end{proof}
+
+Moving forward it is good to keep these sharp constants in mind, and the techniques used to prove them. Via the CLT arguments we see in $B_p$ does not change if we change the distribution of the terms being summed. Similarly convexity arguments seem to continue to work well for $p \geq 3$. 
+
+This concludes our discussion of Khintchine type inequalities for random signs. We move on to discussing generalizations to other distributions.
+
+
+\subsection{Uniform Random Variables}
+
+Here we present results from \cite{LO} leading to Khintchine-type results for uniform variables $t_i$ distributed over $[-1,1]$. We get optimal upper bounds in the $p \geq 2$ case and lower bounds in $p \in [1,2]$ case which are gaussian moments for comparisons between uniform random variables. This is made precise by the following.
+
+\begin{theorem}
+	Let $a = (a_1,...,a_n)$ and $b=(b_1,...,b_n)$ be two sequences of real numbers s.t. $(a_i^2) \prec (b_i^2)$ and $t_1,...,t_n$ be a sequence of independent random variables uniformly distributed on $[-1,1]$. Then
+	\begin{align*}
+		(\E |\sum_{i=1}^n a_it_i|^p)^{1/p}\leq (\E |\sum_{i=1}^nb_it_i|^p)^{1/p}
+	\end{align*}
+	for $p \in [1,2]$ and
+	\begin{align*}
+		(\E |\sum_{i=1}^n a_it_i|^p)^{1/p} \geq (\E |\sum_{i=1}^n b_it_i|^p)^{1/p}
+	\end{align*}
+	for $p \geq 2$
+\end{theorem}
+
+%Makes mention of relevance of optimal inequalites to K Ball!!!
+
+
+We establish some lemmas. First an alternative way of writing densities of symmetric unimodal distributions. We recall a random variable is \textit{symmetric unimodal} if its density is symmetric and nonincreasing on $[0,\infty)$. 
+
+\begin{lemma}
+	A real random variable X is symmetric unimodal $\iff$ there exists a probability measure $\mu$ on $[0,\infty)$ s.t. density $g$ of X is 
+	\begin{align*}
+		g(x) = \int_0^{\infty}\frac{1}{2t}\chi_{[-t,t]}(x)d\mu(t)
+	\end{align*}
+\end{lemma}
+
+\begin{proof}
+	Define measure $\nu$ on $[0,\infty)$ via $\nu([x,\infty)) = g(x)$ where g is a density of some symmetric unimodal random variable. Set $\mu(t) = 2 t\nu(t)$. For $x > 0$
+	\begin{align*}
+		g(x) = \int_0^{\infty}\chi_{[-t,t]}(x) d\nu(t) = \int_0^{\infty} \frac{1}{2t}\chi_{[-t,t]}(x)d\mu(t)
+	\end{align*}
+	Compute
+	\begin{align*}
+		\int_0^{\infty}d\mu(t) = \int_0^{\infty} 2td\nu(t) = \int_0^{\infty} \int \chi_{[-t,t]}(x)dxd\nu(t) = \int g(x) dx = 1
+	\end{align*}
+	so $\mu$ probability measure.
+\end{proof}
+
+\begin{lemma}
+	If $X = \sum_{i=1}^n X_i$ and $X_i$ are independent symmetric unimodal random variables then X is symmetric unimodal. In particular if $X = \sum_{i=1}^n a_i t_i$ where $t_i$ are independent and uniformly distributed on $[-1,1]$ then X symmetric unimodal. 
+\end{lemma}
+
+\begin{proof}
+	We simply show closure under sum. Let $X_1$, $X_2$ be independent symmetric unimodal with densities $g_1,g_2$ and measures $\mu_1,\mu_2$ as above. Compute density g of $X_1 + X_2$ as 
+	\begin{align*}
+		g(x) = \int_0^{\infty} \int_0^{\infty} \frac{1}{4ts}\chi_{[-t,t]} * \chi_{[-s,s]}(x)d\mu(t)d\mu(s)
+	\end{align*}
+
+	via lemma 1 representation. Clearly $g$ is symmetric and nonincreasing on $[0,\infty)$. 
+\end{proof}
+
+We now present a key technical lemma.
+
+\begin{lemma}
+	\begin{align*}
+		G(t)=
+		\begin{cases}
+			(p+2)\frac{(t+1)^{p+1}-(t-1)^{p+1}}{t^2} - \frac{(t+1)^{p+2}-(t-1)^{p+2}}{t^3} & t \geq 1\\
+			(p+2)\frac{(1+t)^{p+1}+(1-t)^{p+1}}{t^2} - \frac{(1+t)^{p+2}-(1-t)^{p+2}}{t^3} & 0 < t < 1
+		\end{cases}
+	\end{align*}
+	Then G is nondecreasing on $(0,\infty)$ if $p \geq 2$ and nonincreasing for $1 \leq p \leq 2$. 
+\end{lemma}
+
+For proof we refer readers to lemma 3 of \cite{LO}. We present the final lemma which shall directly imply the desired result.
+
+\begin{lemma}
+	If $t_1,t_2,t_3$ are independent random variables uniformly distributed on $[-1,1]$ and $a,b,c,d > 0$ with $a^2 + b^2 = c^2 + d^2$ and $c \geq a \geq b \geq d$ then
+	\begin{align*}
+		&\E |t_1 + at_2 + bt_3|^p \leq \E |t_1 + ct_2 + dt_3|^p \qquad p \in [1,2] \\
+		&\E|t_1 + at_2 + bt_3|^p \geq \E|t_1 + ct_2 + dt_3|^p \qquad p \geq 2
+	\end{align*}
+\end{lemma}
+
+\begin{proof}
+	We have the observation 
+	\begin{align*}
+		|x|^p = \frac{d^3}{dx^3}(\frac{x^3|x|^p}{(p+1)(p+2)(p+3)})
+	\end{align*}
+	integrating by parts then gives
+	\begin{align*}
+		\E|t_1 + at_3 + bt_3|^p &= \frac{1}{8}\int_{-1}^1\int_{-1}^1\int_{-1}^1|x_1 + ax_2 +bx_3|^p dx_1dx_2dx_3 =\\ &c_p(\frac{(a+b+1)^3|a+b+1|^p+(a-b-1)^3|a-b-1|^p}{ab} \\&- \frac{(a-b+1)^3|a-b+1|^p+(a+b-1)^3|a+b-1|^p}{ab})
+	\end{align*}
+	where $c_p = \frac{1}{4(p+1)(p+2)(p+3)}$
+
+	Setting $k = a^2+b^2$ and $s = 2ab$ we then reduce $f(s) = \E|t_1+aT_2+bt_3| = 2c_p \frac{g(s)}{s}$ after appropriate substitutions. We can show f nondecreasing for $p \geq 2$ and nonincreasing if $p \in [1,2]$. This follows from direct computation.
+\end{proof}
+
+This allows us to prove a corollary giving us the theorem for free.
+
+\begin{corollary}
+	If $X,t_1,t_2$ are independent random variables, $t_1,t_2$ are uniformly distibuted on $[-1,1]$ and X symmetric unimodal with $a^2+b^2 = c^2+d^2$ and $c \geq a \geq b \geq d$ then
+	\begin{align*}
+		&\E|X + at_1 + bt_2|^p \leq \E |X+ct_1 + dt_2|^p \qquad p \in [1,2]\\
+		&\E|X + at_1 + bt_2|^p \geq \E |X+ct_1 + dt_2|^p \qquad p \geq 2
+	\end{align*}
+\end{corollary}
+
+\begin{proof}
+	Let g be the density of X and $\mu$ the corresponding measure via our first lemma. We have
+	\begin{align*}
+		\E|X + at_1 + bt_2|^p &= \int_{-\infty}^{\infty}\E|x+at_1 + bt_2|^p g(x)dx = \int_0^{\infty}\frac{1}{2s}\int_{-s}^s \E|t+at_1 + bt_2|^p dt d\mu(s)\\
+		&= \int_0^{\infty} \E|st_3 + at_1 + bt_2|^p d\mu(s) \leq \int_0^{\infty} \E|st_3 + ct_1 +d t_2|^p d\mu(s) = \E |X + ct_1 + dt_2|^p
+	\end{align*}
+
+	where we get the inequality from our last lemma.
+\end{proof}
+
+Now we finish the theorem.
+
+\begin{proof}\textit{Proof of the theorem}
+
+	Via the lemma from \cite{MO} it suffices to prove inequalities in the case $a_i^2 = b_i^2$ for $i \neq j,k$ and $a_j^2 = tb_j^2 + (1-t)b_k^2$ with $a_k^2 = tb_k^2+(1-t)b_j^2$. Via symmetry $ a_i,b_i \geq 0$. So our proposition follows directly from the corollary by setting $X = \sum_{i \neq j,k} a_it_i$. 
+\end{proof}
+
+Note the schur concavity result immediately shows optimal constant khintchine inequalities via central limit theorem. Indeed for the case $p \in [1,2]$ we have
+
+\begin{align*}
+	\E |\sum_{i=1}^n a_it_i|^p \geq (\sum_{i=1}^na_i^2)^{p/2}\E|\sum_{i=1}^n \frac{1}{\sqrt{n}}t_i|^p
+\end{align*}
+
+to which we apply the following lemma noting we have uniform integrability of the sums.
+
+%Why do we have uniform integrability of the sums???
+
+\begin{lemma}
+	Suppose $X_n \to X$ in distribution. If $\{X_n\}$ is uniformly integrable then $\E|X| < \infty$ and $\E(X_n) \to \E(X)$ and$\E |X_n| \to \E |X|$. Recall a sequence $\{X_n\}$ uniformly integrable if $\sup_n |X_n| < \infty$ and for all $\epsilon > 0$ we have $\delta > 0$ such that when for some event A $P(A) < \delta$ then $P(|X_n| \in A) < \epsilon$. 
+\end{lemma}
+
+%Need to present proof of this!!!
+
+The proof of this relies on a standard fact from measure theory.
+
+\begin{prop}
+	Let $\Omega$ be finite measure set with $\mu$ the measure and $f_n \to f$ almost everywhere. If the $f_n$ are uniformly integrable then f is integrable and
+	\begin{align*}
+		\int f_n d\mu \to \int f d\mu
+	\end{align*}
+\end{prop}
+
+\begin{proof}
+	Via Fatou's Lemma we know $\int f d\mu < \infty$. We define
+	\begin{align*}
+		&f_n^{{(\alpha)}} = 
+		\begin{cases}
+			f_n & |f_n| < \alpha \\
+			0 & |f_n| \geq \alpha 
+		\end{cases}\quad
+		f^{(\alpha)} = 
+		\begin{cases}
+			f & |f| < \alpha\\
+			0 & |f| \geq \alpha
+		\end{cases}
+	\end{align*}
+
+	as cutoff functions controlling the size of f. Then here we may apply the Dominated Convergence Theorem to see
+	\begin{align*}
+		\int f_n^{(\alpha)} d\mu \to \int f^{(\alpha)} d\mu
+	\end{align*}
+	since clearly $f_n^{(\alpha)} \to f^{(\alpha)}$ pointwise and we have the bound of $\alpha \mu(\Omega)$. 
+
+	Then noting
+	\begin{align*}
+		&\int f_n d\mu - \int f_n^{(\alpha)} d\mu = \int_{|f_n| \geq \alpha} f_n d\mu \\
+		& \int f d\mu - \int f^{(\alpha)} d\mu = \int_{|f| \geq \alpha} fd\mu
+	\end{align*} 
+	we have
+	\begin{align*}
+		\limsup_{n \to \infty}|\int f_n d\mu - \int f d\mu| \leq \sup_n \int_{|f_n|\geq \alpha} |f_n| d\mu + \int_{|f| \geq \alpha} |f| d\mu
+	\end{align*}
+	But using uniform integrabilty we can send the first term to 0. The second term goes to 0 since f integrable. 
+\end{proof}
+
+We also need the Skorohod's Theorem allowing us to pick pointwise converging random variables with specified distributions.
+
+\begin{theorem}
+	Suppose $\mu_n$ and $\mu$ probability measures on $(R^1,\mathcal{R}^1)$ with $\mu_n \to \mu$. Then we can find random variables $Y_n$ and Y on probability space $(\Omega,\mathcal{F},P)$ such that $Y_n$ has distribution $\mu_n$ and Y has distribution $\mu$ with $Y_n \to Y$ almost surely.
+\end{theorem}
+
+\begin{proof}[Moment Convergence]
+	It suffices to pick $Y_n \to Y$ pointwise with same distributions as $X_n \to X$ in distribution which have same moments via Skorohod's Theorem.???
+\end{proof}
+
+
+
+
+The technique of finding the stronger schur-concavity result is often useful and used repeatedly in what follows to show Khintchine-type inequalities.
+
+%!!!Need to be as explicit as possible.
+
+%Can also cover vector case
+
+\subsection{Ultra Sub-Gaussian Random Variables}
+
+This section examines a result via Nayar and Oleszkiewicz in \cite{NO} which significantly generalizes the class of random variables considered and achieves comparisons for all even integer moments via log-concavity.
+
+First we discuss the notions of Ultra Sub-Gaussanity and Strong Log Concavity of a Random Variable. Recall
+
+\begin{defn}
+	A sequence $(a_i)_{i=0}^{\infty}$ of non-negative real numbers is called \textit{log-concave} if $a_i^2 \geq a_{i-1}a_{i+1}$.
+\end{defn}
+
+Then we can define the notion of \textit{Ultra Sub-Gaussanity} for $\R^n$ valued random vectors from \cite{NO}.
+
+\begin{defn}
+	$\R^n$ valued $X$ is \textit{Ultra sub-Gaussian} if $X=0$ or X is rotation invariant, has finite moments, and has gaussian log-concave even moments ie. $a_i = \E \norm{X}^{2i}/\E \norm{G}^{2i}$ are log-concave.
+\end{defn}
+
+The results crucially use Walkup's Theorem concerning preservation of log-concavity under convolution:
+
+\begin{theorem}
+	Let $(a_i)_{i=0}^{\infty}$ and $(b_i)_{i=0}^{\infty}$ be two log-concave sequences of positive real numbers. We define:
+	\begin{align*}
+		c_n = \sum_{i=0}^n {n \choose i} a_i b_{n-i}
+	\end{align*}
+
+	Then the $(c_n)_{n=0}^{\infty}$ is log-concave
+\end{theorem}
+
+This tells us the collection $\textbf{ULCS}$ of ultra log-concave sequences is closed under convolution:
+
+\begin{defn}
+	$(a_i)_{i=0}^{\infty}$ is ultra log-concave if $(i! a_i)_{i=0}^{\infty}$ is log-concave.
+\end{defn}
+
+Given X Ultra Sub-Gaussian we can extract a khintchine type inequality of the following form.
+
+\begin{theorem}
+	Let n,d positive integers and $p > q \geq 2$ even integers. If $X_1,...,X_n$ independent $\R^n$ valued random vectors are ultra sub-Gaussian then
+	\begin{align*}
+		(\E |S|^p)^{1/p} \leq \frac{(\E|G|^p)^{1/p}}{(\E|G|^q)^{1/q}}\E (|S|^q)^{1/q}
+	\end{align*}
+
+	where $S = \sum_i X_i$
+\end{theorem}
+
+The proof rests on some lemmas we highlight now.
+
+\begin{lemma}
+	Let $\Prod: \R^n \to \R$ be projection to first coordinate. For $p > 0$ assume X rotation invariant random vector on $\R^n$ with finite pth moment. Then
+	\begin{align*}
+		\frac{\E|\Prod X|^p}{\E |G|^p} = \frac{\E||X||^p}{\E||G||^p}
+	\end{align*}
+\end{lemma}
+
+Notably the class of ultra sub-gaussian random variables is closed under sums.
+
+\begin{lemma}
+	If $X,Y \in \textbf{USG}$ are independent random vectors then $X+Y \in \textbf{USG}$Uniform.
+\end{lemma}
+
+\begin{proof}
+	We may assume X and Y nonzero constant. Setting
+	\begin{align*}
+		&a_i = \E||X||^{2i}/\E||G||^{2i} = \E(\prod X)^{2i}/\EG^{2i}\\
+		&b_i = \E||Y||^{2i}/\E||G|^{2i} = \E(\prod Y)^{2i}/\E G^{2i}\\
+		&b_i = \E||X+Y||^{2i}/\E||G|^{2i} = \E(\prod (X+Y))^{2i}/\E G^{2i}
+	\end{align*}
+	and then note
+	\begin{align*}
+		c_n  = \frac{1}{(2n-1)!!}\sum_{i=0}^{n}{2n \choose 2i} \E(\Prod X)^{2i} \E(\Prod Y)^{2n - 2i} = \sum_{i=0}^n \frac{(2n)!!}{(2i)!!(2n-2i)!!}a_ib_{n-i} = \sum_{i=0}^n {n \choose i}a_i b_{n-i}
+	\end{align*}
+	and we conclude with Walkup's theorem.
+\end{proof}
+
+We must also note distributions producting with nonnegative random variables to a standard gaussian must ultra sub-gaussian.
+
+\begin{lemma}
+	Assume an $\R^d$ valued random vector X and non-negative random variable R are independent and that $R \cdot X$ has distribution $N(0,I d_d)$. Then X is ultra sub-gaussian
+\end{lemma}
+
+Now we establish the Khintchine-type inequality for ultra sub-gaussian random variables.
+
+\begin{proof}
+	Note first the constant is optimal as indicated by the central limit theorem.
+
+	If we show $S$ ultra log-concave then we know the sequence $a_k = \E||S||^{2k}/\E||G||^{2k}$ is log-concave which gives us our desired result since then we know $(a_s^{1/s})_{s=1}^{\infty}$ is non-increasing and in particular $a_{p/2}^{2/p} \leq a_{q/2}^{2/q}$. But S is clearly ultra log-concave as it is the sum of ultra log-concave random variables. So we are done.
+\end{proof}
+
+These results in turn relate to our discussion of type $\mathcal{L}$ random variables, where we discover every Type $\mathcal{L}$ random variable is ultra sub-gaussian.
+
+
+\subsection{Gaussian Mixtures}
+
+First we look at \cite{ENT}. Gaussian measures very important in convex geometry and local banach space theory. 
+
+Recall what a gaussian mixture is:
+
+\begin{defn}
+	A random variable X is a \textit{Gaussian mixture} if there exists a positive rando variable Y and standard Gaussian Z independent from Y s.t. X has the same distribution as YZ.
+\end{defn}
+
+\begin{exmp}
+	A random variable with density $f(x) = \sum_{j=1}^m p_j \frac{1}{\sqrt{2\pi}\sigma_j}e^{-x^2/2\sigma_j^2}$ is a gaussian mixture
+\end{exmp}
+
+We also recall definitions of majorization:
+
+\begin{defn}
+	$a \in \R^n$ is majorized by $b \in \R^n$, written $a \prec b$, if for $k = 1,...,n-1$ we have 
+	\begin{align*}
+		\sum_{j=1}^k a_j^* \leq \sum_{j=1}^k b_j^*
+	\end{align*}
+	,where $a^*$ is the decreasing rearrangement, and we have $\sum_{j=1}^n a_j = \sum_{j=1}^n b_j$. 
+\end{defn}
+
+\begin{defn}
+	Then a function preserving $\prec$ is Schur convex
+\end{defn}
+
+This allows us to state:
+
+\begin{theorem}
+	Let X be a Gaussin mixture and $X_1,...,X_n$ be independent copies of X. For two vectors $a,b \in \R^n$ with $p \geq 2$ we have
+	\begin{align*}
+		(a_1^2,...,a_n^2) \prec (b_1^2,...,b_n^2) \implies ||\sum_{i=1}^n a_iX_i||_p \leq ||\sum_{i=1}^n b_iX_i||_p
+	\end{align*}
+\end{theorem}
+
+%need to cover bernstein's theorem
+
+The proof relies on Bernstein's theorem:
+
+\begin{theorem}
+	$g : (0,\infty) \to \R$ is completely monotonic, ie. $(-1)^ng^{(n)} \geq 0$, if and only if $\exists$ non-negative Borel measure $\mu$ on $[0,\infty)$ s.t.
+	\begin{align*}
+		f(x) = \int_0^{\infty} e^{-tx}d\mu(t)
+	\end{align*}
+\end{theorem}
+
+Bernstein in turn can be used to show the following:
+
+\begin{theorem}
+	A symmeric random variable X with density f is a Gaussian mixture if and only if $x \to f(\sqrt{x})$ is completely monotonic for $x > 0$. 
+\end{theorem}
+
+%Why???
+
+\begin{proof}
+	Let X be a symmetric random variable with density f with $x \to f(\sqrt(x))$ is completely monotonic. By Bernstein there exists a non-negative Borel measure $\mu$ supported on $[0,\infty)$ s.t. $f(\sqrt{x}) = \int_0^{\infty}e^{-tx}d\mu(t)$. We can now compute
+	\begin{align*}
+		P(X \in A) = \int_A \int_0^{\infty} e^{-tx^2}d\mu(t)dx = \int_0^{\infty}\int_A e^{-tx^2}dxd\mu(t) = \int_0^{\infty} \int_{\sqrt{2t}A} \frac{1}{\sqrt{2\pi}}e^{-x^2/2}dx
+	\end{align*}
+	and then simplify to $\int_0^{\infty}\gamma_n(\sqrt{2t}A)d\nu(t)$ by writing $d\nu(t) = \sqrt{\frac{\pi}{t}}d\mu(t)$. We note this is a probability measure.
+
+	Now let $V$ be distributed via $\nu$. V is positive and hence we can write $Y = \frac{1}{\sqrt{2V}}$. Then
+	\begin{align*}
+		P(YZ \in A) = P(\frac{1}{2V} Z \in A) = \int_0^{\infty}\gamma_n(\sqrt{2t}A)d\nu(t) = P(X \in A)
+	\end{align*}
+
+	which concludes the proof. The converse follows via bernstein and noting X has density $f(x) = \frac{1}{\sqrt{2 \pi}} \int_0^{\infty} e^{-x^2/2y^2}\frac{d\nu(y)}{y}$
+\end{proof}
+
+Note this is a la \cite{LO}. Similarly inspired by \cite{BGMN} we have a result for vectors uniformly distributed on $l_p$ balls:
+
+\begin{theorem}
+	Fix $q \in (0,2]$ and let $X = (X_1,...,X_n)$ a random vector uniformly distributed on $B_q^n$. For two vectors $(a_1,...,a_n)$ and $(b_1,...,b_n)$ in $\R^n$ with $p \geq 2$ we have
+	\begin{align*}
+		(a_1^2,...,a_n^2) \prec (b_1^2,...,b_n^2) \implies ||\sum^n a_i X_i||_p \leq ||\sum^n b_i X_i||_p
+	\end{align*}
+
+	whereas for $p \in (-1,2)$ the second inequality is reversed
+\end{theorem}
+
+
+
+
+\subsection{Random Vectors Uniform on $\mathbb{S}^{n-1}$}
+
+Here we present the results from $\cite{BC}$. 
+
+Let $\Delta$ denote the laplace operator. Recall a function is subharmonic if for any ball $B(x,r)$ for $x \in \R^n, r > 0$ and continuous function $h$ harmonic on $B(x,r)$ s.t. $\phi \leq h$ on $\partial B(x,r)$ then $\phi \leq h$ in $B(x,r)$ or equivalently $\Delta f \geq 0$. Then a function is superharmonic if its negation is subharmonic. We say continous $\Phi : \R^n \to \R$ is bisubharmonic if $\Delta \Phi$ equals a subharmonic in distribution. Equivalently if $\Phi \in C^4(\R^n;\R)$ then $\Phi$ satisfies $\Delta \Delta \Phi \geq 0$ $\iff$ bisubharmonic. 
+
+\begin{theorem}
+	Let $\Phi : \R^n \to \R$ bisubharmonic andcontinuous on $\R^n$. Set $X = \sum_{j=1}^n a_j U_j, Y = \sum_{j=1}^n b_jU_j$. If $(b_i^2) \prec (a_i^2)$ then 
+	\begin{align*}
+		\E \Phi(X) \leq \E \Phi(Y)
+	\end{align*}
+\end{theorem}
+
+So for fixed square sum more spread out mass on the coefficients results in larger moments. 
+
+Set 
+\begin{align*}
+	I(r) = I(r,f) = \int_{\mathbb{S}^{d-1}} f(rx) dx, \qquad r \geq 0
+\end{align*}
+
+where the integral over $\mathbb{S}^{n-1}$ denotes the normalized uniform measure on $\mathbb{S}^{n-1}$. Before we prove the theorem we establish some lemmas.
+
+\begin{lemma}
+	Suppose $f \in C^2(\R^n;\R)$. Then
+	\begin{align*}
+		\frac{d}{dt}I(t^{1/2},f) = \frac{1}{2n}\int_{\mathbb{B}^d}\Delta f(t^{1/2}x)dx, \qquad 0 \leq t < \infty
+	\end{align*}
+\end{lemma}
+
+\begin{proof}
+	We can compute using divergence theorem
+	\begin{align*}
+		I'(r) = \frac{r}{n}\int_{\mathbb{B}^d} \Delta f(rx)dx
+	\end{align*}
+	with the change of variables $s=nb$. Note $\mathbb{B}^n = \{x \in \R^n : |x| < 1\}$. 
+\end{proof}
+
+\begin{lemma}
+	Suppose $f \in C(\R^n;\R)$. Then for $\alpha, \beta \in \R$ we have
+	\begin{align*}
+		\int_{\mathbb{S}^{n-1}\times \mathbb{S}^{d-1}}f(\alpha x + \beta y) dx dy = \int_{\mathbb{S}^{d-1}} I(|\alpha e_1 + \beta y|,f)dy
+	\end{align*}
+\end{lemma}
+
+\begin{proof}
+	Fix $n \geq 2$ with $S = \mathbb{S}^{n-1}$ and $dg$ the Haar measure on $G = SO(n)$. For continuous F on $\mathbb{R}^n$ we have
+	\begin{align*}
+		\int_G F(gz)dg = \int_S F(|z|x)dx
+	\end{align*}
+
+	\begin{align*}
+		\int_{S \times S} f(\alpha x + \beta y) dxdy &= \int_{G \times G} f(\alpha g_1 e_1 + \beta g_2 e_1) dg_1dg_2 = \int_G dg_1 \int_G f(g_1(\alpha e_1 + \beta g_1^{-1} g_2 e_1))dg_2 \\ 
+		&= \int_G dg_1 \int_G f(g_1(\alpha e_1 + \beta g_2 e_1))dg_2 = \int_G dg_2 \int_G f(g_1(\alpha e_1 + \beta g_2 e_1)) dg_1 \\
+		&= \int_G dg_2 \int_S f(|\alpha e_1 + \beta g_2 e_1|y)dy = \int_G I(|\alpha e_1 + \beta g_2 e_1|,f)dg_2\\
+		&= \int_S I(|\alpha e_1 + \beta y|,f)dy
+	\end{align*}
+\end{proof}
+
+\begin{proof}\textit{Proof of the theorem}
+	Now we are prepared to present a proof of the theorem. We may suppose $a_i,b_i \geq 0$ and via approximation arguments that $\Phi \in C^4$(if $\Phi$ not in $C^4$ we just get arbitrarily close with a $C^4$ $\Psi$). Set $\R_+^d$ to be the strictly positive section of $\R^d$. We then let $Q: \R_+^d \to \R$ via
+	\begin{align*}
+		Q(s) = \E \Phi(\sum_{j=1}^n s_j^{1/2}U_i) = \int_{\prod_{j=1}^n \mathbb{S}^{d-1}} \Phi(\sum_{j=1}^n s_j^{1/2}x_j)dx_1...dx_n
+	\end{align*}
+	So we seek to show if $b \prec a$ then $Q(a) \leq Q(b)$. Write for $b \prec a$
+	\begin{align*}
+		Q(b) - Q(a) = \int_0^1 \frac{d}{dt}Q((1-t)a + tb) dt = \int_0^1 \sum_{j=1}^n \partial_j Q((1-t)a+tb)(b_j-a_j)dt
+	\end{align*}
+
+	We obtain the expression
+	\begin{align*}
+		\partial_i Q(s) = \frac{1}{2d} \int_{\Omega_i}\Delta \Phi(\sum_{j=1}^n s_j^{1/2}x_j)dx_1...dx_n
+	\end{align*}
+
+	by integrating $Q$ over $\mathbb{S}^{d-1} \times ... \mathbb{B}^d ... \times \mathbb{S}^{d-1}$ where $\mathbb{B}^d$ the ith factor first in $x_i$ the differentiate in $s_i$ and applying the first lemma to $x_i \to \Phi(x_i + \sum_{j\neq i}s_j^{1/2}x_j)$. 
+
+	Note $\int_{\mathbb{B}^d} F(x)dx = \int_0^1 d r^{d-1}dr = \int_{\mathbb{S}^{d-1}}F(rx)dx$ 
+
+	So applying this to the above we get
+
+	\begin{align*}
+		\partial_1 Q(s) = \frac{1}{2} \int_{\prod_{j=1}^{k-2}\mathbb{S}^{d-1}} dx_2....dx_k... \int_0^1 r^{n-1}dr\int_{\mathbb{S}^{d-1}\times \mathbb{S}^{d-1}} \Delta \Phi(s_1^{1/2}rx_1 + s_2^{1/2}_2 + \sum_{j=3}^n s_j^{1/2}x_j)dx_1dx_2
+	\end{align*}
+
+	Set $f(z) = \Delta \Phi (z+\sum_{j=3}^ns_j^{1/2}x_j)$. By our second lemma we know the above $dx_1dx_2$ integral term equals $I(|rs_1^{1/2} + s_2^{1/2}|,f)$. We can apply a similar analysis to $\partial_2 Q(s)$.  
+
+	Since $f = \Delta \Phi$ subharmonic we know $I(r,f)$ increases as r increases. So then we have shown if $s_1 \geq s_2$ then $\partial_1 Q(s) \leq \partial_2 Q(s)$. 
+
+	Clearly Q permutation invariant so we may assume components of $a,b$ decrease as i increases. So components of $(1-t)a + tb$ also decrease and hence $\partial_j Q((1-t)a+tb)$ increases. We know $b \prec a$ and $\lambda = (\lambda_1,...,\lambda_k)$ has increasing terms, then $b \prec a$ implies $\sum \lambda_j b_j \geq \sum \lambda_j a_j$. Thus we know $\sum_{j=1}^n \partial_j Q((1-t)a+tb)(b_j - a_j)$ is nonnegative and we are done.
+\end{proof}
+
+Note we crucially use the bisubharmonicity of $\Phi$ to have $f = \Delta \Phi$ subharmonic and thus $I(r,f)$ increasing as r increasing. 
+
+Recall if $\Phi$ radial then $\Phi(x) = R(|x|)$ for $x \in \R$. Interestingly if $\Phi$ radial then a converse holds as well:
+
+\begin{theorem}
+	Let $\Phi : \R^n \to \R$ be continuous and radial. Then if $\E \Phi(X) \leq \E \Phi(Y)$ for all pairs of a,b with $(b_i^2) \prec (a_i^2)$ then $\Phi$ is bisubharmonic.
+\end{theorem}
+
+For proof we refer the reader to \cite{BC}.
+
+\newpage
+
+\section{Type $\mathcal{L}$ Random Variables}
+
+Here we cover results from $\cite{HNT}$ giving new types of Khintchine inequalities for Type $\mathcal{L}$ random variables.
+
+First defined by Newman in \cite{N}, we define random variable X to be of type $\mathcal{L}$ if we have sub-gaussianity i.e. $\exists A,B$ s.t. $|\E e^{z X}| \leq A e^{B|z|^2}$ and the characteristic is even with strictly real zeroes or equivalently $\E e^{zX}$ is even with pure imaginary zeroes. If the distribution is not symmetric we say instead $X \in \mathcal{L}'$. 
+
+Note clearly $\mathcal{L}$ closed under sum since the characteristic of the sum $X+Y$ is the product of the characteristics, which preserves sub-gaussanity and pure imaginary zeroes. 
+
+Basic examples of type $\mathcal{L}$ random variables include random signs, arithmetic progressions, and the gaussian. Indeed clearly all these have characteristics which are subgaussian and have strictly real zeroes. 
+
+\subsection{Connections to Ultra Sub-Gaussianity}
+
+Newman showed in \cite{N} a class of $2,p$ khintchine inequalities:
+
+\begin{theorem}
+	If the $\{X_j\}_{j=1}^N$ are independent random variables of type L, then for any real $a_j$ with $X= \sum_j a_j X_j$ and even m we have
+	\begin{align*}
+		\E|X|^{2m} \leq \frac{(2m)!}{2^mm!}(\E|X|^2)^m
+	\end{align*}
+\end{theorem}
+
+The proof is importantly uses Hadamard's factorization theorem for the characteristics of our random variables, allowing us to compare moments of with terms in the expontial power series. We generalize this approach below. Now we present the main Khintchine type result for type $\mathcal{L}$ random variables. 
+
+\begin{theorem}
+Let $X$ be a random variable of type $\mathcal{L}'$. Then for every even integers $2 \leq p \leq q$, we have
+\begin{equation*}\label{eq:mom-comp}
+\|X\|_q \leq \frac{\|G\|_q}{\|G\|_p}\|X\|_p,
+\end{equation*}
+where $G$ is a standard Gaussian random variable.
+\end{theorem}
+
+\begin{proof}
+	First note If $X \in \mathcal{L}'$ then we can find $c \in \R$ s.t. $X+c \in \mathcal{L}$. Since
+	\begin{align*}
+		\E e^{zX} = e^{bz^2/2+cz}\prod_j(1+\alpha_jz^2/2)
+	\end{align*}
+	for $b \geq 0$ and some $c \in \R$, $\alpha_j > 0$ by hadamard factorization. So if $X \in \mathcal{L}'$ then $Y = X-c \in \mathcal{L}$. We can write $\E|X|^p = \E|Y+c|^p = \E|Y+c\epsilon|^p$ since Y is symmetric. Further this is type L as it is the sum of two type L random variable. So X of type $\mathcal{L}'$ has moments equal to some type L random variable $Y+c\epsilon$ and so it suffices to simply consider $X \in \mathcal{L}$.
+
+	So we know we have
+	\begin{align*}
+		\E e^{zX} = e^{bz^2/2+cz}\prod_j(1+\alpha_jz^2/2)
+	\end{align*}
+	so expanding with exponential power series and applying $z = \sqrt{2t}$ yields
+	\begin{align*}
+		\sum_{n=0}^{\infty}\frac{\E X^{2n}}{(2n)!} 2^nt^n = \E e^{\sqrt{2t}X} = e^{bt}\prod_j(1+\alpha_j t)
+	\end{align*}
+	We can write $\prod_j(1+\alpha_j t) = \sum_{k=0}^{\infty}\sigma_k t^k$ where $\sigma_k$ are the elementary symmetric functions in $\alpha_j$. So by equating coefficients we know 
+	\begin{align*}
+		\frac{\E X^{2n}}{\E G^{2n}} = n!\sum_{k=0}^n \frac{b^{n-k}}{(n-k)!}\sigma_k = \sum_{k=0}^n {n \choose k}b^{n-k}\sigma_k k!
+	\end{align*}
+
+	Thus it suffices to show the sequence $s = (\sigma_k k!)_{k \geq 0}$ is log-concave as then $\frac{\E X^{2n}}{\E G^{2n}}$ is log-concave yielding the desired result. 
+
+	We show $s_k$ log-concave via newton's inequalities which tell us the elementary symmetric functions are ultra-log concave ie.
+	\begin{align*}
+		\frac{\sigma_{k-1}}{{n \choose k-1}}\frac{\sigma_{k+1}}{{n \choose k+1}} \leq \frac{\sigma_{k}^2}{{n \choose k}^2s}
+	\end{align*}
+	which is exactly what is needed, since clearly then $k!\sigma_k$ also log-concave.
+\end{proof}
+
+\begin{corollary}
+	If $X \in \mathcal{L}'$ then $X$ is ultra sub-Gaussian. 
+\end{corollary}
+
+We see this immediately from the previous theorem since we showed X's moments log-concave. 
+
+We also have the following generalization to hilbert spaces: 
+
+\begin{corollary}
+Let $(H,\|\cdot\|)$ be a separable (real or complex) Hilbert space. If $X_1, \ldots, X_n$ are independent type $\mathcal{L}$ random variables, then for every vectors $v_1, \ldots, v_n$ in $H$, the sum $X = \sum_{j=1}^n X_jv_j$ satisfies $\|X\|_q \leq \frac{\|G\|_q}{\|G\|_p}\|X\|_p$ for all positive even integers $p \leq q$, where we denote $\|X\|_p = (\E\|X\|^p)^{1/p}$.
+\end{corollary}
+
+The proof follows directly from two applications our result after defining the isometric embedding for $v$ in hilbert H, $\{e_1,...\}$ an orthonormal basis and $g_j$ iid standard gaussians:
+\begin{align*}
+	v \to c_q \sum_j \langle v,e_j\rangle g_j
+\end{align*}
+
+Most of the time independence is assumed for these khintchine type inequalities. However here we also present a a result allowing for dependencies between the summed random variables, again inspired by ferromagnetic model considerations from \cite{GN}, in particular proposition 6 which we present now.
+
+\begin{theorem}
+	Suppose $X_1,...,X_n$ have joint distribution $\nu$ given by 
+	\begin{align*}
+		\nu(x_1,...,x_n) = \frac{1}{Z}e^{\sum_{j=1}^n h_j x_j + \sum_{j \leq k}^n J_{j,k}x_jx_k}\prod_{j=1}^n \rho_j(x_j)
+	\end{align*}
+	with $J_{j,k},h_j \geq 0$ and $\rho_j$ even sub-Gaussian probability measure. Let $\delta$ an independent bernoulli and set $Y_0 = \delta$ and $Y_j = \delta X_j$ then the $Y_j$ have joint distribution 
+	\begin{align*}
+		\hat{\nu}(y_0,...,y_n) = \frac{1}{Z}e^{\sum_{j \leq k}^n J_{j,k}y_jy_k}\prod_{j=0}^n \rho_j(y_j)
+	\end{align*}
+\end{theorem}
+
+Having this we state and prove %FINISH!!!
+
+\begin{corollary}\label{cor:ferr}
+Let $\mu_1, ..., \mu_n$ be Borel probability measures on $\R$, each one of type $\mathcal{L}$. Suppose that $(X_1,\dots,X_n)$ is a random vector in $\R^n$ whose law $\rho$ on $\R^n$ is of the form
+\begin{equation}\label{eq:ferr-density}
+d\rho(x_1,\ldots,x_n) = Z^{-1}\exp\left(\sum_{j=1}^n h_jx_j+\sum_{j,k=1}^n J_{jk}x_jx_k\right)d\mu_1(x_1)\dots d\mu_n(x_n)
+\end{equation}
+with $h_j \geq 0$, $J_{jk} \geq 0$ for all $j,k \leq n$, where $Z$ is the normalising constant. Then for every nonnegative $a_1, \ldots, a_n$, the sum $X = \sum_{j=1}^n a_jX_j$ satisfies \eqref{eq:mom-comp} for all positive even integers $p \leq q$.
+\end{corollary}
+
+\begin{proof}
+	Let $(X_1, \ldots, X_n)$ be a random vector with distribution given by \eqref{eq:ferr-density} and let $\varepsilon$ be an independent Rademacher random variable. By the previous theorem, the vector $(Y_0,Y_1,\dots,Y_n) = (\e,\e X_1,\dots,\e X_n)$ has distribution $\rho'$ of the form
+\[
+d\rho'(x_0,x_1,\ldots,x_n) = Z'^{-1}\exp\left(\sum_{j,k=0}^n J_{jk}'x_jx_k\right)d\mu_0(x_0)d\mu_1(x_1)\dots\mu_n(x_n),
+\]
+where $\mu_0$ is the distribution of $\varepsilon$, $J_{0,0}' = 0$, $J_{0,k}' = J_{k,0}'= h_k/2$, $J_{jk}' = J_{jk}$, $j,k \geq 1$, so of the form \eqref{eq:ferr-density} with $h \equiv 0$. Therefore, by Theorem 2 from \cite{N}, for every $a_0, a_1,\dots, a_n \geq 0$, the sum $S = \sum_{j=0}^n a_jY_j = a_0\e + \sum_{j=1}^n a_j\e X_j$ is of type $\sL$ and in particular, $S$ satisfies \eqref{eq:mom-comp}. Hence, taking $a_0 = 0$ yields that $\sum_{j=1}^n a_jX_j$ also satisfies \eqref{eq:mom-comp}.\hfill$\square$
+\end{proof}
+
+\subsection{Type $\mathcal{L}$ Random Variables with "Enough Gaussanity"}
+
+The above results hold only for even integer moment comparisons. We now turn our attention to inequalites for a restricted class of type L random variables. In particular, those with "enough gaussianity". The following lemma makes this precise.
+
+\begin{lemma}
+	For every $b > 0$ and $a_1,a_2...\geq 0$ with $\sum a_j \leq b$ we know
+	\begin{align*}
+		e^{-bt^2/2}\prod_{j=1}^n (1-b_jt^2)
+	\end{align*} 
+	is the characteristic of a type $\mathcal{L}$ random variable. 
+\end{lemma}
+
+\begin{proof}
+	Define $\phi_a(t) = e^{-t^2/2}(1-at^2)$ for $a \in [0,1]$. Taking the inverse fourier transform we have
+	\begin{align*}
+		f_a(x) = \frac{1}{2\pi}\int_{-\infty}^{\infty}\phi_a(t)e^{-itx}dt = (1-a+ax^2)\frac{e^{-x^2/2}}{\sqrt{2\pi}}
+	\end{align*}
+	which is a density for $0 \leq a \leq 1$. In particular it is type $\mathcal{L}$ since its characteristic has real zeroes and is sub-Gaussian.
+
+	Then it suffices to notice 
+	\begin{align*}
+		e^{-bt^2/2}\prod_j (1-b_jt^2)
+	\end{align*} 
+	is the characteristic of a sum of type $\mathcal{L}$ random variables distributed according to $f_{a_j}$ for some $a_j$ and a gaussian. 
+\end{proof}
+
+We define $Z_a$ to be the random variable with density $f_a(x) = (1-a+ax^2)\frac{e^{-x^2/2}}{\sqrt{2\pi}}$. Note $Z_0$ is gaussian. Having established this class of random variables as type $\mathcal{L}$ we then can show khitchine-type inequalities $p \geq 3$ and $q=2$. 
+
+\begin{theorem}
+Let $X$ be type $\mathcal{L}$ random variable with characteristic function of the form $\phi_X(t) = e^{-b t^2/2}\prod_{j=1}^\infty(1-a_jt^2)$ with $b > 0$, $a_j \geq 0$, $\sum a_j \leq b$. Let $\sigma = \sqrt{\Var(X)}$. Then for every $p \geq 3$, 
+\[
+\E|\sigma Z_1|^p \leq \E|X|^p \leq \E|\sigma Z_0|^p,\]
+where $Z_0$ is a standard Gaussian random variable and $Z_1$ is a random variable with density $(2\pi)^{-1/2}x^2e^{-x^2/2}$.
+\end{theorem}
+
+Before giving proof we establish a useful lemma which will allow us to bound moments via schur-concavity.
+
+\begin{lemma}\label{lm:interlacing}
+For $\lambda \in (0,1)$, let $g_\lambda$ be the density of $\sqrt{\lambda}X_1 + \sqrt{1-\lambda}X_2$, where $X_1, X_2$ are independent copies of $Z_1$. Then for every $0 < \lambda_1 < \lambda_2 < \frac{1}{2}$, the function $g_{\lambda_2} - g_{\lambda_1}$ on $(0,+\infty)$ has exactly two zeros and the sign pattern $+-+$.
+\end{lemma}
+\begin{proof}
+By a direct computation, 
+\[g_\lambda(x) = \Big(x^2+\lambda(1-\lambda)(3-6x^2+x^4)\Big)\frac{e^{-x^2/2}}{\sqrt{2\pi}}
+\]
+so $g_{\lambda_2} - g_{\lambda_1}$ has the same sign as $(\lambda_2-\lambda_1)(1-\lambda_1-\lambda_2)(3-6x^2+x^4)$.
+\end{proof}
+
+
+\begin{lemma}\label{lm:schur}
+Let $X_1, X_2, \dots$ be i.i.d. copies of $Z_1$ and let $Y$ be a symmetric random variable independent of the $X_j$. Then the function
+\[
+\Psi(b_1,\dots,b_n) = \E|\sqrt{b_1}X_1+\dots+\sqrt{b_n}X_n + Y|^p
+\]
+is Schur-concave on $[0+\infty)^n$.
+\end{lemma}
+\begin{proof}
+We use the technique of interlacing densities (see, e.g. \cite{ENT2} or \cite{NZ}). Let $h(x) = |x+1|^p+|x-1|^p$. It suffices to show that for every $0 < \lambda_1 < \lambda_2 < \frac{1}{2}$, we have
+\[
+\int_0^\infty h(x)(g_{\lambda_2(x)} - g_{\lambda_1}(x)) \dd x \geq 0,
+\]
+where $g_\lambda$ is as in Lemma \ref{lm:interlacing}. For arbitrary $\alpha, \beta$, $\int (\alpha x^2+\beta)(g_{\lambda_2(x)} - g_{\lambda_1}(x)) \dd x = 0$, so the desired inequality is equivalent to 
+\[
+\int_0^\infty \tilde h(|x|)(g_{\lambda_2(x)} - g_{\lambda_1}(x)) \dd x \geq 0,
+\]
+with $\tilde h(x) = h(x) + \alpha x^2 + \beta$. Let $x_1, x_2$ be the zeros of $g_{\lambda_2(x)} - g_{\lambda_1}(x)$. Choose $\alpha$ and $\beta$ such that $\tilde h$ has zeros at $x_1$ and $x_2$. Since for $p \geq 3$, $\tilde h(\sqrt{x})$ is convex on $(0,+\infty)$, $\tilde h$ on $(0,+\infty)$ has no other zeros and the sign pattern $+-+$. Thus the integrand is pointwise nonnegative, hence the result.
+\end{proof}
+
+Now we present the proof the theorem.
+
+\begin{proof}\textit{Proof of Theorem}
+
+
+	Via approximation we suppose finitely many of the $a_j$ are nonzero. Normalize $\sum_{j=1}^n a_j = 1$ and $b = 1+c$ so then X is the same in distribution as $\sum_{j=1}^n \sqrt{a_j}Z_1^{(j)} + \sqrt{c}Z_0$. We compute the variance
+	\begin{align*}
+		Var(X) = \sum_{j=1}^na_jVar(Z_1) + cVar(Z_0) = 3+c
+	\end{align*}
+	where we know $Var(Z_1) = 3$. 
+
+	By the lemma we know with schur-concavity
+	\begin{align*}
+		\E |X|^p \leq \E|\sum_{j=1}^n \frac{1}{\sqrt{n}} X_j + \sqrt{c}Z_0|^p
+	\end{align*}
+	Sending $n \to \infty$ and using the central limit theorem we get the gaussian moment as an upper bound, as desired. 
+
+	Again via schur-concavity we get our lower bound by shifting all mass onto one term giving
+	\begin{align*}
+		\E |X|^p \geq \E |Z_1 + \sqrt{c}Z_0|^p
+	\end{align*}
+	whose density can be directly computed yielding the desired lower rbound.
+\end{proof}
+
+This concludes the discussion of Khintchine-type resuts for type $\mathcal{L}$ random variables.
+
+\subsubsection{Examples of Type $\mathcal{L}$ Random Variables}
+
+We list some examples of probability distributions of type $\mathcal{L}$. In what follows, $X$ is a symmetric random variable.
+
+\begin{enumerate}[(a)]
+
+\item 
+Let $X$ be integer-valued with $\p{X = 0} = p_0$ and $\p{X = -k} = \p{X = k} = p_k$, $k = 1, \dots, n$ for nonnegative $p_0, \dots, p_n$ with $p_0 + 2\sum_{k=1}^n p_k = 1$. 
+
+If $\frac{1}{2}p_0 \leq p_1 \leq \dots \leq p_n$, then $\E \cos(zX) = p_0 + \sum_{k=1}^n (2p_k)\cos(kz)$ has only real zeros, as it follows from the Enestr\"om-Kakeya theorem (see, e.g. Problem III.204 in \cite{PS1}). As a result, $X$ is of type $\sL$. In particular, if $X$ is uniform on $\{-n,\dots, 1, 1, \dots, n\}$ with a possible atom at $0$ satisfying $\p{X = 0} \leq \frac{1}{n+1}$, then $X$ is of $\mathcal{L}$
+
+By the symmetry of $X$, the polynomial $Q(w) = \E w^{X+n}$ is self-inversive (the sequence of its coefficients is a palindrome, in other words, $w^{2n}Q(1/w) = Q(w)$). In particular, all its roots are symmetric with respect to the unit circle, that is if $w_0$ is a root of $Q$, then so is $1/w_0$. For instance, if for some $\alpha \geq 1$,
+\[
+\frac{1}{2}p_0^\alpha + \sum_{k=1}^{n-1} p_k^\alpha \leq \left(\frac{2}{n-2}\right)^{\alpha-1}p_n^\alpha,
+\]
+where $n$ is the number of nonzero coefficients of $Q$, then $Q$ has zeros only on the unit circle, so $X$ is of $\mathcal{L}$
+
+\item
+Let $X$ take values in $[-1,1]$ and have a density $f$ (which is even). Each of the following conditions implies that $X$ is of $\mathcal{L}$.
+\begin{enumerate}[(i)]
+\item $f$ is  nondecreasing on $(0,1)$.
+
+\item $f$ is $C^2$ with $f' < 0$ and $f'' < 0$ on $(0,1)$.
+
+\item $f(t) = h(t)^{\alpha}$, where $\alpha > -1$ and $h$ is an entire even function which is real-valued on the real line, $h(1) = 0$, $h(0) > 0$ and $h'(iz)$ is  in the Laguerre-P\'olya class. In particular, $f(t) = \text{const}\cdot (1-t^{2m})^{\alpha}$ for a nonnegative integer $m$.  
+\end{enumerate}
+
+Moreover, if $X$ has a density on $\R$ of the following form, then it is of type $\mathcal{L}$.
+
+\begin{enumerate}
+\item[(iv)] $f(t) = \text{const}\cdot e^{-t^{2m}}$ for a nonnegative integer $m$.  
+
+\item[(v)] $f(t) = (2\pi)^{-1/2}e^{-t^2/2}(1-b+ bt^2)$, $0 \leq b \leq 1$.
+\end{enumerate}
+
+
+\end{enumerate}
+
+\newpage
+
+\section{Discrete Symmetric Distributions}
+
+We now consider the generalization of a random sign to a symmetric discrete random variables uniformly distributed outside 0. Ie. consider the generalization to $X ~ \{-L,,..,0,...,L\}$ with some mass $\Pp(X = 0) = \rho_0$ and otherwise uniformly distributed on the $\{-L,...,-1\} \cup \{1,...,L\}$. We have the following results.
+
+\subsection{Connections to Ultra Sub-Gaussianity}
+
+For small enough mass at 0 the random variables is ultra sub-gaussian and thus we have khintchine type-inequalities for all even moments.
+
+\begin{theorem}\label{thm:USG}
+Let $\rho_0 \in [0,1]$ and let $L$ be a positive integer. Let $X_1, X_2,\dots$ be i.i.d. copies of a random variable $X$ with $\p{X=0} = \rho_0$ and $\p{X = -j} = \p{X = j} = \frac{1-\rho_0}{2L}$, $j = 1,\dots,L$. Then $X$ is ultra sub-Gaussian if and only if $\rho_0 = 1$, or
+\begin{equation}\label{eq:USG-rho}
+\rho_0 \leq 1 - \frac{2}{5}\frac{3L^2+3L-1}{(L+1)(2L+1)}.
+\end{equation}
+If this holds, then, consequently, for positive even integers $q > p \geq 2$, every $n \geq 1$ and reals $a_1,\dots,a_n$, we have
+\begin{equation}\label{eq:Khin-even}
+\left(\E\left|\sum_{i=1}^n a_iX_i\right|^q\right)^{1/q} \leq C_{p,q}\left(\E\left|\sum_{i=1}^n a_iX_i\right|^p\right)^{1/p}
+\end{equation}
+with $C_{p,q} = \frac{[1\cdot 3\cdot\ldots \cdot (q-1)]^{1/q}}{[1\cdot 3\cdot\ldots \cdot (p-1)]^{1/p}}$ which is sharp.
+\end{theorem}
+
+We refer readers to \cite{HT} for the proof which is a technical nested induction argument.
+
+The expression bounding mass at 0 $\rho_0$ in terms of L suggests a tradeoff between the size of the support and mass. So we break into cases, treating large and small masses at 0 separately. 
+
+\subsection{Small mass at 0}
+
+First we consider a strong claim for the case with no mass at 0, allowing us to access all $p \geq 3$. 
+
+\begin{theorem}\label{thm:2-p>3}
+Let $L$ be a positive integer. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = -j} = \p{X = j} = \frac{1}{2L}$, $j = 1, \ldots, L$. For every $n \geq 1$, reals $a_1,\ldots,a_n$ and $p \geq 3$, we have
+\begin{equation}\label{eq:2-p>3}
+\left(\E\left|\sum_{i=1}^n a_iX_i \right|^p\right)^{1/p} \leq C_p \left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{1/2} 
+\end{equation}
+with $C_p = \sqrt{2} \Big(\frac{\Gamma (\frac{p+1}{2})}{\sqrt{\pi}} \Big)^{1/p}$ which is sharp.
+\end{theorem}
+
+The value of the constant $C_p$ equals the $p$-th moment of a standard Gaussian random variable and is seen to be sharp by taking $a_1 = \ldots = a_n = \frac{1}{\sqrt{n}}$, letting $n \to \infty$ and applying the central limit theorem.
+
+We shall follow an inductive argument exploiting independence based on swapping the $X_i$ one by one with independent Gaussians. We normalize the gaussians to have same variance as the $X_i$. 
+
+Let 
+\begin{equation}\label{eq:def-sigma}
+\sigma  = \sqrt{\E |X_1|^2} = \left(\frac{(L+1)(2L+1)}{6}\right)^{1/2}
+\end{equation}
+and let $G_1, G_2, \ldots$ be i.i.d. centred Gaussian random variables with variance $\sigma^2$. Since
+\[
+C_p^p\left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{p/2} = C_p^p\left(\sum_{i=1}^n a_i^2\right)^{p/2}\sigma^{p/2} = \E\left|\sum_{i=1}^n a_iG_i \right|^p,
+\]
+inequality \eqref{eq:2-p>3} is equivalent to
+\[
+ \E\left|\sum_{i=1}^n a_iX_i \right|^p \leq  \E\left|\sum_{i=1}^n a_iG_i \right|^p.
+\]
+By independence and induction, it suffices to show that for every reals $a, b$, we have
+\begin{equation}\label{eq:XvsG}
+\E|a+bX_1|^p \leq \E|a+bG_1|^p.
+\end{equation}
+This will follow from the following claim.
+
+\bigskip
+\noindent\textbf{Claim.} For every convex nondecreasing function $h\colon [0,+\infty)\to [0,+\infty)$, we have 
+\begin{equation}\label{eq:X^2vsG^2}
+\E h(X_1^2) \leq \E h(G_1^2).
+\end{equation}
+
+\noindent
+Indeed, \eqref{eq:XvsG} for $b = 0$ is clear. Assuming $b \neq 0$, by homogeneity, \eqref{eq:XvsG} is equivalent to
+\[
+\E|a+X_1|^p \leq \E|a+G_1|^p.
+\]
+Using the symmetry of $X_1$, we can write
+\[
+2\E|a+X_1|^p = \E|a + |X_1||^p + \E|a-|X_1||^p = \E h_a(X_1^2),
+\]
+where
+\begin{equation}\label{eq:def-h_a}
+h_a(x) = |a + \sqrt{x}|^p + |a - \sqrt{x}|^p, \qquad x \geq 0
+\end{equation}
+(and similarly for $G_1$). The convexity of $h_a$ is established in the following standard lemma.
+
+\begin{lemma}\label{lm:h_a-convex}
+Let $p \geq 3$, $a \in \R$. Then $h_a$ defined in \eqref{eq:def-h_a} is convex nondecreasing on $[0,\infty)$.
+\end{lemma}
+\begin{proof}
+The case $a = 0$ is clear (and the assertion holds for $p \geq 2$). The case $a \neq 0$ reduces by homogeneity to, say $a = 1$. We have
+\[
+h_1'(x) = \frac{p}{2\sqrt{x}}\Big[|1+\sqrt{x}|^{p-1}+\text{sgn}(\sqrt{x}-1)|\sqrt{x}-1|^{p-1}\Big]
+\]
+and it suffices to show that the function $g(y) = \frac{|1+y|^{p-1}+\text{sgn}(y-1)|y-1|^{p-1}}{y}$ is nondecreasing on $(0,\infty)$. Call the numerator $f(y)$. Since $g(y) = \frac{f(y) - f(0)}{y-0}$, it suffices to show that $f$ is convex $(0,\infty)$. We have $f'(y) = (p-1)(|1+y|^{p-2}+|y-1|^{p-2})$ which is convex on $\R$ for $p \geq 3$, hence nondecreasing on $(0,\infty)$ (as being even). This justifies that $h_1'$ is nondecreasing, hence $h_1$ is convex. Since $h_1'(0) = f'(0) = 2(p-1) > 0$, we get $h_1'(x) \geq h_1'(0) > 0$, so $h_1$ is increasing on $(0,\infty)$.
+\end{proof}
+
+Thus $2\E|a+X_1|^p = \E h_a(X_1^2) \leq \E h_a(G_1^2) = 2\E|a+G_1|^p$ by the claim, as desired. It remains to prove the claim.
+
+\begin{proof}[Proof of the claim.]
+When $L=1$, the claim follows immediately because $X_1^2 = 1$ and by Jensen's inequality, $\E h(G_1^2) \geq h(\E G_1^2) = h(1) = \E h(X_1^2)$. We shall assume from now on that $L \geq 2$.
+
+By standard approximation arguments, it suffices to show that the claim holds for $h(x) = (x-a)_+$ for every $a > 0$. Here and throughout $x_+ = \max\{x,0\}$. Note that 
+\[
+\mathbb{E}(X_1^2-a)_+ = \frac{1}{2L}\sum_{k=-L}^L(k^2-a)_+ = \frac{1}{L}\sum_{k = \lceil \sqrt{a} \rceil}^L (k^2-a)
+\]
+and
+\[
+\mathbb{E}(G_1^2-a)_+ = \int_{-\infty}^{\infty}(x^2-a)_+\frac{1}{\sqrt{2 \pi \sigma^2}}e^{-x^2/2\sigma^2}\dd x =\sqrt{\frac{2}{\pi \sigma^2}}\int_{\sqrt{a}}^{\infty}(x^2-a)e^{-x^2/2\sigma^2}\dd x
+\]
+with $\sigma$ (depending on $L$) defined by \eqref{eq:def-sigma}.
+Fix an integer $L \geq 2$ and set for nonnegative $a$,
+\[
+f(a) = \sqrt{\frac{2}{\pi \sigma^2}}\int_{\sqrt{a}}^{\infty}(x^2-a)e^{-x^2/2\sigma^2}\dd x-\frac{1}{L}\sum_{k = \lceil \sqrt{a} \rceil}^L (k^2-a).
+\]
+Our goal is to show that $f(a) \geq 0$ for every $a \geq 0$. This is clear for $a > L^2$ because then the second term is $0$. Note that $f$ is continuous (because $x \mapsto x_+$ is continuous). For $a \in (b^2, (b+1)^2)$ with $b \in \{0,1,\ldots,L-1\}$ our expression becomes 
+\[
+f(a) = \sqrt{\frac{2}{\pi \sigma^2}}\int_{\sqrt{a}}^{\infty}(x^2-a)e^{-x^2/2\sigma^2}dx-\frac{1}{L}\sum_{k=b+1}^L (k^2-a),
+\]
+is differentiable and
+\begin{align}
+f'(a) &=  -\sqrt{\frac{2}{\pi \sigma^2}}\int_{\sqrt{a}}^{\infty}e^{-x^2/2 \sigma^2}\dd x- \frac{1}{L}\sum_{k = b+1}^L (-1) \notag\\
+&= -\sqrt{\frac{2}{\pi \sigma^2}}\int_{\sqrt{a}}^{\infty}e^{-x^2/2 \sigma^2}\dd x + \frac{L-b}{L}, \qquad\qquad a \in (b^2,(b+1)^2).\label{eq:f'}
+\end{align}
+Bounding $b < \sqrt{a}$ yields
+\begin{align*}
+f'(a) &\geq -\sqrt{\frac{2}{\pi \sigma^2}}\int_{\sqrt{a}}^{\infty}e^{-x^2/2 \sigma^2}\dd x + \frac{L-\sqrt{a}}{L} \\
+&= -\sqrt{\frac{2}{\pi}}\int_{\sqrt{a}/\sigma}^{\infty}e^{-x^2/2}\dd x + \left(1 -  \frac{\sqrt{a}}{L}\right).
+\end{align*}
+Call the right hand side $\tilde g(a)$,
+\[
+\tilde g(a) = -\sqrt{\frac{2}{\pi}}\int_{\sqrt{a}/\sigma}^{\infty}e^{-x^2/2}\dd x + \left(1 -  \frac{\sqrt{a}}{L}\right).
+\]
+We have obtained $f' \geq \tilde g$ on $(0,L^2)$ (except for the points $1^2, 2^2, \ldots$). Since $f$ is absolutely continuous and $f(0) = 0$, we can write $f(a) = \int_0^a f'(x) \dd x$ and consequently
+\[
+f(a) \geq g(a), \qquad a \in [0,L^2],
+\]
+where we define
+\[
+g(a) = \int_0^a \tilde g(x)\dd x.
+\]
+Note: $g''(a) = \tilde g'(a) = \frac{1}{2\sqrt{a}}\left(\sqrt{\frac{2}{\pi}}\frac{1}{\sigma}e^{-\frac{a}{2\sigma}} - \frac{1}{L}\right)$ which changes sign from positive to negative (since $\sqrt{\frac{2}{\pi}}\frac{1}{\sigma} - \frac{1}{L} > 0$ for $L \geq 2$). This implies that $g'$ is first strictly increasing, then strictly decreasing and together with $g'(0) = \tilde g(0) = 0$, $g'(\infty) = -\infty$, it gives that $g'$ is first positive, then negative. Consequently, $g$ is first strictly increasing and then strictly decreasing. Since $g(0) = 0$, to conclude that $g$ is nonnegative on $[0,L^2]$ (hence $f$), it suffices to check that $g(L^2) \geq 0$. We have,
+\begin{align*}
+g(L^2) &= \int_0^{L^2}\Bigg[-\sqrt{\frac{2}{\pi}}\int_{\sqrt{a}/\sigma}^{\infty}e^{-x^2/2}\dd x + \left(1 -  \frac{\sqrt{a}}{L}\right)\Bigg] \dd a \\
+&=\int_0^{L^2}\Bigg[\sqrt{\frac{2}{\pi}}\int_{0}^{\sqrt{a}/\sigma}e^{-x^2/2}\dd x - \frac{\sqrt{a}}{L} \Bigg] \dd a \\
+&= \sqrt{\frac{2}{\pi}}\int_0^{L/\sigma} (L^2-\sigma^2x^2)e^{-x^2/2} \dd x - \frac{2}{3}L^2.
+\end{align*}
+Note that for $t = t(L) = \frac{L^2}{\sigma^2} = \frac{6L^2}{(L+1)(2L+1)}$, the expression $\frac{g(L^2)}{\sigma^2}$ becomes
+\[
+h(t) = \sqrt{\frac{2}{\pi}}\int_0^{\sqrt{t}} (t-x^2)e^{-x^2/2} \dd x - \frac{2}{3}t.
+\]
+We have,
+\[
+h'(t) = \sqrt{\frac{2}{\pi}}\int_0^{\sqrt{t}} e^{-x^2/2} \dd x - \frac{2}{3}.
+\]
+For $L \geq 7$, we have $t \geq t_0 = t(7) = \frac{49}{20}$. We check that $h'(t_0) = h'(\frac{49}{20})> 0.2$ and since $h'$ is increasing, $h'(t)$ is positive for $t \geq t_0$, hence $h(t) \geq h(t_0) = h(\frac{49}{20}) > 0.01$ for $t \geq t_0$. Consequently, $g(L^2) > 0$ for every $L \geq 7$, which completes the proof for $L \geq 7$.
+
+It remains to address the cases $2 \leq L \leq 6$. Here lower-bounding $f$ by $g$ incurs too much loss, so we show that $f$ is nonnegative on $[0,L^2]$ by direct computations. First note that $f'(a)$ (see \eqref{eq:f'}) is strictly increasing on each interval $a \in (b^2,(b+1)^2)$, $b \in \{0,1,\ldots, L-1\}$. Clearly $f'(0+) = 0$ and we check that $\theta_{L,b} = f'(b^2+) > 0$ for every $b \in \{1,\ldots,L-2\}$ and $3 \leq L \leq 6$ (see Table \ref{tab:f'}), so $f(a)$ is strictly increasing for $a \in (0,(L-1)^2)$. Since $f(0) = 0$, this shows that $f(a) > 0$ for $a \in (0,(L-1)^2)$. On the interval $((L-1)^2,L^2)$, we use the convexity of $f$ and we lower-bound $f$ by its tangent at $a = (L-1)^2+$ with the slope $\theta_{L,L-1}$ (which is negative), that is $f(a) \geq \theta_{L,L-1}(a - (L-1)^2) + f((L-1)^2)$. It remains to check that $v_L = \theta_{L,L-1}(2L-1) + f((L-1)^2)$, the values of the right hand side at the end point $a = L^2$, are positive. We have, $v_2 > 0.2$, $v_3 > 0.7$, $v_4 > 1.2$, $v_5 > 1.9$, $v_6 > 2.6$. This finishes the proof.
+\end{proof}
+
+ We recall the notions of majorisation and Schur-convexity. Given two nonnegative sequences $(a_i)_{i=1}^n$ and $(b_i)_{i=1}^n$, we say that $(b_i)_{i=1}^n$ \emph{majorises} $(a_i)_{i=1}^n$, denoted $(a_i) \prec (b_i)$ if
+\[
+\sum_{i=1}^n a_i = \sum_{i=1}^n b_i \qquad \text{and} \qquad \sum_{i=1}^k a_i^* = \sum_{i=1}^k b_i^* \ \text{ for all } \ k = 1,\ldots,n,
+\]
+where $(a_i^*)_{i=1}^n$ and $(b_i^*)_{i=1}^n$ are nonincreasing permutations of $(a_i)_{i=1}^n$ and $(b_i)_{i=1}^n$ respectively. For example, $(\frac{1}{n},\frac{1}{n},\dots,\frac{1}{n}) \prec (a_1,a_2,\dots,a_n) \prec (1,0,\dots,0)$ for every nonnegative sequence $(a_i)$ with $\sum_{i=1}^n a_i = 1$. A function $\Psi\colon [0,\infty)^n \to \R$ which is symmetric (with respect to permuting the coordinates) is said to be \emph{Schur-convex} if $\Psi(a) \leq \Psi(b)$ whenever $a \prec b$ and \emph{Schur-concave} if $\Psi(a) \geq \Psi(b)$ whenever $a \prec b$. For instance, a function of the form $\Psi(a) = \sum_{i=1}^n \psi(a_i)$ with $\psi\colon [0,+\infty) \to \R$ being convex is Schur-convex.
+
+Now if we restrict our attention to a random sign with some mass added at 0, we can achieve a Schur convexity type result, which in turn yields khintchine type inequalities.
+
+\begin{theorem}\label{thm:Schur}
+Let $\rho_0 \in [0,\frac{1}{2}]$. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = 0} = \rho_0$ and $\p{X = -1} = \p{X = 1} = \frac{1-\rho_0}{2}$. Let $p \geq 3$. For every $n \geq 1$ and reals $a_1,\ldots,a_n, b_1, \ldots, b_n$ such that $(a_i^2)_{i=1}^n \prec (b_i^2)_{i=1}^n$, we have
+\begin{equation}\label{eq:Schur}
+\E\left|\sum_{i=1}^n a_iX_i \right|^p \geq \E\left|\sum_{i=1}^n b_iX_i \right|^p.
+\end{equation}
+\end{theorem}
+
+We need to begin with two technical lemmas. Let $\mathcal{C}$ be the linear space of all continuous functions on $\R$ equipped with pointwise topology. Let $\mathcal{C}_{1} \subset \mathcal{C}$ be the cone of all odd functions on $\R$ which are nondecreasing convex on $(0,+\infty)$ and let $\mathcal{C}_{2} \subset \mathcal{C}$ be the cone of all even functions on $\R$ which are nondecreasing convex on $(0,+\infty)$. Note that $\mathcal{C}_{2}$ is the closure (in the pointwise topology) of the set $\mathcal{S} = \{(|x|-\gamma)_+, \ \gamma \geq 0\}$ .
+
+\begin{lemma}\label{lm:r-is-convex}
+Let $q \geq 2$, $w \geq 0$ and $\phi_w(x) = \sgn(x+w)|x+w|^q + \sgn(x-w)|x-w|^q$, $x \in \R$. Then $\phi_w \in \mathcal{C}_1$. Let $r_w(x) = \frac{\phi_w(x)}{x}$, $x \in \R$ (with the value at $x=0$ understood as the limit). Then $r_w \in \mathcal{C}_2$.
+\end{lemma}
+\begin{proof}
+The case $w=0$ is clear. For $w > 0$, verifying that $\phi_w \in \mathcal{C}_1$ and $r_w \in \mathcal{C}_2$, by homogeneity, is equivalent to doing so for $w=1$. Let $w=1$ and denote $\phi=\phi_1$ and $r=r_1$. Suppose we have shown that $r \in \mathcal{C}_2$. Then, plainly, $\phi(x) = xr(x)$ is also nondecreasing on $(0,\infty)$ and $\phi''(x) = (r(x) +xr'(x))' = 2r'(x) + xr''(x)$ is nonnegative on $(0,\infty)$ since $r'$ and $r''$ are nonnegative on $(0,\infty)$. 
+
+It remains to prove that $r \in \mathcal{C}_2$. Plainly $\phi(x)$ is odd and thus $r(x)$ is even. Thus we consider $x > 0$.
+
+\bigskip
+\noindent
+\emph{Case 1.} $x \geq 1$. We have, $\phi(x) = (x+1)^q + (x-1)^q$,
+\[
+r'(x) = \frac{\phi'(x)}{x} - \frac{\phi(x)}{x^2} = q\frac{(x+1)^{q-1}+(x-1)^{q-1}}{x} - \frac{(x+1)^q+(x-1)^q}{x^2}
+\]
+and
+\begin{align*}
+x^3r''(x) &= x^3\Bigg[\frac{\phi''(x)}{x}-2\frac{\phi'(x)}{x^2}+2\frac{\phi(x)}{x^3}\Bigg]\\
+&=q(q-1)x^2\Big[(x+1)^{q-2}+(x-1)^{q-2}\Big] \\
+&\qquad\qquad-2qx\Big[(x+1)^{q-1}+(x-1)^{q-1}\Big]+ 2\Big[(x+1)^q+(x-1)^q\Big].
+\end{align*}
+Note that taking one more derivative gives
+\[
+(x^3r''(x))' = q(q-1)(q-2)x^2\Big[(x+1)^{q-3}+(x-1)^{q-3}\Big]
+\]
+which is clearly positive for $x > 1$ since $q \geq 2$. Thus, for $x > 1$, we have
+\[
+x^3r''(x) > r''(1) = q(q-1)\cdot 2^{q-2}-2q\cdot 2^{q-1}+2\cdot 2^{q} = 2^{q-2}\left( \left(q-\frac{5}{2}\right)^2 + \frac{7}{4}\right) > 0.
+\]
+Therefore, $r''(x) > 0$ for $x > 1$. Since $r'(1) = q2^{q-1}-2^q = 2^{q-1}(q-2) \geq 0$, we also get that $r'(x)$ is positive for $x > 1$.
+
+
+
+\bigskip
+\noindent
+\emph{Case 2.} $0 < x < 1$. The argument and the computations are very similar to Case 1. We have, $\phi(x) = (1+x)^q - (1-x)^q$,
+\[
+r'(x) = \frac{\phi'(x)}{x} - \frac{\phi(x)}{x^2} = q\frac{(1+x)^{q-1}+(1-x)^{q-1}}{x} - \frac{(1+x)^q-(1-x)^q}{x^2}
+\]
+and
+\begin{align*}
+x^3r''(x) &= x^3\Bigg[\frac{\phi''(x)}{x}-2\frac{\phi'(x)}{x^2}+2\frac{\phi(x)}{x^3}\Bigg] \\
+&=q(q-1)x^2\Big[(1+x)^{q-2}-(1-x)^{q-2}\Big] \\
+&\qquad\qquad-2qx\Big[(1+x)^{q-1}+(1-x)^{q-1}\Big]+ 2\Big[(1+x)^q-(1-x)^q\Big].
+\end{align*}
+Taking one more derivative yields
+\[
+(x^3r''(x))' = q(q-1)(q-2)x^2\Big[(1+x)^{q-3}+(1-x)^{q-3}\Big].
+\]
+If $q > 2$, this is positive for $0 < x  < 1$. Then in this case, consequently, $x^3r''(x) > x^3r''(x)\Big|_{x=0} = 0$, so $r''(x)$ is positive for $0 < x < 1$. As a result, $r'(x) > r'(0+) = 0$ for $0 < x < 1$. If $q = 2$, we simply have $\phi(x) = 4x$ and $r(x) = 4$. 
+
+Combining the cases, we see that both $r'$ and $r''$ are nonnegative on $(0,+\infty)$, which finishes the proof.
+\end{proof}
+
+%\begin{lemma}\label{lm:r-via-simple}
+%\end{lemma}
+
+\begin{lemma}\label{lm:2point-C}
+The best constant $D$ such that the inequality
+\begin{equation}\label{eq:2point-C}
+D\cdot\left[\frac{\phi(a+b)-\phi(b-a)}{2a} - \frac{\phi(a+b)+\phi(b-a)}{2b}\right] \geq \left[ \frac{\phi(b)}{b}-\frac{\phi(a)}{a}\right]
+\end{equation}
+holds for all $0 < a < b$ and every function $\phi(x)$ of the form $xr(x)$, $r \in \mathcal{C}_2$, is $D=1$.
+\end{lemma}
+\begin{proof}
+For $\phi(x) = xr(x)$, $r(x) = |x|$, by homogeneity, inequality \eqref{eq:2point-C} is equivalent to: for all $0 < a < 1$, we have
+\[
+D\cdot\left[\frac{(1+a)^2-(1-a)^2}{2a} - \frac{(1+a)^2+(1-a)^2}{2}\right] \geq 1-a,
+\]
+that is $D\cdot(1-a^2) \geq (1-a)$ for all $0 < a < 1$, which holds if and only if $D \geq 1$. Now we show that in fact \eqref{eq:2point-C} holds with $D=1$ for every $\phi(x) = xr(x)$, where $r \in \mathcal{C}_2$. Since $\mathcal{C}_2$ is the closure of $\mathcal{S}$, by linearity, it suffices to show this for all simple functions $r \in \mathcal{S}$, that is $r(x) = (|x|-\gamma)_+$. By homogeneity, this is equivalent to showing that for all $\gamma \geq 0$ and $0 < a < 1$, we have
+\begin{align*}
+&\frac{(1+a)(1+a-\gamma)_+-(1-a)(1-a-\gamma)_+}{2a} - \frac{(1+a)(1+a-\gamma)_++(1-a)(1-a-\gamma)_+}{2} \\
+&\qquad\geq  (1-\gamma)_+-(a-\gamma)_+.
+\end{align*}
+Fix $0 < a < 1$. Let $h_a(\gamma)$ be the left hand side minus the right hand side. For $\gamma \geq 1+a$, $h_a(\gamma) = 0$. Since as a function of $\gamma$, $h_a(\gamma)$ is piecewise linear, showing that it is nonnegative on $[0,1+a]$ is equivalent to verifying it at the nodes $\gamma \in \{0, 1, a, 1-a\}$. We have, $h_a(0) = a-a^2 > 0$. Next, $h_a(1) = \frac{(1+a)a}{2a} - \frac{(1+a)a}{2} = \frac{1}{2}(1+a)(1-a) > 0$. Finally, to check $\gamma = a$ and $\gamma = 1-a$, we consider two cases.
+
+\bigskip
+\noindent
+\emph{Case 1.} $a \leq 1-a$, that is $0< a \leq \frac{1}{2}$. Then,
+\[
+h_a(a) = \frac{(1+a)-(1-a)(1-2a)}{2a} - \frac{(1+a)+(1-a)(1-2a)}{2} - (1-a) = a(1-a) > 0
+\]
+and
+\[
+h_a(1-a) = \frac{(1+a)2a}{2a} - \frac{(1+a)2a}{2}-a = 1-a^2-a \geq 1 - \frac{1}{4} - \frac{1}{2} = \frac{1}{4}.
+\]
+
+
+\bigskip
+\noindent
+\emph{Case 2.} $a > 1-a$, that is $\frac{1}{2} < a <1$. Then,
+\[
+h_a(a) = \frac{(1+a)}{2a} - \frac{(1+a)}{2} - (1-a) = \frac{(1-a)^2}{2a} > 0
+\]
+and
+\[
+h_a(1-a) = \frac{(1+a)2a}{2a} - \frac{(1+a)2a}{2}-[a-(2a-1)] = a(1-a) > 0.
+\]
+\end{proof}
+
+\begin{proof}[Proof of Theorem \ref{thm:Schur}]
+Fix $p \geq 3$ and let $F(x) = |x|^p$. Then \eqref{eq:Schur} is equivalent to saying that the function
+\[
+\Phi(a_1,\ldots,a_n) = \E F\left(\sum_{i=1}^n \sqrt{a_i}X_i\right)
+\]
+is Schur concave. Since $\Phi$ is symmetric, by Ostrowski's criterion (see, e.g., Theorem II.3.14 in \cite{Bh}), $\Phi$ is Schur concave if and only if
+\[
+\frac{\partial \Phi}{\partial a_1} \geq \frac{\partial \Phi}{\partial a_2}, \qquad a_1 < a_2,
+\]
+which is equivalent to
+\[
+\frac{1}{\sqrt{a_1}}\E[ X_1F'(S)] \geq \frac{1}{\sqrt{a_2}}\E[X_2 F'(S)],
+\]
+where $S = \sqrt{a_1}X_1+\sqrt{a_2}X_2 + W$ and $W = \sum_{i>2} \sqrt{a_i}X_i$.
+After taking the expectation with respect to $X_1$ and $X_2$, it becomes
+\begin{align*}
+&\quad \frac{1}{\sqrt{a_1}}\Bigg(\frac{1-\rho_0}{2}\rho_0\E[F'(\sqrt{a_1}+W) - F'(-\sqrt{a_1}+W)] \\
+&\qquad+ \left(\frac{1-\rho_0}{2}\right)^2 \E[ F'(\sqrt{a_1}+ \sqrt{a_2} +  W) - F'(-\sqrt{a_1} + \sqrt{a_2} + W) \\
+&\qquad\qquad\qquad\qquad + F'(\sqrt{a_1} - \sqrt{a_2} + W) - F'(-\sqrt{a_1} - \sqrt{a_2} + W)  ]\Bigg) \\
+&\geq \frac{1}{\sqrt{a_2}}\Bigg(\frac{1-\rho_0}{2}\rho_0\E[F'(\sqrt{a_2}+W) - F'(-\sqrt{a_2}+W)] \\
+&\qquad+ \left(\frac{1-\rho_0}{2}\right)^2 \E[ F'(\sqrt{a_2}+ \sqrt{a_1} +  W) - F'(-\sqrt{a_2} + \sqrt{a_1} + W) \\
+&\qquad\qquad\qquad\qquad + F'(\sqrt{a_2} - \sqrt{a_1} + W) - F'(-\sqrt{a_2} - \sqrt{a_1} + W)  ]\Bigg).
+\end{align*}
+This trivially holds for $\rho_0 = 1$. Suppose $\rho_0 < 1$.
+Note that $F'$ is odd and $W$ is symmetric. Thus, $-\E F'(-\sqrt{a_1}+W) = \E F'(\sqrt{a_1}+W)$ and similarly for the other terms. Consequently, the inequality is equivalent to
+\begin{align*}
+&\quad \frac{1}{\sqrt{a_1}}\Bigg(2\rho_0\E F'(\sqrt{a_1}+W) \\
+&\qquad+ (1-\rho_0) \E[ F'(\sqrt{a_1}+ \sqrt{a_2} +  W) - F'(-\sqrt{a_1} + \sqrt{a_2} + W) ]\Bigg) \\
+&\geq \frac{1}{\sqrt{a_2}}\Bigg(2\rho_0\E F'(\sqrt{a_2}+W) \\
+&\qquad+(1-\rho_0) \E[ F'(\sqrt{a_2}+ \sqrt{a_1} +  W) + F'(\sqrt{a_2} - \sqrt{a_1} + W) ]\Bigg).
+\end{align*}
+Set $a = \sqrt{a_1}$, $b = \sqrt{a_2}$ and
+\[
+\phi(x) = \E F'(x+W), \qquad x \in \R
+\]
+($\phi$ is also odd). Suppose $\rho_0 > 0$. Then, the validity of the above inequality is equivalent to the question whether for all $0 < a < b$,
+\begin{equation}\label{eq:phi-2point}
+(\rho_0^{-1}-1)\left[\frac{\phi(a+b)-\phi(b-a)}{2a} - \frac{\phi(a+b)+\phi(b-a)}{2b}\right] \geq \left[ \frac{\phi(b)}{b}-\frac{\phi(a)}{a}\right].
+\end{equation}
+By the symmetry of $W$, it has the same distribution as $\varepsilon |W|$, where $\varepsilon$ is an independent symmetric random sign, so we can write $\phi(x) = \frac{1}{2}\E\phi_{|W|}(x)$, where for $w \geq 0$, we set $\phi_w(x) = F'(x+w) + F'(x-w)$. By Lemmas \ref{lm:r-is-convex} and \ref{lm:2point-C}, inequality \eqref{eq:phi-2point} holds for $\phi_w$ in place of $\phi$ (for every $w \geq 0$) as long as $\rho_0^{-1} - 1 \geq 1$. Taking the expectation against $|W|$ yields the inequality for $\phi$, as desired. For $\rho_0 =0$, we can for instance argue by taking the limit $\rho_0 \to 0+$ directly in \eqref{eq:Schur}.
+\end{proof}
+
+\begin{corollary}
+Under the assumptions of Theorem \ref{thm:Schur} for every $n \geq 1$ and reals $a_1,\ldots,a_n$, we have
+\begin{equation}\label{eq:2-p>3'}
+\left(\E\left|\sum_{i=1}^n a_iX_i \right|^p\right)^{1/p} \leq C_p \left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{1/2} 
+\end{equation}
+with $C_p = \sqrt{2} \Big(\frac{\Gamma (\frac{p+1}{2})}{\sqrt{\pi}} \Big)^{1/p}$ which is sharp.
+\end{corollary}
+
+Now we consider when $\rho_0$ is "large".
+
+\subsection{Large mass at 0}
+
+It turns out large mass at 0 is more ameniable to bounds for $p < 2$. Here we consdier the case $p=1$. 
+
+\begin{theorem}\label{thm:L1-L2}
+Let $\rho_0 \in [\frac{1}{2},1]$ and let $L$ be a positive integer. Let $X_1,X_2,\ldots$ be i.i.d. copies of a random variable $X$ with $\p{X = 0} = \rho_0$ and $\p{X = -j} = \p{X = j} = \frac{1-\rho_0}{2L}$, $j = 1, \ldots, L$. For every $n \geq 1$ and reals $a_1,\ldots,a_n$, we have
+\begin{equation}\label{eq:L1-L2}
+\E\left|\sum_{i=1}^n a_iX_i \right| \geq c_1\left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{1/2} 
+\end{equation}
+with $c_1 = \frac{\E|X|}{\sqrt{\E|X|^2}} = \sqrt{\frac{3(1-\rho_0)L(L+1)}{2(2L+1)}}$ which is sharp.
+\end{theorem}
+
+Note that for $a_1 = 1$, $a_2 = \dots = a_n = 0$, we have equality in \eqref{eq:L1-L2}, which explains why the value of the constant $c_1$ is sharp.
+
+We shall closely follow Haagerup's approach from \cite{Haa}. Let $\phi_X(t) = \E e^{itX}$ be the characteristic function of $X$. We have
+\begin{align*}
+\phi_X(t) &= \rho_0 + (1-\rho_0)\frac{1}{L}\sum_{k=1}^L \cos(kt) \\
+&\geq \rho_0 -(1-\rho_0) = 2\rho_0 -1 \geq 0.
+\end{align*}
+We also define
+\[
+F(s) = \frac{2}{\pi}\int_0^\infty\left[1 - \left|\phi_X\left(\frac{t}{\sqrt{s}}\right)\right|^s\right]\frac{dt}{t^2}, \qquad s \geq 1.
+\]
+By symmetry, without loss of generality we can assume that $a_1, \ldots, a_n$ are positive with $\sum a_j^2 = 1$. By Lemma 1.2 from \cite{Haa} and independence,
+\begin{align*}
+\E\left|\sum_j a_j X_j\right| &= \frac{2}{\pi}\int_0^\infty \left[ 1 - \prod_j \phi_X(a_jt) \right] \frac{dt}{t^2}.
+\end{align*}
+As in the proof of Lemma 1.3 from \cite{Haa}, by the AM-GM inequality, 
+\[
+\prod \phi_X(a_jt) \leq \sum a_j^{2}|\phi_X(a_jt)|^{a_j^{-2}},
+\]
+thus
+\[
+\E\left|\sum_j a_j X_j\right| \geq \sum_j a_j^2F(a_j^{-2}).
+\]
+If we show that
+\begin{equation}\label{eq:F>F(1)}
+F(s) \geq F(1), \qquad s \geq 1,
+\end{equation}
+then
+\[
+\E\left|\sum_j a_j X_j\right| \geq \sum_j a_j^2F(1) = F(1) = \frac{F(1)}{\sqrt{\E |X|^2}}\left(\E\left|\sum_{i=1}^n a_iX_i \right|^2\right)^{1/2}.
+\]
+Since $\phi_X$ is nonnegative, using again Lemma 1.2 from \cite{Haa}, we have 
+\[
+F(1) = \frac{2}{\pi}\int_0^\infty\left[1 - \left|\phi_X\left(t\right)\right|\right]\frac{dt}{t^2} = \frac{2}{\pi}\int_0^\infty\left[1 - \phi_X\left(t\right)\right]\frac{dt}{t^2} = \E|X|,
+\]
+so the proof of \eqref{eq:L1-L2} is finished. 
+
+It remains to show \eqref{eq:F>F(1)}. For a fixed $s \geq 1$, the left hand side
+\[
+F(s) = \frac{2}{\pi}\int_0^\infty\left[1 - \left|\rho_0 + (1-\rho_0)\frac{1}{L}\sum_{k=1}^L \cos\left(\frac{kt}{\sqrt{s}}\right)\right|^s\right]\frac{dt}{t^2}
+\]
+is concave as a function of $\rho_0$, whereas the right hand side $F(1) = \E|X| = (1-\rho_0)\frac{L+1}{2}$ is linear as a function of $\rho_0$. Therefore, it is enough to check the cases: 1) $\rho_0 = 1$ which is clear, 2) $\rho_0 = 1/2$ which becomes
+\[
+\frac{2}{\pi}\int_0^\infty\left[1 - \left|\frac{1}{2} + \frac{1}{2}\frac{1}{L}\sum_{k=1}^L \cos\left(\frac{kt}{\sqrt{s}}\right)\right|^s\right]\frac{dt}{t^2} \geq \frac{L+1}{4}.
+\]
+Using $\frac{\cos x +1}{2} = \cos^2(x/2)$ and then employing convexity, the left hand side can be rewritten and lower bounded as follows
+\begin{align*}
+\frac{2}{\pi}\int_0^\infty\left[1 - \left|\frac{1}{L}\sum_{k=1}^L \cos^2\left(\frac{kt}{2\sqrt{s}}\right)\right|^s\right]\frac{dt}{t^2} \geq \frac{1}{L}\sum_{k=1}^L\frac{2}{\pi}\int_0^\infty\left[1 - \left|\cos\left(\frac{kt}{2\sqrt{s}}\right)\right|^{2s}\right]\frac{dt}{t^2}.
+\end{align*}
+A change of variables $t = \sqrt{2}t'/k$ allows to write the right hand side as
+\begin{align*}
+\frac{1}{L}\sum_{k=1}^L\frac{2}{\pi}\int_0^\infty\left[1 - \left|\cos\left(\frac{t'}{\sqrt{2s}}\right)\right|^{2s}\right]\frac{dt'}{t'^2}\frac{k}{\sqrt{2}} = \frac{L+1}{2\sqrt{2}}F_{\text{Haa}}(2s),
+\end{align*}
+where $F_{\text{Haa}}(s) = \frac{2}{\pi}\int_0^\infty\left[1 - \left|\cos\left(\frac{t}{\sqrt{s}}\right)\right|^{s}\right]\frac{dt}{t^2}$ is Haagerup's function (see Lemma 1.3 and 1.4 in \cite{Haa}). He showed therein that it is increasing, so for $s \geq 1$, we get $F_{\text{Haa}}(2s) \geq F_{\text{Haa}}(2) = \frac{1}{\sqrt{2}}$ and this finishes the proof.
+
+
+\begin{thebibliography}{9}
+
+\bibitem{TT} Tkocz T. Khinchin Inequalities with Sharp Constants. 
+
+\begin{verbatim}
+	http://www.him.uni-bonn.de/fileadmin/him/Lecture_Notes/Khinchin_inequalities_-_slides_3.pdf
+\end{verbatim}
+
+\bibitem{H} Haagerup U. The Best Constants in the Khintchine Inequality. 
+
+\begin{verbatim}
+	https://eudml.org/doc/218383
+\end{verbatim}
+
+\bibitem{S} Szarek H. On the best constants in the Khinchin's inequality. 
+
+\begin{verbatim}
+	https://eudml.org/doc/218071
+\end{verbatim}
+
+\bibitem{HT} Havrilla. A, Tkocz. T, Sharp Khinchin-type inequalities for symmetric discrete uniform random variables. 
+
+\begin{verbatim}
+	https://arxiv.org/abs/1912.13345
+\end{verbatim}
+
+\bibitem{HNT} Havrilla .A, Nayar. P, Tkocz. T, Khinchin-type inequalities via Hadamard's factorisation. 
+
+\begin{verbatim}
+	https://arxiv.org/abs/2102.09500
+\end{verbatim}
+
+\bibitem{NO} Nayar. P, Oleszkiewicz. Khinchine type inequalties with optimal constants via ultra log-concavity. 
+
+\begin{verbatim}
+	https://link.springer.com/article/10.1007/s11117-011-0130-z
+\end{verbatim}
+
+\bibitem{KH} J.-P. Kahane, Sur les sommes vectorielles, C. R. Acad Sci. Paris 259(1964), 2577-2580
+
+\bibitem{LT} Ledoux. M, Talagrand. M, Probability in Banach Spaces. 
+
+\begin{verbatim}
+	https://link.springer.com/book/10.1007/978-3-642-20212-4
+\end{verbatim}
+
+\bibitem{M} Mordhorst, O. The optimal constants in Khintchine's inequality for the case $2 < p < 3^*$. 
+
+\begin{verbatim}
+	https://arxiv.org/pdf/1601.07850.pdf
+\end{verbatim}
+
+\bibitem{NP} Nazarov, F. Podkorytov, A. Ball, Haagerup, and Distribution Functions. 
+
+\begin{verbatim}
+	https://link.springer.com/chapter/10.1007/978-3-0348-8378-8_21
+\end{verbatim}
+
+\bibitem{ENT} Eskenazis, A. Nayar, P. Tkocz, T. Gaussian Mixtures: Entropy and Geometric Inequalities.
+
+\begin{verbatim}
+	https://arxiv.org/pdf/1611.04921.pdf
+\end{verbatim}
+
+\bibitem{LO} Latala, R. Oleszkiewicz, K. A note on sums of independent uniformly distributed random variables.
+
+\begin{verbatim}
+	https://www.mimuw.edu.pl/~rlatala/papers/cm6826.pdf
+\end{verbatim}
+
+\bibitem{BGMN} Barthe, F. Guedon, O. Mendelson, S. Naor, A. A Probabilistic Approach To The Geometry of the $l_P^N$-Ball.
+
+\begin{verbatim}
+	https://arxiv.org/pdf/math/0503650.pdf
+\end{verbatim}
+
+\bibitem{S} Szarek, S. On the best constants in the Khinchin inequality.
+
+\begin{verbatim}
+	https://eudml.org/doc/218071
+\end{verbatim}
+
+\bibitem{Y} Young, R. On the Best Possible Constants in the Khintchine Inequality.
+
+\begin{verbatim}
+	https://academic.oup.com/jlms/article/s2-14/3/496/2939431?login=true
+\end{verbatim}
+
+\bibitem{N} Newman, C. An Extension of Khintchines Inequality. 
+
+\begin{verbatim}
+	https://projecteuclid.org/journals/bulletin-of-the-american-mathematical-society-new-series/volume-81/issue-5/An-extension-of-Khintchines-inequality/bams/1183537247.full
+\end{verbatim}
+
+\bibitem{GN} Newman, C. Moment Inequalities for Ferromagnetic Gibbs Distributions
+
+\begin{verbatim}
+	https://aip.scitation.org/doi/pdf/10.1063/1.522748?casa_token=Z_1AHe4y5o4AAAAA:r88BmLJsWwn8tdZ0NKMJQbBllWAxbUWR-eYQ86m-gP3X10NYq8xRkFpZyVMQqXDx9kPDcHIPZQ
+\end{verbatim}
+
+\bibitem{BC} Baernstein, A. Culverhouse, R. Majorization of sequences, sharp vector Khinchin inequalities, and bisubharmonic functions
+
+\begin{verbatim}
+	https://www.impan.pl/pl/wydawnictwa/czasopisma-i-serie-wydawnicze/studia-mathematica/all/152/3/90752/majorization-of-sequences-sharp-vector-khinchin-inequalities-and-bisubharmonic-functions
+\end{verbatim}
+
+\bibitem{K} A. Ya. Khinchin,{\"U}ber dyadische Br{\"u}che, Math. Z. 18 (1923), 109-116
+
+\bibitem{W} Whittle, P., Bounds for the moments of linear and quadratic forms in independent random variables. \textit{Theory Probab. Appl. 5, 302-305} (1960)
+
+\bibitem{ENT2}
+Eskenazis, A., Nayar, P., Tkocz, T., Sharp comparison of moments and the log-concave moment problem. Adv. Math. 334 (2018), 389--416.
+
+\bibitem{PS1}
+P\'olya, G., Szeg\"o, G., 
+Problems and theorems in analysis. I. Series, integral calculus, theory of functions. Translated from the German by Dorothee Aeppli. Reprint of the 1978 English translation. Classics in Mathematics. Springer-Verlag, Berlin, 1998.
+
+\bibitem{NZ}
+Nayar, P., Zwara, S.,
+Sharp variance-entropy comparison for nonnegative gaussian quadratic forms. Preprint (2020), arXiv:2005.11705.
+
+
+\bibitem{MO} Marshall. A, Olkin. I, Arnold. B, \textit{Inequalities: Theory of Majorization and its Applications}
+
+\begin{verbatim}
+	https://link.springer.com/book/10.1007/978-0-387-68276-1
+\end{verbatim}
+
+\bibitem{BB} Billingsley, B. \textit{Probability and Measure} 
+
+\begin{verbatim}
+	https://www.colorado.edu/amath/sites/default/files/attached-files/billingsley.pdf
+\end{verbatim}
+
+\end{thebibliography}
+
+
+\end{document}
+
+
+

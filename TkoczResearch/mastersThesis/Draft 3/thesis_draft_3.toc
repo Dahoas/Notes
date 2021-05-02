@@ -1,0 +1,19 @@
+\contentsline {section}{\numberline {1}Introduction}{4}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Overview}{4}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Some History}{4}{subsection.1.2}%
+\contentsline {section}{\numberline {2}Khintchine Inequalities for Various Distributions}{6}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Random Signs - The Classical Story}{6}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Uniform Random Variables}{11}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Ultra Sub-Gaussian Random Variables}{13}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Gaussian Mixtures}{15}{subsection.2.4}%
+\contentsline {section}{\numberline {3}Type $\mathcal {L}$ Random Variables}{19}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Connections to Ultra Sub-Gaussianity}{19}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Type $\mathcal {L}$ Random Variables with "Enough Gaussanity"}{21}{subsection.3.2}%
+\contentsline {subsection}{\numberline {3.3}Examples of Type $\mathcal {L}$ Random Variables}{23}{subsection.3.3}%
+\contentsline {section}{\numberline {4}Discrete Symmetric Distributions}{24}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Connections to Ultra Sub-Gaussianity}{24}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Small mass at 0}{24}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Large mass at 0}{31}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Appendix}{33}{section.5}%
+\contentsline {subsection}{\numberline {5.1}Proof of Convergence of Moments}{33}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Proof of Distribution Lemma}{34}{subsection.5.2}%
