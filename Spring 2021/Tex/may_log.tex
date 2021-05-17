@@ -1,0 +1,261 @@
+\documentclass[11pt]{article}
+%you can look for fun LaTeX packages to use hereasdf
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{amsthm}
+
+\usepackage{graphicx}
+\usepackage{dcolumn}
+\usepackage{bm}
+
+%fun commands for fun sets
+%make sure to use these in math mode
+\newcommand{\Z}{\mathbb{Z}}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\N}{\mathbb{N}}
+\newcommand{\C}{\mathbb{C}}
+\newcommand{\m}{\mathcal{M}}
+\newcommand{\Tt}{\mathcal{T}}
+\newcommand{\pa}{\partial}
+\newcommand{\dD}{\mathcal{D}}
+\newcommand{\E}{\mathbb{E}}
+\newcommand{\norm}[1]{\left\lvert\left\lvert#1\right\rvert\right\rvert}
+\newcommand{\normOne}[1]{\left\lvert#1\right\rvert}
+\newcommand{\lparen}{\left(}
+\newcommand{\rparen}{\right)}
+
+
+
+\oddsidemargin0cm
+\topmargin-2cm    
+\textwidth16.5cm   
+\textheight23.5cm  
+
+\newcommand{\question}[2] {\vspace{.25in} \hrule\vspace{0.5em}
+\noindent{\bf #1: #2} \vspace{0.5em}
+\hrule \vspace{.10in}}
+\renewcommand{\part}[1] {\vspace{.10in} {\bf (#1)}}
+
+\newcommand{\myname}{Alex Havrilla}
+\newcommand{\myandrew}{alumhavr}
+\newcommand{\myhwnum}{Hw 1}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{prop}{Prop}
+\theoremstyle{remark}
+\newtheorem{lemma}{Lemma}
+\newtheorem{remark}{Remark}
+\newtheorem{defi}{Def}
+\newtheorem{apps}{Application}
+\newtheorem{quest}{Question}
+\newtheorem{ans}{Answer}
+\newtheorem{interest}{Interesting}
+\newtheorem{theme}{Theme}
+\newtheorem{back}{Background}
+\newtheorem{idea}{Idea}
+\newtheorem{example}{Example}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt plus 1pt}
+ 
+\pagestyle{fancyplain}
+\lhead{\fancyplain{}{\textbf{HW\myhwnum}}}      % Note the different brackets!
+\rhead{\fancyplain{}{\myname\\ \myandrew}}
+\chead{\fancyplain{}{\mycourse}}
+
+\linespread{1.3}
+
+\title{April Log}
+
+\begin{document}
+
+\maketitle
+
+\section{5/3}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Good complex test
+	\item Finish Modeling evolution
+\end{enumerate}
+
+\subsection{Complex Review}
+
+8:30 on - Grind complex + set/fantasy reading break
+
+Review Plan:
+
+\begin{enumerate}
+	\item Prove notes
+	\item Homeworks
+	\item General term review
+	\item Look over SS practice problems
+	\item Idea make proof structure list and technique list too
+\end{enumerate}
+
+Homework 11 Problems: 
+
+All fairly straightforward. Slight complication with 1b) needed to use product relation sin and cos i.e. $2sin(x)cos(x) = sin(2x)$.
+
+Proof Review:
+
+\begin{theorem}
+	Jensen's Formula: If $f : \Omega \to \mathbb{C}$ holo. with $\overline{D_R} \subseteq \Omega$ and $f(0) \neq 0$ and $f(z) \neq 0$ for $z \in C_R$ then where $\{z_1,...,z_n\}$ are the zeroes in $D_R$ we have
+	\begin{align*}
+		log|f(0)| = \sum_{k=1}^{n}log(\frac{|z_k|}{R}) + \frac{1}{2\pi}\int_{0}^{2\pi}log|f(Re^{i\theta})|d\theta
+	\end{align*}
+\end{theorem}
+
+\begin{remark}
+	Is a type of modified mean value theorem.
+\end{remark}
+
+Idea of proof sketch is to provide outline while stepping through details I had issue with.
+
+\begin{proof}
+	To start note if formula $J(f_1),J(f_2)$ holds then $J(f_1f_2)$ holds. So STS for nonvanishing $g$ and roots $z-z_k$. 
+
+	For $g$ case follows from $g = e^h$ and using MVP/Cauchy on $h$. 
+
+	For $z-z_k$ follows from a homework probem. Key is to compute log norm smartly allowing for easy integration.
+\end{proof}
+
+\begin{theorem}
+	If $f$ entire with order $\leq \rho$ then
+
+	\begin{equation*}
+		\eta(r) \leq Cr^{\rho}
+	\end{equation*} for $r$ sufficiently large
+
+	Further if $z_1,...$ are zeroes of $f$ then
+	\begin{equation*}
+		\sum_{k=1}^{\infty}\frac{1}{|z_k|^s} < \infty
+	\end{equation*} for $s > \rho$
+\end{theorem}
+
+Actually don't have time to write reviews but will have scratch in notebook and refer back to notes when stuck.
+
+The process shouldn't be too complicated that it takes away from learning. Or if it is complicated needs to be eased into. Slowly build instead of doing everything. Keep crucial parts like problem solving.
+
+Key idea for ii) is to use dyadic blocks and then count number of roots in each block while bounding norm with block bound. Use bound from i) for bound on n(r). So bound root norm by partitioning and deal with partition count via earlier estimate.
+
+*Important to always work through details once understand strategy.
+
+\section{5/5}
+
+\subsection{Modeling Evolution}
+
+\section{5/6}
+
+\subsection{Goals}
+
+\begin{itemize}
+	\item Modeling Evolution
+	\item Grind DRL
+	\item Make Math talk
+\end{itemize}
+
+\subsection{DRL Review}
+
+\section{5/7}
+
+\subsection{Goals}
+
+\begin{itemize}
+	\item Calendar
+	\item Shop for self+party
+	\item Grind DRL
+	\item Make math presentation
+\end{itemize}
+
+\section{5/8}
+
+\begin{itemize}
+	\item Grind DRL
+	\item Finish engage essays
+\end{itemize}
+
+\subsection{DRL Review}
+
+Interesting:
+
+https://en.wikipedia.org/wiki/Bayesian_network
+
+All about representing uncertainty
+
+Aleatoric uncertainty captured by outputing a distribution. Epistemic captured by multiple networks which agree on points we have seen and have high variance on points we haven't seen.
+
+Question: What if all approximating models are too weak? Ex: all linear learners trying to approximate nonlinear ground truth? 
+
+Question: NN with distributions ove rweights? Helps approximate stochasticity?
+
+Very interesting questions on curiosity and related philosophy in lecture 21.
+
+
+\subection{Sydney Review}
+
+Goal of presentation?
+
+I feel like motivation/metahpor too long for 10 min?
+
+Maybe talk about similar/related work?
+-Mentioned other systems did not have summarization tool
+-Nevermind was touched on, maybe bump uup
+
+Technical details?
+
+Challenges?
+
+\section{5/10}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish Engage
+	\item Finish Propel
+	\item Start DRL
+\end{enumerate}
+
+\subsection{Clogic Notes}
+
+\section{5/13}
+
+\subsection{DRL}
+
+\section{5/15}
+
+\subsection{DRL}
+
+\section{5/16}
+
+\subsection{Goals}
+
+\begin{enumerate}
+	\item Finish DRL
+	\item Be with Maia
+	\item Look for job stuff
+\end{enumerate}
+
+\subsection{To Do}
+
+\begin{enumerate}
+	\item Register for commencement
+	\item Get cap and gown
+	\item Make dental appointment
+	\item Make skin appointment
+	\item Make pediatrics checkup
+\end{enumerate}
+
+\subsection{Rel}
+
+\begin{enumerate}
+	\item Set
+	\item Algebraic Geomtry
+\end{enumerate}
+
+
+\end{document}
+
